@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84BD2DAF1F56ACBE0044CC5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DAE1F56ACBE0044CC5E /* AppDelegate.swift */; };
+		84BD2DB11F56ACBE0044CC5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DB01F56ACBE0044CC5E /* ViewController.swift */; };
+		84BD2DB41F56ACC10044CC5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD2DB21F56ACC10044CC5E /* Main.storyboard */; };
+		84BD2DB61F56ACC40044CC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BD2DB51F56ACC40044CC5E /* Assets.xcassets */; };
+		84BD2DB91F56ACC40044CC5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD2DB71F56ACC40044CC5E /* LaunchScreen.storyboard */; };
+		84BD2DC41F56ACC50044CC5E /* SAS_CoffeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DC31F56ACC50044CC5E /* SAS_CoffeeTests.swift */; };
+		84BD2DCF1F56ACC50044CC5E /* SAS_CoffeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DCE1F56ACC50044CC5E /* SAS_CoffeeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84BD2DC01F56ACC50044CC5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84BD2DA31F56ACB80044CC5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BD2DAA1F56ACBB0044CC5E;
+			remoteInfo = "SAS Coffee";
+		};
+		84BD2DCB1F56ACC50044CC5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84BD2DA31F56ACB80044CC5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BD2DAA1F56ACBB0044CC5E;
+			remoteInfo = "SAS Coffee";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84BD2DAB1F56ACBC0044CC5E /* SAS Coffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SAS Coffee.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BD2DAE1F56ACBE0044CC5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84BD2DB01F56ACBE0044CC5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84BD2DB31F56ACC10044CC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84BD2DB51F56ACC40044CC5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84BD2DB81F56ACC40044CC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84BD2DBA1F56ACC40044CC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BD2DBF1F56ACC50044CC5E /* SAS CoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAS CoffeeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BD2DC31F56ACC50044CC5E /* SAS_CoffeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAS_CoffeeTests.swift; sourceTree = "<group>"; };
+		84BD2DC51F56ACC50044CC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BD2DCA1F56ACC50044CC5E /* SAS CoffeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAS CoffeeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BD2DCE1F56ACC50044CC5E /* SAS_CoffeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAS_CoffeeUITests.swift; sourceTree = "<group>"; };
+		84BD2DD01F56ACC50044CC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84BD2DA81F56ACBB0044CC5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD2DBC1F56ACC50044CC5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD2DC71F56ACC50044CC5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84BD2DA21F56ACB80044CC5E = {
+			isa = PBXGroup;
+			children = (
+				84BD2DAD1F56ACBC0044CC5E /* SAS Coffee */,
+				84BD2DC21F56ACC50044CC5E /* SAS CoffeeTests */,
+				84BD2DCD1F56ACC50044CC5E /* SAS CoffeeUITests */,
+				84BD2DAC1F56ACBC0044CC5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84BD2DAC1F56ACBC0044CC5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84BD2DAB1F56ACBC0044CC5E /* SAS Coffee.app */,
+				84BD2DBF1F56ACC50044CC5E /* SAS CoffeeTests.xctest */,
+				84BD2DCA1F56ACC50044CC5E /* SAS CoffeeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84BD2DAD1F56ACBC0044CC5E /* SAS Coffee */ = {
+			isa = PBXGroup;
+			children = (
+				84BD2DAE1F56ACBE0044CC5E /* AppDelegate.swift */,
+				84BD2DB01F56ACBE0044CC5E /* ViewController.swift */,
+				84BD2DB21F56ACC10044CC5E /* Main.storyboard */,
+				84BD2DB51F56ACC40044CC5E /* Assets.xcassets */,
+				84BD2DB71F56ACC40044CC5E /* LaunchScreen.storyboard */,
+				84BD2DBA1F56ACC40044CC5E /* Info.plist */,
+			);
+			path = "SAS Coffee";
+			sourceTree = "<group>";
+		};
+		84BD2DC21F56ACC50044CC5E /* SAS CoffeeTests */ = {
+			isa = PBXGroup;
+			children = (
+				84BD2DC31F56ACC50044CC5E /* SAS_CoffeeTests.swift */,
+				84BD2DC51F56ACC50044CC5E /* Info.plist */,
+			);
+			path = "SAS CoffeeTests";
+			sourceTree = "<group>";
+		};
+		84BD2DCD1F56ACC50044CC5E /* SAS CoffeeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84BD2DCE1F56ACC50044CC5E /* SAS_CoffeeUITests.swift */,
+				84BD2DD01F56ACC50044CC5E /* Info.plist */,
+			);
+			path = "SAS CoffeeUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84BD2DAA1F56ACBB0044CC5E /* SAS Coffee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BD2DD31F56ACC50044CC5E /* Build configuration list for PBXNativeTarget "SAS Coffee" */;
+			buildPhases = (
+				84BD2DA71F56ACBB0044CC5E /* Sources */,
+				84BD2DA81F56ACBB0044CC5E /* Frameworks */,
+				84BD2DA91F56ACBB0044CC5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SAS Coffee";
+			productName = "SAS Coffee";
+			productReference = 84BD2DAB1F56ACBC0044CC5E /* SAS Coffee.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84BD2DBE1F56ACC50044CC5E /* SAS CoffeeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BD2DD61F56ACC50044CC5E /* Build configuration list for PBXNativeTarget "SAS CoffeeTests" */;
+			buildPhases = (
+				84BD2DBB1F56ACC50044CC5E /* Sources */,
+				84BD2DBC1F56ACC50044CC5E /* Frameworks */,
+				84BD2DBD1F56ACC50044CC5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84BD2DC11F56ACC50044CC5E /* PBXTargetDependency */,
+			);
+			name = "SAS CoffeeTests";
+			productName = "SAS CoffeeTests";
+			productReference = 84BD2DBF1F56ACC50044CC5E /* SAS CoffeeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84BD2DC91F56ACC50044CC5E /* SAS CoffeeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BD2DD91F56ACC50044CC5E /* Build configuration list for PBXNativeTarget "SAS CoffeeUITests" */;
+			buildPhases = (
+				84BD2DC61F56ACC50044CC5E /* Sources */,
+				84BD2DC71F56ACC50044CC5E /* Frameworks */,
+				84BD2DC81F56ACC50044CC5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84BD2DCC1F56ACC50044CC5E /* PBXTargetDependency */,
+			);
+			name = "SAS CoffeeUITests";
+			productName = "SAS CoffeeUITests";
+			productReference = 84BD2DCA1F56ACC50044CC5E /* SAS CoffeeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84BD2DA31F56ACB80044CC5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Duy Cao";
+				TargetAttributes = {
+					84BD2DAA1F56ACBB0044CC5E = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = GVUH4TQN58;
+						ProvisioningStyle = Automatic;
+					};
+					84BD2DBE1F56ACC50044CC5E = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = GVUH4TQN58;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 84BD2DAA1F56ACBB0044CC5E;
+					};
+					84BD2DC91F56ACC50044CC5E = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = GVUH4TQN58;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 84BD2DAA1F56ACBB0044CC5E;
+					};
+				};
+			};
+			buildConfigurationList = 84BD2DA61F56ACB80044CC5E /* Build configuration list for PBXProject "SAS Coffee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84BD2DA21F56ACB80044CC5E;
+			productRefGroup = 84BD2DAC1F56ACBC0044CC5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84BD2DAA1F56ACBB0044CC5E /* SAS Coffee */,
+				84BD2DBE1F56ACC50044CC5E /* SAS CoffeeTests */,
+				84BD2DC91F56ACC50044CC5E /* SAS CoffeeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84BD2DA91F56ACBB0044CC5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BD2DB91F56ACC40044CC5E /* LaunchScreen.storyboard in Resources */,
+				84BD2DB61F56ACC40044CC5E /* Assets.xcassets in Resources */,
+				84BD2DB41F56ACC10044CC5E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD2DBD1F56ACC50044CC5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD2DC81F56ACC50044CC5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84BD2DA71F56ACBB0044CC5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BD2DB11F56ACBE0044CC5E /* ViewController.swift in Sources */,
+				84BD2DAF1F56ACBE0044CC5E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD2DBB1F56ACC50044CC5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BD2DC41F56ACC50044CC5E /* SAS_CoffeeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD2DC61F56ACC50044CC5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BD2DCF1F56ACC50044CC5E /* SAS_CoffeeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84BD2DC11F56ACC50044CC5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BD2DAA1F56ACBB0044CC5E /* SAS Coffee */;
+			targetProxy = 84BD2DC01F56ACC50044CC5E /* PBXContainerItemProxy */;
+		};
+		84BD2DCC1F56ACC50044CC5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BD2DAA1F56ACBB0044CC5E /* SAS Coffee */;
+			targetProxy = 84BD2DCB1F56ACC50044CC5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84BD2DB21F56ACC10044CC5E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84BD2DB31F56ACC10044CC5E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84BD2DB71F56ACC40044CC5E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84BD2DB81F56ACC40044CC5E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84BD2DD11F56ACC50044CC5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84BD2DD21F56ACC50044CC5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84BD2DD41F56ACC50044CC5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GVUH4TQN58;
+				INFOPLIST_FILE = "SAS Coffee/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kasper.personal.SAS-Coffee";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		84BD2DD51F56ACC50044CC5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GVUH4TQN58;
+				INFOPLIST_FILE = "SAS Coffee/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kasper.personal.SAS-Coffee";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		84BD2DD71F56ACC50044CC5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GVUH4TQN58;
+				INFOPLIST_FILE = "SAS CoffeeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kasper.personal.SAS-CoffeeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAS Coffee.app/SAS Coffee";
+			};
+			name = Debug;
+		};
+		84BD2DD81F56ACC50044CC5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GVUH4TQN58;
+				INFOPLIST_FILE = "SAS CoffeeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kasper.personal.SAS-CoffeeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAS Coffee.app/SAS Coffee";
+			};
+			name = Release;
+		};
+		84BD2DDA1F56ACC50044CC5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = GVUH4TQN58;
+				INFOPLIST_FILE = "SAS CoffeeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kasper.personal.SAS-CoffeeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "SAS Coffee";
+			};
+			name = Debug;
+		};
+		84BD2DDB1F56ACC50044CC5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = GVUH4TQN58;
+				INFOPLIST_FILE = "SAS CoffeeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kasper.personal.SAS-CoffeeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "SAS Coffee";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84BD2DA61F56ACB80044CC5E /* Build configuration list for PBXProject "SAS Coffee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BD2DD11F56ACC50044CC5E /* Debug */,
+				84BD2DD21F56ACC50044CC5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84BD2DD31F56ACC50044CC5E /* Build configuration list for PBXNativeTarget "SAS Coffee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BD2DD41F56ACC50044CC5E /* Debug */,
+				84BD2DD51F56ACC50044CC5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84BD2DD61F56ACC50044CC5E /* Build configuration list for PBXNativeTarget "SAS CoffeeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BD2DD71F56ACC50044CC5E /* Debug */,
+				84BD2DD81F56ACC50044CC5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84BD2DD91F56ACC50044CC5E /* Build configuration list for PBXNativeTarget "SAS CoffeeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BD2DDA1F56ACC50044CC5E /* Debug */,
+				84BD2DDB1F56ACC50044CC5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84BD2DA31F56ACB80044CC5E /* Project object */;
+}
