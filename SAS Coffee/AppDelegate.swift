@@ -8,6 +8,8 @@
 
 import UIKit
 
+import NVActivityIndicatorView
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,9 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UIApplication.shared.statusBarStyle = .lightContent
+        LangUtil.switchLang(code: LangCode.EN)
+        configLoadingBlocker()
         return true
     }
 
+    
+    func configLoadingBlocker(){
+        NVActivityIndicatorView.DEFAULT_TYPE = .ballPulse
+        NVActivityIndicatorView.DEFAULT_BLOCKER_MESSAGE = "loading".localize()
+        NVActivityIndicatorView.DEFAULT_PADDING = 10.0
+        NVActivityIndicatorView.DEFAULT_COLOR = Style.colorSecondary
+        NVActivityIndicatorView.DEFAULT_BLOCKER_SIZE = CGSize(width: 100, height: 50)
+        
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

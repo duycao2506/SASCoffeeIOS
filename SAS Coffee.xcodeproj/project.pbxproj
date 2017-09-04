@@ -7,13 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		015F6BBA99B778A0D24F3CD3 /* Pods_SAS_CoffeeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93B730B8783F2AF972FD429 /* Pods_SAS_CoffeeUITests.framework */; };
+		1B32C3684D521CA05864D41A /* Pods_SAS_CoffeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C616FE1F6CA22ACD0D5BE8 /* Pods_SAS_CoffeeTests.framework */; };
+		842A7C101F59174100630509 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A7C0F1F59174100630509 /* UserModel.swift */; };
+		848F0DDE1F591B8100B204F5 /* SuperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DDD1F591B8000B204F5 /* SuperModel.swift */; };
+		848F0DE01F592A8900B204F5 /* NetworkServiceConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DDF1F592A8900B204F5 /* NetworkServiceConst.swift */; };
+		848F0DE41F59536300B204F5 /* KasperNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DE31F59536300B204F5 /* KasperNavViewController.swift */; };
+		848F0DE61F5953EB00B204F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DE51F5953EA00B204F5 /* HomeViewController.swift */; };
+		848F0DF01F5962AE00B204F5 /* GlobalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DEF1F5962AE00B204F5 /* GlobalUtils.swift */; };
+		848F0DF21F59647600B204F5 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DF11F59647600B204F5 /* Style.swift */; };
+		848F0DF41F59654B00B204F5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DF31F59654B00B204F5 /* UIColor+Extension.swift */; };
+		848F0DF61F596BFD00B204F5 /* MyString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DF51F596BFD00B204F5 /* MyString+Extension.swift */; };
+		848F0DF81F596C2200B204F5 /* LangCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DF71F596C2200B204F5 /* LangCode.swift */; };
+		848F0DFA1F596C9600B204F5 /* LangUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DF91F596C9600B204F5 /* LangUtil.swift */; };
+		848F0E011F59B6E300B204F5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848F0DFD1F59B40800B204F5 /* Roboto-Bold.ttf */; };
+		848F0E021F59B6E300B204F5 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848F0DFE1F59B40800B204F5 /* Roboto-Italic.ttf */; };
+		848F0E031F59B6E300B204F5 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848F0DFF1F59B40800B204F5 /* Roboto-Light.ttf */; };
+		848F0E041F59B6E300B204F5 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848F0E001F59B40800B204F5 /* Roboto-Regular.ttf */; };
+		848F0E061F5A38EE00B204F5 /* BasicInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E051F5A38EE00B204F5 /* BasicInfoTableViewCell.swift */; };
+		848F0E081F5A390800B204F5 /* UserLevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E071F5A390800B204F5 /* UserLevelTableViewCell.swift */; };
+		848F0E0A1F5A433F00B204F5 /* TableViewCellIdetifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E091F5A433F00B204F5 /* TableViewCellIdetifier.swift */; };
+		848F0E0C1F5A98BC00B204F5 /* CustomerCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E0B1F5A98BC00B204F5 /* CustomerCodeTableViewCell.swift */; };
+		848F0E0E1F5AA68800B204F5 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E0D1F5AA68800B204F5 /* UIImage+Extension.swift */; };
+		848F0E101F5AA86B00B204F5 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E0F1F5AA86B00B204F5 /* CardTableViewCell.swift */; };
+		848F0E121F5ACC2F00B204F5 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E111F5ACC2F00B204F5 /* AppSetting.swift */; };
+		848F0E141F5AD03500B204F5 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E131F5AD03500B204F5 /* RequestService.swift */; };
+		848F0E161F5AD30900B204F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848F0E151F5AD30900B204F5 /* Assets.xcassets */; };
+		848F0E191F5ADC7300B204F5 /* ImageTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E171F5ADC7300B204F5 /* ImageTitleTableViewCell.swift */; };
+		848F0E1A1F5ADC7300B204F5 /* ImageTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848F0E181F5ADC7300B204F5 /* ImageTitleTableViewCell.xib */; };
+		848F0E1C1F5AE3A700B204F5 /* SuperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E1B1F5AE3A700B204F5 /* SuperTableViewCell.swift */; };
+		848F0E261F5B274C00B204F5 /* LoginUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E251F5B274C00B204F5 /* LoginUIView.swift */; };
+		848F0E281F5B29BD00B204F5 /* LoginUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848F0E271F5B29BD00B204F5 /* LoginUIView.xib */; };
+		848F0E2A1F5B9E7C00B204F5 /* KasperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E291F5B9E7C00B204F5 /* KasperButton.swift */; };
+		848F0E2E1F5BA83800B204F5 /* ViewNibNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0E2D1F5BA83800B204F5 /* ViewNibNames.swift */; };
 		84BD2DAF1F56ACBE0044CC5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DAE1F56ACBE0044CC5E /* AppDelegate.swift */; };
-		84BD2DB11F56ACBE0044CC5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DB01F56ACBE0044CC5E /* ViewController.swift */; };
+		84BD2DB11F56ACBE0044CC5E /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DB01F56ACBE0044CC5E /* EntranceViewController.swift */; };
 		84BD2DB41F56ACC10044CC5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD2DB21F56ACC10044CC5E /* Main.storyboard */; };
-		84BD2DB61F56ACC40044CC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BD2DB51F56ACC40044CC5E /* Assets.xcassets */; };
-		84BD2DB91F56ACC40044CC5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD2DB71F56ACC40044CC5E /* LaunchScreen.storyboard */; };
 		84BD2DC41F56ACC50044CC5E /* SAS_CoffeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DC31F56ACC50044CC5E /* SAS_CoffeeTests.swift */; };
 		84BD2DCF1F56ACC50044CC5E /* SAS_CoffeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DCE1F56ACC50044CC5E /* SAS_CoffeeUITests.swift */; };
+		84BD2DE41F56B7DB0044CC5E /* AppStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DE31F56B7DB0044CC5E /* AppStoryBoard.swift */; };
+		84BD2DEA1F56BD830044CC5E /* Launchscreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD2DE81F56BD830044CC5E /* Launchscreen.storyboard */; };
+		84BD2DF21F56C9FE0044CC5E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD2DF11F56C9FE0044CC5E /* Home.storyboard */; };
+		84BD2DF41F56CC410044CC5E /* KasperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DF31F56CC410044CC5E /* KasperViewController.swift */; };
+		84BD2DF61F56CC5C0044CC5E /* HomeNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DF51F56CC5C0044CC5E /* HomeNavViewController.swift */; };
+		84BD2DF81F56CD3B0044CC5E /* ViewControllerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DF71F56CD3B0044CC5E /* ViewControllerList.swift */; };
+		84BEB26A1F5BEE0D00CCC549 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEB2691F5BEE0D00CCC549 /* UIView+Extension.swift */; };
+		84BEB26C1F5BEE3100CCC549 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEB26B1F5BEE3100CCC549 /* NibView.swift */; };
+		B3427F016424EFACF74EB8FE /* Pods_SAS_Coffee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550E001BCDB940D28E68466B /* Pods_SAS_Coffee.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +74,45 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15767A4926B18A1CB112829E /* Pods-SAS CoffeeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAS CoffeeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SAS CoffeeUITests/Pods-SAS CoffeeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		54B247FBE490E18C1EB4E5AA /* Pods-SAS Coffee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAS Coffee.release.xcconfig"; path = "Pods/Target Support Files/Pods-SAS Coffee/Pods-SAS Coffee.release.xcconfig"; sourceTree = "<group>"; };
+		550E001BCDB940D28E68466B /* Pods_SAS_Coffee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAS_Coffee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		842A7C0F1F59174100630509 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		848F0DDD1F591B8000B204F5 /* SuperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperModel.swift; sourceTree = "<group>"; };
+		848F0DDF1F592A8900B204F5 /* NetworkServiceConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceConst.swift; sourceTree = "<group>"; };
+		848F0DE31F59536300B204F5 /* KasperNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KasperNavViewController.swift; sourceTree = "<group>"; };
+		848F0DE51F5953EA00B204F5 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		848F0DEF1F5962AE00B204F5 /* GlobalUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUtils.swift; sourceTree = "<group>"; };
+		848F0DF11F59647600B204F5 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		848F0DF31F59654B00B204F5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		848F0DF51F596BFD00B204F5 /* MyString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyString+Extension.swift"; sourceTree = "<group>"; };
+		848F0DF71F596C2200B204F5 /* LangCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangCode.swift; sourceTree = "<group>"; };
+		848F0DF91F596C9600B204F5 /* LangUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangUtil.swift; sourceTree = "<group>"; };
+		848F0DFD1F59B40800B204F5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		848F0DFE1F59B40800B204F5 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		848F0DFF1F59B40800B204F5 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		848F0E001F59B40800B204F5 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		848F0E051F5A38EE00B204F5 /* BasicInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfoTableViewCell.swift; sourceTree = "<group>"; };
+		848F0E071F5A390800B204F5 /* UserLevelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLevelTableViewCell.swift; sourceTree = "<group>"; };
+		848F0E091F5A433F00B204F5 /* TableViewCellIdetifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellIdetifier.swift; sourceTree = "<group>"; };
+		848F0E0B1F5A98BC00B204F5 /* CustomerCodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerCodeTableViewCell.swift; sourceTree = "<group>"; };
+		848F0E0D1F5AA68800B204F5 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		848F0E0F1F5AA86B00B204F5 /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		848F0E111F5ACC2F00B204F5 /* AppSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
+		848F0E131F5AD03500B204F5 /* RequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		848F0E151F5AD30900B204F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		848F0E171F5ADC7300B204F5 /* ImageTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTitleTableViewCell.swift; sourceTree = "<group>"; };
+		848F0E181F5ADC7300B204F5 /* ImageTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageTitleTableViewCell.xib; sourceTree = "<group>"; };
+		848F0E1B1F5AE3A700B204F5 /* SuperTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperTableViewCell.swift; sourceTree = "<group>"; };
+		848F0E1F1F5AEDB000B204F5 /* SAS Coffee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SAS Coffee.entitlements"; sourceTree = "<group>"; };
+		848F0E251F5B274C00B204F5 /* LoginUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUIView.swift; sourceTree = "<group>"; };
+		848F0E271F5B29BD00B204F5 /* LoginUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginUIView.xib; sourceTree = "<group>"; };
+		848F0E291F5B9E7C00B204F5 /* KasperButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KasperButton.swift; sourceTree = "<group>"; };
+		848F0E2D1F5BA83800B204F5 /* ViewNibNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewNibNames.swift; sourceTree = "<group>"; };
 		84BD2DAB1F56ACBC0044CC5E /* SAS Coffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SAS Coffee.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BD2DAE1F56ACBE0044CC5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84BD2DB01F56ACBE0044CC5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84BD2DB01F56ACBE0044CC5E /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntranceViewController.swift; path = ../EntranceViewController.swift; sourceTree = "<group>"; };
 		84BD2DB31F56ACC10044CC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		84BD2DB51F56ACC40044CC5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		84BD2DB81F56ACC40044CC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84BD2DBA1F56ACC40044CC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84BD2DBF1F56ACC50044CC5E /* SAS CoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAS CoffeeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BD2DC31F56ACC50044CC5E /* SAS_CoffeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAS_CoffeeTests.swift; sourceTree = "<group>"; };
@@ -47,6 +120,21 @@
 		84BD2DCA1F56ACC50044CC5E /* SAS CoffeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAS CoffeeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BD2DCE1F56ACC50044CC5E /* SAS_CoffeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAS_CoffeeUITests.swift; sourceTree = "<group>"; };
 		84BD2DD01F56ACC50044CC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BD2DE31F56B7DB0044CC5E /* AppStoryBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoryBoard.swift; sourceTree = "<group>"; };
+		84BD2DE91F56BD830044CC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Launchscreen.storyboard; sourceTree = "<group>"; };
+		84BD2DEB1F56C3C80044CC5E /* SAS Coffee-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SAS Coffee-Bridging-Header.h"; sourceTree = "<group>"; };
+		84BD2DF11F56C9FE0044CC5E /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		84BD2DF31F56CC410044CC5E /* KasperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KasperViewController.swift; sourceTree = "<group>"; };
+		84BD2DF51F56CC5C0044CC5E /* HomeNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavViewController.swift; sourceTree = "<group>"; };
+		84BD2DF71F56CD3B0044CC5E /* ViewControllerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerList.swift; sourceTree = "<group>"; };
+		84BEB2691F5BEE0D00CCC549 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		84BEB26B1F5BEE3100CCC549 /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		A93B730B8783F2AF972FD429 /* Pods_SAS_CoffeeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAS_CoffeeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9C616FE1F6CA22ACD0D5BE8 /* Pods_SAS_CoffeeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAS_CoffeeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7D6D90DA9A43F195BC30577 /* Pods-SAS CoffeeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAS CoffeeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SAS CoffeeTests/Pods-SAS CoffeeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC58E74CC52C8071675EDDFA /* Pods-SAS CoffeeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAS CoffeeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SAS CoffeeTests/Pods-SAS CoffeeTests.release.xcconfig"; sourceTree = "<group>"; };
+		CCC2A0FCBF48D098D3BA3593 /* Pods-SAS Coffee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAS Coffee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SAS Coffee/Pods-SAS Coffee.debug.xcconfig"; sourceTree = "<group>"; };
+		E02056D5DE3F5CAF229D9D58 /* Pods-SAS CoffeeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAS CoffeeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SAS CoffeeUITests/Pods-SAS CoffeeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3427F016424EFACF74EB8FE /* Pods_SAS_Coffee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B32C3684D521CA05864D41A /* Pods_SAS_CoffeeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +158,64 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				015F6BBA99B778A0D24F3CD3 /* Pods_SAS_CoffeeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36C300895D5C7422B6FF7E78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CCC2A0FCBF48D098D3BA3593 /* Pods-SAS Coffee.debug.xcconfig */,
+				54B247FBE490E18C1EB4E5AA /* Pods-SAS Coffee.release.xcconfig */,
+				B7D6D90DA9A43F195BC30577 /* Pods-SAS CoffeeTests.debug.xcconfig */,
+				CC58E74CC52C8071675EDDFA /* Pods-SAS CoffeeTests.release.xcconfig */,
+				15767A4926B18A1CB112829E /* Pods-SAS CoffeeUITests.debug.xcconfig */,
+				E02056D5DE3F5CAF229D9D58 /* Pods-SAS CoffeeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		848F0DE11F59529500B204F5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				848F0E051F5A38EE00B204F5 /* BasicInfoTableViewCell.swift */,
+				848F0E071F5A390800B204F5 /* UserLevelTableViewCell.swift */,
+				848F0E0B1F5A98BC00B204F5 /* CustomerCodeTableViewCell.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		848F0DE21F5952A200B204F5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				84BD2DB01F56ACBE0044CC5E /* EntranceViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		848F0DFC1F59B3B400B204F5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				848F0DFD1F59B40800B204F5 /* Roboto-Bold.ttf */,
+				848F0DFE1F59B40800B204F5 /* Roboto-Italic.ttf */,
+				848F0DFF1F59B40800B204F5 /* Roboto-Light.ttf */,
+				848F0E001F59B40800B204F5 /* Roboto-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		848F0E201F5B04CB00B204F5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				848F0E251F5B274C00B204F5 /* LoginUIView.swift */,
+				848F0E271F5B29BD00B204F5 /* LoginUIView.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		84BD2DA21F56ACB80044CC5E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +223,8 @@
 				84BD2DC21F56ACC50044CC5E /* SAS CoffeeTests */,
 				84BD2DCD1F56ACC50044CC5E /* SAS CoffeeUITests */,
 				84BD2DAC1F56ACBC0044CC5E /* Products */,
+				36C300895D5C7422B6FF7E78 /* Pods */,
+				D807868A65AF5063502C4DFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +241,20 @@
 		84BD2DAD1F56ACBC0044CC5E /* SAS Coffee */ = {
 			isa = PBXGroup;
 			children = (
+				848F0E1F1F5AEDB000B204F5 /* SAS Coffee.entitlements */,
+				848F0E151F5AD30900B204F5 /* Assets.xcassets */,
+				848F0DFC1F59B3B400B204F5 /* Resources */,
+				84BD2DDF1F56AFCD0044CC5E /* ExternalHelper */,
+				84BD2DDE1F56AFCD0044CC5E /* Extension */,
+				84BD2DE11F56AFCD0044CC5E /* Services */,
+				84BD2DE01F56AFCD0044CC5E /* Model */,
+				84BD2DE21F56AFCD0044CC5E /* View */,
+				84BD2DDD1F56AFCD0044CC5E /* Controller */,
 				84BD2DAE1F56ACBE0044CC5E /* AppDelegate.swift */,
-				84BD2DB01F56ACBE0044CC5E /* ViewController.swift */,
 				84BD2DB21F56ACC10044CC5E /* Main.storyboard */,
-				84BD2DB51F56ACC40044CC5E /* Assets.xcassets */,
-				84BD2DB71F56ACC40044CC5E /* LaunchScreen.storyboard */,
+				84BD2DE81F56BD830044CC5E /* Launchscreen.storyboard */,
 				84BD2DBA1F56ACC40044CC5E /* Info.plist */,
+				84BD2DEB1F56C3C80044CC5E /* SAS Coffee-Bridging-Header.h */,
 			);
 			path = "SAS Coffee";
 			sourceTree = "<group>";
@@ -125,6 +277,113 @@
 			path = "SAS CoffeeUITests";
 			sourceTree = "<group>";
 		};
+		84BD2DDD1F56AFCD0044CC5E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84BD2DF31F56CC410044CC5E /* KasperViewController.swift */,
+				848F0DE31F59536300B204F5 /* KasperNavViewController.swift */,
+				84BD2DF71F56CD3B0044CC5E /* ViewControllerList.swift */,
+				848F0DE21F5952A200B204F5 /* Login */,
+				84BD2DE71F56B8CB0044CC5E /* Menu */,
+				84BD2DE61F56B8BF0044CC5E /* Map */,
+				84BD2DE51F56B8B30044CC5E /* Home */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84BD2DDE1F56AFCD0044CC5E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				848F0DF31F59654B00B204F5 /* UIColor+Extension.swift */,
+				848F0DF51F596BFD00B204F5 /* MyString+Extension.swift */,
+				848F0E0D1F5AA68800B204F5 /* UIImage+Extension.swift */,
+				84BEB2691F5BEE0D00CCC549 /* UIView+Extension.swift */,
+				84BEB26B1F5BEE3100CCC549 /* NibView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		84BD2DDF1F56AFCD0044CC5E /* ExternalHelper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExternalHelper;
+			sourceTree = "<group>";
+		};
+		84BD2DE01F56AFCD0044CC5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				848F0DDD1F591B8000B204F5 /* SuperModel.swift */,
+				842A7C0F1F59174100630509 /* UserModel.swift */,
+				848F0E111F5ACC2F00B204F5 /* AppSetting.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84BD2DE11F56AFCD0044CC5E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				84BD2DE31F56B7DB0044CC5E /* AppStoryBoard.swift */,
+				848F0DDF1F592A8900B204F5 /* NetworkServiceConst.swift */,
+				848F0DEF1F5962AE00B204F5 /* GlobalUtils.swift */,
+				848F0DF11F59647600B204F5 /* Style.swift */,
+				848F0DF71F596C2200B204F5 /* LangCode.swift */,
+				848F0DF91F596C9600B204F5 /* LangUtil.swift */,
+				848F0E131F5AD03500B204F5 /* RequestService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		84BD2DE21F56AFCD0044CC5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				848F0E201F5B04CB00B204F5 /* Login */,
+				848F0E0F1F5AA86B00B204F5 /* CardTableViewCell.swift */,
+				848F0DE11F59529500B204F5 /* Home */,
+				848F0E091F5A433F00B204F5 /* TableViewCellIdetifier.swift */,
+				848F0E2D1F5BA83800B204F5 /* ViewNibNames.swift */,
+				848F0E171F5ADC7300B204F5 /* ImageTitleTableViewCell.swift */,
+				848F0E181F5ADC7300B204F5 /* ImageTitleTableViewCell.xib */,
+				848F0E1B1F5AE3A700B204F5 /* SuperTableViewCell.swift */,
+				848F0E291F5B9E7C00B204F5 /* KasperButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84BD2DE51F56B8B30044CC5E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				84BD2DF11F56C9FE0044CC5E /* Home.storyboard */,
+				84BD2DF51F56CC5C0044CC5E /* HomeNavViewController.swift */,
+				848F0DE51F5953EA00B204F5 /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		84BD2DE61F56B8BF0044CC5E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		84BD2DE71F56B8CB0044CC5E /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		D807868A65AF5063502C4DFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				550E001BCDB940D28E68466B /* Pods_SAS_Coffee.framework */,
+				A9C616FE1F6CA22ACD0D5BE8 /* Pods_SAS_CoffeeTests.framework */,
+				A93B730B8783F2AF972FD429 /* Pods_SAS_CoffeeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +391,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84BD2DD31F56ACC50044CC5E /* Build configuration list for PBXNativeTarget "SAS Coffee" */;
 			buildPhases = (
+				53F82E686445360D5A5F62B3 /* [CP] Check Pods Manifest.lock */,
 				84BD2DA71F56ACBB0044CC5E /* Sources */,
 				84BD2DA81F56ACBB0044CC5E /* Frameworks */,
 				84BD2DA91F56ACBB0044CC5E /* Resources */,
+				0F28BA8CA05BB841D40BA182 /* [CP] Embed Pods Frameworks */,
+				F0862C6D742E7BC837A0CF5F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +411,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84BD2DD61F56ACC50044CC5E /* Build configuration list for PBXNativeTarget "SAS CoffeeTests" */;
 			buildPhases = (
+				700ABDA4213D698B4F7CA27E /* [CP] Check Pods Manifest.lock */,
 				84BD2DBB1F56ACC50044CC5E /* Sources */,
 				84BD2DBC1F56ACC50044CC5E /* Frameworks */,
 				84BD2DBD1F56ACC50044CC5E /* Resources */,
+				3955E2C4E474472EBF051D96 /* [CP] Embed Pods Frameworks */,
+				B2B5508937A7D014B7C3689E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +432,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84BD2DD91F56ACC50044CC5E /* Build configuration list for PBXNativeTarget "SAS CoffeeUITests" */;
 			buildPhases = (
+				4A48754CE6CE334628F4FCFF /* [CP] Check Pods Manifest.lock */,
 				84BD2DC61F56ACC50044CC5E /* Sources */,
 				84BD2DC71F56ACC50044CC5E /* Frameworks */,
 				84BD2DC81F56ACC50044CC5E /* Resources */,
+				38511941762AD25F49C89C36 /* [CP] Embed Pods Frameworks */,
+				B54F07C1398F474F002C355F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,7 +462,13 @@
 					84BD2DAA1F56ACBB0044CC5E = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = GVUH4TQN58;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 					84BD2DBE1F56ACC50044CC5E = {
 						CreatedOnToolsVersion = 8.3;
@@ -235,9 +509,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BD2DB91F56ACC40044CC5E /* LaunchScreen.storyboard in Resources */,
-				84BD2DB61F56ACC40044CC5E /* Assets.xcassets in Resources */,
+				848F0E281F5B29BD00B204F5 /* LoginUIView.xib in Resources */,
+				848F0E011F59B6E300B204F5 /* Roboto-Bold.ttf in Resources */,
+				848F0E021F59B6E300B204F5 /* Roboto-Italic.ttf in Resources */,
+				848F0E031F59B6E300B204F5 /* Roboto-Light.ttf in Resources */,
+				848F0E041F59B6E300B204F5 /* Roboto-Regular.ttf in Resources */,
+				84BD2DEA1F56BD830044CC5E /* Launchscreen.storyboard in Resources */,
 				84BD2DB41F56ACC10044CC5E /* Main.storyboard in Resources */,
+				848F0E1A1F5ADC7300B204F5 /* ImageTitleTableViewCell.xib in Resources */,
+				848F0E161F5AD30900B204F5 /* Assets.xcassets in Resources */,
+				84BD2DF21F56C9FE0044CC5E /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,13 +538,238 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F28BA8CA05BB841D40BA182 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SAS Coffee/Pods-SAS Coffee-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PullToRefreshSwift/PullToRefreshSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/String+Extensions/String_Extensions.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PullToRefreshSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/String_Extensions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SAS Coffee/Pods-SAS Coffee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38511941762AD25F49C89C36 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SAS CoffeeUITests/Pods-SAS CoffeeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3955E2C4E474472EBF051D96 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SAS CoffeeTests/Pods-SAS CoffeeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A48754CE6CE334628F4FCFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SAS CoffeeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53F82E686445360D5A5F62B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SAS Coffee-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		700ABDA4213D698B4F7CA27E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SAS CoffeeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2B5508937A7D014B7C3689E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SAS CoffeeTests/Pods-SAS CoffeeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B54F07C1398F474F002C355F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SAS CoffeeUITests/Pods-SAS CoffeeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0862C6D742E7BC837A0CF5F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SAS Coffee/Pods-SAS Coffee-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SAS Coffee/Pods-SAS Coffee-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84BD2DA71F56ACBB0044CC5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BD2DB11F56ACBE0044CC5E /* ViewController.swift in Sources */,
+				84BD2DB11F56ACBE0044CC5E /* EntranceViewController.swift in Sources */,
+				848F0DF01F5962AE00B204F5 /* GlobalUtils.swift in Sources */,
+				848F0E121F5ACC2F00B204F5 /* AppSetting.swift in Sources */,
+				842A7C101F59174100630509 /* UserModel.swift in Sources */,
+				848F0DF41F59654B00B204F5 /* UIColor+Extension.swift in Sources */,
+				848F0E1C1F5AE3A700B204F5 /* SuperTableViewCell.swift in Sources */,
+				848F0DE41F59536300B204F5 /* KasperNavViewController.swift in Sources */,
+				84BD2DE41F56B7DB0044CC5E /* AppStoryBoard.swift in Sources */,
+				848F0DFA1F596C9600B204F5 /* LangUtil.swift in Sources */,
+				848F0E0C1F5A98BC00B204F5 /* CustomerCodeTableViewCell.swift in Sources */,
+				848F0DF81F596C2200B204F5 /* LangCode.swift in Sources */,
+				848F0E0E1F5AA68800B204F5 /* UIImage+Extension.swift in Sources */,
+				848F0DF61F596BFD00B204F5 /* MyString+Extension.swift in Sources */,
+				848F0DF21F59647600B204F5 /* Style.swift in Sources */,
+				848F0E261F5B274C00B204F5 /* LoginUIView.swift in Sources */,
+				848F0E141F5AD03500B204F5 /* RequestService.swift in Sources */,
+				848F0E191F5ADC7300B204F5 /* ImageTitleTableViewCell.swift in Sources */,
+				84BD2DF41F56CC410044CC5E /* KasperViewController.swift in Sources */,
+				848F0E0A1F5A433F00B204F5 /* TableViewCellIdetifier.swift in Sources */,
+				848F0DDE1F591B8100B204F5 /* SuperModel.swift in Sources */,
+				848F0E081F5A390800B204F5 /* UserLevelTableViewCell.swift in Sources */,
+				848F0E2A1F5B9E7C00B204F5 /* KasperButton.swift in Sources */,
 				84BD2DAF1F56ACBE0044CC5E /* AppDelegate.swift in Sources */,
+				848F0DE61F5953EB00B204F5 /* HomeViewController.swift in Sources */,
+				848F0E101F5AA86B00B204F5 /* CardTableViewCell.swift in Sources */,
+				84BD2DF81F56CD3B0044CC5E /* ViewControllerList.swift in Sources */,
+				84BEB26A1F5BEE0D00CCC549 /* UIView+Extension.swift in Sources */,
+				84BD2DF61F56CC5C0044CC5E /* HomeNavViewController.swift in Sources */,
+				84BEB26C1F5BEE3100CCC549 /* NibView.swift in Sources */,
+				848F0E2E1F5BA83800B204F5 /* ViewNibNames.swift in Sources */,
+				848F0E061F5A38EE00B204F5 /* BasicInfoTableViewCell.swift in Sources */,
+				848F0DE01F592A8900B204F5 /* NetworkServiceConst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,12 +813,12 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		84BD2DB71F56ACC40044CC5E /* LaunchScreen.storyboard */ = {
+		84BD2DE81F56BD830044CC5E /* Launchscreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				84BD2DB81F56ACC40044CC5E /* Base */,
+				84BD2DE91F56BD830044CC5E /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Launchscreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -415,32 +921,42 @@
 		};
 		84BD2DD41F56ACC50044CC5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCC2A0FCBF48D098D3BA3593 /* Pods-SAS Coffee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = GVUH4TQN58;
 				INFOPLIST_FILE = "SAS Coffee/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kasper.personal.SAS-Coffee";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SAS Coffee/SAS Coffee-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		84BD2DD51F56ACC50044CC5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54B247FBE490E18C1EB4E5AA /* Pods-SAS Coffee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = GVUH4TQN58;
 				INFOPLIST_FILE = "SAS Coffee/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kasper.personal.SAS-Coffee";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SAS Coffee/SAS Coffee-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		84BD2DD71F56ACC50044CC5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7D6D90DA9A43F195BC30577 /* Pods-SAS CoffeeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -456,6 +972,7 @@
 		};
 		84BD2DD81F56ACC50044CC5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC58E74CC52C8071675EDDFA /* Pods-SAS CoffeeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +988,7 @@
 		};
 		84BD2DDA1F56ACC50044CC5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15767A4926B18A1CB112829E /* Pods-SAS CoffeeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = GVUH4TQN58;
@@ -485,6 +1003,7 @@
 		};
 		84BD2DDB1F56ACC50044CC5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E02056D5DE3F5CAF229D9D58 /* Pods-SAS CoffeeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = GVUH4TQN58;
@@ -516,6 +1035,7 @@
 				84BD2DD51F56ACC50044CC5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84BD2DD61F56ACC50044CC5E /* Build configuration list for PBXNativeTarget "SAS CoffeeTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +1044,7 @@
 				84BD2DD81F56ACC50044CC5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84BD2DD91F56ACC50044CC5E /* Build configuration list for PBXNativeTarget "SAS CoffeeUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +1053,7 @@
 				84BD2DDB1F56ACC50044CC5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_study" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-Xa-1yq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcQ-db-PaH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aOw-Yf-Ine">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.72549019609999998" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rcQ-db-PaH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1KE-01-WIG"/>
+                            <constraint firstItem="UKh-Xa-1yq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2mW-AP-FcK"/>
+                            <constraint firstItem="UKh-Xa-1yq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="MHq-2c-Hc1"/>
+                            <constraint firstItem="rcQ-db-PaH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Wgb-qe-pup"/>
+                            <constraint firstItem="rcQ-db-PaH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bkJ-6R-oMW"/>
+                            <constraint firstItem="UKh-Xa-1yq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hAc-z5-eBL"/>
+                            <constraint firstItem="UKh-Xa-1yq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oTI-TM-2VL"/>
+                            <constraint firstItem="rcQ-db-PaH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="tNY-9g-rpL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background_study" width="360" height="639"/>
+    </resources>
+</document>
