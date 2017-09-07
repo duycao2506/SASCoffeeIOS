@@ -12,6 +12,9 @@ import Realm
 import ObjectMapper
 
 class SuperModel: Object, Mappable{
+    static let ID = "id"
+    static let NAME = "name"
+    
     var id : String = ""
     var name: String = ""
     required public init(id: String, name :String ) {
@@ -38,8 +41,8 @@ class SuperModel: Object, Mappable{
     
     // Mappable
     func mapping(map: Map) {
-        id    <- map["id"]
-        name  <- map["name"]
+        id    <- map[SuperModel.ID]
+        name  <- map[SuperModel.NAME]
     }
     
 }

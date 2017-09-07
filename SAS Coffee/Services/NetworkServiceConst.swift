@@ -19,5 +19,9 @@ class NetworkServiceConst {
     static let POST_LOGIN_FB = "user/loginFacebook";
     static let POST_LOGIN_GMAIL = "user/loginGmail";
     static let POST_LOGIN_AUTO = "user/autoLogin";
+    
+    
+    
+
 
 }

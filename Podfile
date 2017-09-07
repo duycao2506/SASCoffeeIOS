@@ -7,9 +7,9 @@ target 'SAS Coffee' do
 
   # Pods for SAS Coffee
   pod 'pop'
-  pod 'MMDrawerController'
+  pod 'DrawerController'
   pod 'PureLayout'
-  pod 'PullToRefreshSwift'
+  pod 'SwiftPullToRefresh'
   pod 'GoogleSignIn'
   pod 'RealmSwift'
   pod 'SwiftDate'

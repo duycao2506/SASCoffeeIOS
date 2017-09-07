@@ -15,11 +15,21 @@ class ImageTitleTableViewCell: SuperTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.selectionStyle = .none
         ivIcon.image = ivIcon.image?.changeTint(color: Style.colorPrimary)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        if (selected)
+        {
+            self.ivIcon.image = self.ivIcon.image?.changeTint(color: Style.colorSecondary)
+            self.ivtTitle.textColor = Style.colorSecondary
+            self.accessoryView?.tintColor = Style.colorSecondary
+        }else{
+            self.ivIcon.image = self.ivIcon.image?.changeTint(color: Style.colorPrimary)
+            self.ivtTitle.textColor = UIColor.darkGray
+            self.accessoryView?.tintColor = UIColor.darkGray
+        }
 
         // Configure the view for the selected state
     }

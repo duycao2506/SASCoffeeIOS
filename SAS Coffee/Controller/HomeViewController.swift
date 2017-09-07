@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import SwiftPullToRefresh
 import FontAwesomeKit
+
+import DrawerController
+
 
 class HomeViewController: KasperViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tbview : UITableView!
+    
     
     
     
@@ -31,26 +36,37 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
         //MARK: Prepare ui
         
         arrProfile = [
-            [GlobalUtils.getDefaultSizeImage(fak: FAKMaterialIcons.emailIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.email],
-            [GlobalUtils.getDefaultSizeImage(fak: FAKMaterialIcons.calendarIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.birthday.string(custom: "dd/MM/yyyy")],
-            [GlobalUtils.getDefaultSizeImage(fak: FAKMaterialIcons.phoneIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.phone],
-            [GlobalUtils.getDefaultSizeImage(fak: FAKMaterialIcons.mapIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.address]]
+            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.emailIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.email],
+            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.calendarIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.birthday?.string(custom: "dd/MM/yyyy")],
+            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.phoneIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.phone],
+            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.mapIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.address]]
         
         
         
         
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.startAnimating()
-            sleep(4)
-            DispatchQueue.main.async {
-                self.stopAnimating()
-            }
-        }
+        self.startAnimating()
+        refreshData()
         
         //MARK: TableView Configuration
-        tbview.rowHeight = UITableViewAutomaticDimension
-        tbview.register(UINib.init(nibName: ViewNibNames.imageTitleCell, bundle: Bundle.main), forCellReuseIdentifier: TableViewCellIdetifier.iconTitleCell)
+        self.tbview.rowHeight = UITableViewAutomaticDimension
+        self.tbview.register(UINib.init(nibName: ViewNibNames.imageTitleCell, bundle: Bundle.main), forCellReuseIdentifier: TableViewCellIdetifier.iconTitleCell)
+        self.tbview.spr_setIndicatorHeader {
+            self.refreshData()
+        }
+        
+        
+    }
+    
+    
+    
+    func refreshData(){
+        DispatchQueue.global(qos: .userInitiated).async {
+            sleep(2)
+            DispatchQueue.main.async {
+                self.stopAnimating()
+                self.tbview.spr_endRefreshing()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,4 +121,6 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
         }
         return cell!
     }
+    
+    
 }

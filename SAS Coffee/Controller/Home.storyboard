@@ -66,7 +66,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb8-2f-9Kf">
-                                            <rect key="frame" x="140" y="37" width="227" height="33"/>
+                                            <rect key="frame" x="140" y="37" width="227" height="29.5"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Cao Khac Le Duy">
                                                     <attributes>
@@ -79,13 +79,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thành viên mới" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fv-dT-nXj">
-                                            <rect key="frame" x="140" y="74" width="227" height="16.5"/>
+                                            <rect key="frame" x="140" y="70.5" width="227" height="16.5"/>
                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.72549019609999998" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9J-jw-gSC">
-                                            <rect key="frame" x="140" y="90.5" width="227" height="37.5"/>
+                                            <rect key="frame" x="140" y="87" width="227" height="37.5"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="24P">
                                                     <attributes>
@@ -299,7 +299,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Hjs-EG-0as">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.75351148840000004" blue="0.91256016490000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.75294117647058822" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="21"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

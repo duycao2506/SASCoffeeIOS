@@ -10,10 +10,13 @@ import UIKit
 
 enum AppStoryBoard : String {
     case Home = "Home"
-    case Main = "Main"
     case Login = "Login"
     case Map = "Map"
     case Menu = "Menu"
+    case Study = "Study"
+    case Translation = "Translation"
+    case Promotion = "Promotion"
+    case Web = "Web"
     
     var instance : UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)

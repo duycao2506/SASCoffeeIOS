@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DrawerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -59,11 +64,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MMDrawerController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -85,11 +85,6 @@
 			<false/>
 		</dict>
 		<key>Pods-SAS CoffeeUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>PullToRefreshSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -124,6 +119,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftPullToRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -132,17 +132,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0FF0E54BF71EE94CEFAB8DD55E4E6073</key>
+		<key>1A84CACB00F3DCE9DEB05F37001C42F5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>3EDFE4052B5DE7D509935AC0774CB135</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>43184CC66885B92EF80F6A1961289E11</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -162,17 +157,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C35C1DC10FACDC16F442501023591CD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5E2BF7B494922C23606FCBD4CE9F3A4B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6606DB401C54F8627BADBFA4321704B3</key>
+		<key>61FFA90154EACA33DBBE8CBB515650F5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,7 +167,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6BD6F76489E1C215B2F3F064E4F88CFE</key>
+		<key>701063517805DFB74BE5D6639405BC0C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -192,7 +177,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>808882167139C2D7AC1C93EDC6FE01DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9131DF28ED698C031A1EA944077F2172</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -202,27 +197,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A8FAB4675B15F8258B6C19B71077B859</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BFF76BD86D4834D6AB7282595FD7367E</key>
+		<key>B383F6AB276BC070BA71747459A6CF48</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD035C93918F05AA543232FF69FC2F4E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C3960FEDDFBCDE3B5587CE377B664007</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7E2F5595C6CE0ED980168180705BDF0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>CD6C9FB6B052E1CF663F8A56041EA163</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D1FBEACE8A9EDBB69DBFFA5BA2745BF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -242,7 +242,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E58975166CF959D78AAA8F1D6C54A4D9</key>
+		<key>E588F4C8D14E40D686C003851629BE48</key>
 		<dict>
 			<key>primary</key>
 			<true/>

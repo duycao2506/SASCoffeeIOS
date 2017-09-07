@@ -14,15 +14,30 @@ import RealmSwift
 import ObjectMapper
 
 class UserModel: SuperModel {
+    //static
+    static let EMAIL = "email"
+    static let PHONE = "phone"
+    static let USERCODE = "code"
+    static let AVATAR = "avatar"
+    static let FBID = "fbId"
+    static let BIRTHDAY = "birthday"
+    static let ADDRESS = "address"
+    static let PASSWORD = "password"
+    
+    
+    
+    
+    
+    //dynamic
     dynamic var email: String = ""
-    dynamic var phone : String = ""
+    dynamic var phone : String = "Not available".localize()
     dynamic var password : String = ""
     dynamic var userCode : String = ""
     dynamic var avatar : String = ""
-    dynamic var birthday : Date = Date()
+    dynamic var birthday : Date? = nil
     dynamic var fbId : String = ""
     dynamic var point : Int = 0
-    dynamic var address: String = ""
+    dynamic var address: String = "Not available".localize()
     dynamic var checkIntime : Int = 0
     
     var accessToken : String = ""
@@ -57,14 +72,17 @@ class UserModel: SuperModel {
         self.point = 10
     }
     
+    
+    
+    
     override func mapping(map: Map) {
         super.mapping(map: map)
-        phone         <- map["phone"]
-        email      <- map["email"]
-        userCode       <- map["code"]
-        avatar  <- map["avatar"]
-        fbId  <- map["fbId"]
-        birthday    <- (map["birthday"], DateTransform())
+        phone         <- map[UserModel.PHONE]
+        email      <- map[UserModel.EMAIL]
+        userCode       <- map[UserModel.USERCODE]
+        avatar  <- map[UserModel.AVATAR]
+        fbId  <- map[UserModel.FBID]
+        birthday    <- (map[UserModel.BIRTHDAY], DateTransform())
     }
     
     

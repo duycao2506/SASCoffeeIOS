@@ -42,7 +42,7 @@
                     <inset key="imageEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                     <state key="normal" image="ic_facebook">
                         <attributedString key="attributedTitle">
-                            <fragment content="Đăng nhập với facebook">
+                            <fragment content="Sign in with Facebook Account">
                                 <attributes>
                                     <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <font key="NSFont" size="16" name="Roboto-Regular"/>
@@ -73,7 +73,7 @@
                     <inset key="imageEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                     <state key="normal" image="ic_facebook">
                         <attributedString key="attributedTitle">
-                            <fragment content="Đăng nhập với Google">
+                            <fragment content="Sign in with Google Account">
                                 <attributes>
                                     <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <font key="NSFont" size="16" name="Roboto-Regular"/>
@@ -99,7 +99,7 @@
                     <rect key="frame" x="16" y="302" width="361" height="34"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                     <inset key="imageEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="Đăng nhập bằng email cá nhân">
+                    <state key="normal" title="Sign in with your own email">
                         <color key="titleColor" red="1" green="0.72330324861499584" blue="0.0091226586860142511" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <state key="selected" image="ic_facebook"/>

@@ -10,9 +10,14 @@ import UIKit
 import NVActivityIndicatorView
 
 
-class KasperViewController: UIViewController, NVActivityIndicatorViewable {
+class KasperViewController: UIViewController, NVActivityIndicatorViewable, KasperObserverDelegate {
 
     var activityData : ActivityData!
+    var backcomplete : (() -> Void)?
+    var continueCondition : ((Any, Any) -> Bool)?
+    @IBOutlet weak var notiViewHeightConstraint : NSLayoutConstraint?
+    @IBOutlet weak var notiTextview : UILabel?
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -40,5 +45,28 @@ class KasperViewController: UIViewController, NVActivityIndicatorViewable {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func actionBack (_sender: Any){
+        if let nav = self.navigationController {
+            if nav.viewControllers.first != self {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+        dismiss(animated: true, completion: backcomplete)
+    }
 
+    
+    func showNotification(){
+        if self.notiViewHeightConstraint != nil {
+            self.view.layoutIfNeeded()
+            self.notiViewHeightConstraint?.constant = 36
+            UIView.animate(withDuration: 0.4, animations: {
+                self.view.layoutIfNeeded() 
+            })
+        }
+    }
+    
+    func callback(_ code: Int?, _ succ: Bool?, _ data: Any) {
+        
+    }
 }

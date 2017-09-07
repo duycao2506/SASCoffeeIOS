@@ -24,12 +24,23 @@ class GlobalUtils  : NSObject {
         return cls;
     }
     
-    static func getDefaultSizeImage(fak : FAKMaterialIcons) -> UIImage{
-        return fak.image(with: CGSize(width: 24*UIScreen.main.scale, height: 24*UIScreen.main.scale))
+    static func getDefaultSizeImage(fakmat : FAKMaterialIcons) -> UIImage{
+        return fakmat.image(with: CGSize(width: 24*UIScreen.main.scale, height: 24*UIScreen.main.scale))
+    }
+    
+    static func getDefaultSizeImage(fakawe : FAKFontAwesome) -> UIImage{
+        return fakawe.image(with: CGSize(width: 24*UIScreen.main.scale, height: 24*UIScreen.main.scale))
     }
 
     static func loadView(nibName : String, owner : Any) -> UIView{
         return Bundle.main.loadNibNamed(nibName, owner: owner, options: nil)?[0] as! UIView
     }
+    
+    static func checkEmail(checkStr: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: checkStr)
+    }
+    
 }
 

@@ -6,6 +6,12 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - DrawerController (3.2.1):
+    - DrawerController/Core (= 3.2.1)
+    - DrawerController/DrawerVisualStates (= 3.2.1)
+  - DrawerController/Core (3.2.1)
+  - DrawerController/DrawerVisualStates (3.2.1):
+    - DrawerController/Core
   - FacebookCore (0.2.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.15)
@@ -61,24 +67,11 @@ PODS:
   - GTMSessionFetcher/Core (1.1.11)
   - GTMSessionFetcher/Full (1.1.11):
     - GTMSessionFetcher/Core (= 1.1.11)
-  - MMDrawerController (0.6.0):
-    - MMDrawerController/Core (= 0.6.0)
-    - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
-    - MMDrawerController/MMDrawerVisualStates (= 0.6.0)
-    - MMDrawerController/Subclass (= 0.6.0)
-  - MMDrawerController/Core (0.6.0)
-  - MMDrawerController/MMDrawerBarButtonItem (0.6.0):
-    - MMDrawerController/Core
-  - MMDrawerController/MMDrawerVisualStates (0.6.0):
-    - MMDrawerController/Core
-  - MMDrawerController/Subclass (0.6.0):
-    - MMDrawerController/Core
   - NVActivityIndicatorView (3.7.0):
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
   - ObjectMapper (2.2.8)
   - pop (1.0.10)
-  - PullToRefreshSwift (3.0.3)
   - PureLayout (3.0.2)
   - Realm (2.10.0):
     - Realm/Headers (= 2.10.0)
@@ -90,28 +83,30 @@ PODS:
   - SDWebImage/Core (4.1.0)
   - String+Extensions (1.1.0)
   - SwiftDate (4.1.7)
+  - SwiftPullToRefresh (1.1.0)
 
 DEPENDENCIES:
   - Alamofire
+  - DrawerController
   - FacebookCore
   - FacebookLogin
   - FBSDKShareKit
   - FontAwesomeKit
   - GoogleSignIn
-  - MMDrawerController
   - NVActivityIndicatorView
   - ObjectMapper
   - pop
-  - PullToRefreshSwift
   - PureLayout
   - RealmSwift
   - SDWebImage
   - String+Extensions
   - SwiftDate
+  - SwiftPullToRefresh
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  DrawerController: d2f25c567a1786476d74bfe8cde9a5bdd39972a9
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FBSDKCoreKit: c8b8582311ec11b145451d8b9717dc6cc2ae5a76
@@ -122,18 +117,17 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
-  MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
-  PullToRefreshSwift: 0743b818072bfd7c9464addc2d1b987b131057ca
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   Realm: 98b3a25643cf6b3e07d2b99fb43fe0eb9c801dec
   RealmSwift: 34073ad3a31232bbaf7c0db898c037940284cba2
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   String+Extensions: 4c13e40b64fcfc079f93cd94160e38b576948348
   SwiftDate: 029be76691ee89176da3a46c7df3415b6734bc5b
+  SwiftPullToRefresh: 11ffa1b9d886b2902bed64b05bd50e1e0f1201f1
 
-PODFILE CHECKSUM: 143b4824ca08243ef301ccef1186099d04a6e43f
+PODFILE CHECKSUM: f8ce1e71f74731d2d05c7c766702a4caa2dc9067
 
 COCOAPODS: 1.3.1
