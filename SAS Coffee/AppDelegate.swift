@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
 import NVActivityIndicatorView
 
@@ -21,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         LangUtil.switchLang(code: LangCode.EN)
         configLoadingBlocker()
+        GMSServices.provideAPIKey(GlobalUtils.GG_API_MAP_KEY)
+        GMSPlacesClient.provideAPIKey(GlobalUtils.GG_API_MAP_KEY)
         return true
     }
 

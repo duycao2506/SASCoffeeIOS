@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Title-->
         <scene sceneID="bsi-Di-Kzf">
             <objects>
                 <viewController storyboardIdentifier="MapVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xkg-fA-sRO" customClass="MapViewController" customModule="SAS_Coffee" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,12 +20,41 @@
                     <view key="view" contentMode="scaleToFill" id="oAM-AT-SHs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPc-zm-kKc" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="drZ-lH-Cl0" firstAttribute="top" secondItem="xPc-zm-kKc" secondAttribute="bottom" id="JIi-Kf-RL9"/>
+                            <constraint firstItem="xPc-zm-kKc" firstAttribute="leading" secondItem="oAM-AT-SHs" secondAttribute="leading" id="O5d-sC-3Vq"/>
+                            <constraint firstItem="xPc-zm-kKc" firstAttribute="top" secondItem="sxF-qJ-gws" secondAttribute="bottom" id="OIq-5w-8Kx"/>
+                            <constraint firstAttribute="trailing" secondItem="xPc-zm-kKc" secondAttribute="trailing" id="joQ-qq-VGL"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="qJ6-QW-fzJ">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu_white" id="MP3-q9-PKU">
+                            <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_facebook" id="b7d-Vv-pxS">
+                            <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="xPc-zm-kKc" id="GpB-GM-8jI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilV-rm-vp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="188"/>
+            <point key="canvasLocation" x="277.60000000000002" y="187.55622188905548"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_facebook" width="12" height="23"/>
+        <image name="ic_menu_white" width="24" height="24"/>
+    </resources>
 </document>

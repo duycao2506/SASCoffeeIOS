@@ -23,10 +23,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="JuN-dD-qy0">
-                        <barButtonItem key="leftBarButtonItem" image="cm_arrow_back_white" style="plain" id="EGF-T9-F90">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu_white" style="plain" id="EGF-T9-F90">
+                            <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_facebook" id="3eI-Ub-Frt">
                             <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cL-dg-I90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -34,6 +38,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cm_arrow_back_white" width="24" height="24"/>
+        <image name="ic_facebook" width="12" height="23"/>
+        <image name="ic_menu_white" width="24" height="24"/>
     </resources>
 </document>

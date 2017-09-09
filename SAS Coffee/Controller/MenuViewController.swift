@@ -24,7 +24,7 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
         menuitems = [
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.homeIcon(withSize: 48.0)), "Home".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.starIcon(withSize: 48.0)), "Promotion".localize()],
-            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.mapMarkerIcon(withSize: 48.0)),"Shop".localize()],
+            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.mapMarkerIcon(withSize: 48.0)),"Shops".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.translateIcon(withSize: 48.0)), "Translator".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.bookIcon(withSize: 48.0)),"Study with E4U".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.infoIcon(withSize: 48.0)), "About us".localize()],
@@ -58,8 +58,12 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(menuitems[indexPath.row][1] as! String)
-        let centernav = self.evo_drawerController?.centerViewController as! HomeNavViewController
-        centernav.setViewControllers([vcArray[indexPath.row]], animated: true)
+        if indexPath.row < vcArray.count {
+            let centernav = self.evo_drawerController?.centerViewController as! HomeNavViewController
+            centernav.setViewControllers([vcArray[indexPath.row]], animated: true)
+        }
+        self.evo_drawerController?.toggleLeftDrawerSide(animated: true, completion: nil)
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

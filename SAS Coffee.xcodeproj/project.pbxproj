@@ -55,6 +55,7 @@
 		84B8D10E1F6141A100D40E2F /* PromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8D10D1F6141A100D40E2F /* PromotionViewController.swift */; };
 		84B8D1101F61AC1300D40E2F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8D10F1F61AC1300D40E2F /* WebViewController.swift */; };
 		84B8D1131F61ACF400D40E2F /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B8D1121F61ACF400D40E2F /* Web.storyboard */; };
+		84B8D1151F62A83300D40E2F /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8D1141F62A83300D40E2F /* VideoViewController.swift */; };
 		84BD2DAF1F56ACBE0044CC5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DAE1F56ACBE0044CC5E /* AppDelegate.swift */; };
 		84BD2DB11F56ACBE0044CC5E /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD2DB01F56ACBE0044CC5E /* EntranceViewController.swift */; };
 		84BD2DB41F56ACC10044CC5E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD2DB21F56ACC10044CC5E /* Login.storyboard */; };
@@ -143,6 +144,7 @@
 		84B8D10D1F6141A100D40E2F /* PromotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionViewController.swift; sourceTree = "<group>"; };
 		84B8D10F1F61AC1300D40E2F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		84B8D1121F61ACF400D40E2F /* Web.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
+		84B8D1141F62A83300D40E2F /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		84BD2DAB1F56ACBC0044CC5E /* SAS Coffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SAS Coffee.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BD2DAE1F56ACBE0044CC5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84BD2DB01F56ACBE0044CC5E /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntranceViewController.swift; path = ../EntranceViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				84B8D0FE1F6140D000D40E2F /* StudyMethodsViewController.swift */,
 				84B8D1001F6140DE00D40E2F /* VideoListViewController.swift */,
 				84B8D1021F6140F100D40E2F /* AudioListViewController.swift */,
+				84B8D1141F62A83300D40E2F /* VideoViewController.swift */,
 			);
 			name = Study;
 			sourceTree = "<group>";
@@ -815,6 +818,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SAS Coffee/Pods-SAS Coffee-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -851,6 +856,7 @@
 				84B8D0FF1F6140D000D40E2F /* StudyMethodsViewController.swift in Sources */,
 				848F0DF61F596BFD00B204F5 /* MyString+Extension.swift in Sources */,
 				848F0DF21F59647600B204F5 /* Style.swift in Sources */,
+				84B8D1151F62A83300D40E2F /* VideoViewController.swift in Sources */,
 				84BEB2761F5ED67800CCC549 /* OptionalInfoViewController.swift in Sources */,
 				848F0E261F5B274C00B204F5 /* LoginUIView.swift in Sources */,
 				84B8D1081F61414500D40E2F /* TranslationViewController.swift in Sources */,

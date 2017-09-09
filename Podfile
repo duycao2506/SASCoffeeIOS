@@ -22,6 +22,8 @@ target 'SAS Coffee' do
   pod 'FontAwesomeKit'
   pod 'NVActivityIndicatorView'
   pod 'String+Extensions'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
   target 'SAS CoffeeTests' do
     inherit! :search_paths
     # Pods for testing

@@ -1,42 +1,26 @@
 //
-//  HomeViewController.swift
+//  VideoViewController.swift
 //  SAS Coffee
 //
-//  Created by Duy Cao on 8/30/17.
+//  Created by Duy Cao on 9/8/17.
 //  Copyright © 2017 Duy Cao. All rights reserved.
 //
 
 import UIKit
 
-import DrawerController
+class VideoViewController: KasperViewController {
 
-class HomeNavViewController: KasperNavViewController {
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-        self.viewControllers.first?.navigationItem.leftBarButtonItems?.first?.action = Selector.init(("toggleNav:"))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
     }
     
-    
-    func toggleNav(_ sender: Any){
-        self.evo_drawerController?.toggleLeftDrawerSide(animated: true, completion: nil)
-    }
-    
-    
-    override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
-        super.setViewControllers(viewControllers, animated: true)
-        self.viewControllers.first?.navigationItem.leftBarButtonItems?.first?.action = Selector.init(("toggleNav:"))
-        
-    }
 
     /*
     // MARK: - Navigation

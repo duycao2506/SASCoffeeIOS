@@ -12,7 +12,7 @@ class TranslationViewController: KasperViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = "Translator".localize()
         // Do any additional setup after loading the view.
     }
 

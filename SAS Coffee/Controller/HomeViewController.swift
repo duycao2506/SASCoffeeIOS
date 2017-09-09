@@ -34,6 +34,8 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
         
         
         //MARK: Prepare ui
+        self.title = "Home".localize()
+        
         
         arrProfile = [
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.emailIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.email],

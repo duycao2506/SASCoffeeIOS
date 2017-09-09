@@ -12,6 +12,7 @@ class StudyMethodsViewController: KasperViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Study with E4U".localize()
 
         // Do any additional setup after loading the view.
     }

@@ -12,6 +12,7 @@ import FontAwesomeKit
 
 
 class GlobalUtils  : NSObject {
+    static let GG_API_MAP_KEY = "AIzaSyDxeCkdR4wufHZx8W2ZT6zEQR8WiFZywJI"
     static func stringClassFromString(_ className: String) -> AnyClass! {
         
         /// get namespace

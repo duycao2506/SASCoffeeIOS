@@ -47,6 +47,13 @@ PODS:
     - FontAwesomeKit/Core
   - FontAwesomeKit/Zocial (2.2.1):
     - FontAwesomeKit/Core
+  - GoogleMaps (2.4.0):
+    - GoogleMaps/Maps (= 2.4.0)
+  - GoogleMaps/Base (2.4.0)
+  - GoogleMaps/Maps (2.4.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.4.0):
+    - GoogleMaps/Base (= 2.4.0)
   - GoogleSignIn (4.0.2):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -92,6 +99,8 @@ DEPENDENCIES:
   - FacebookLogin
   - FBSDKShareKit
   - FontAwesomeKit
+  - GoogleMaps
+  - GooglePlaces
   - GoogleSignIn
   - NVActivityIndicatorView
   - ObjectMapper
@@ -113,6 +122,8 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: f3f03b94c21eb834af243c0a881d48641f47ca60
   FBSDKShareKit: 320712d8293fde6392872c91eb80ef0da5d73cc3
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
+  GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
+  GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
@@ -128,6 +139,6 @@ SPEC CHECKSUMS:
   SwiftDate: 029be76691ee89176da3a46c7df3415b6734bc5b
   SwiftPullToRefresh: 11ffa1b9d886b2902bed64b05bd50e1e0f1201f1
 
-PODFILE CHECKSUM: f8ce1e71f74731d2d05c7c766702a4caa2dc9067
+PODFILE CHECKSUM: da479a28c0d0d516bddc6875fdbae6bb83ad1a3a
 
 COCOAPODS: 1.3.1

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Promotion View Controller-->
+        <!--Promotion & Event-->
         <scene sceneID="4Cy-Zs-kSf">
             <objects>
                 <viewController storyboardIdentifier="PromotionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IXh-Va-LCg" customClass="PromotionViewController" customModule="SAS_Coffee" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,10 +22,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Promotion &amp; Event" id="qoF-EO-GCM">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu_white" id="1K5-6o-taK">
+                            <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_facebook" id="Dda-vl-j4j">
+                            <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q24-TR-2WK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="214" y="-81"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_facebook" width="12" height="23"/>
+        <image name="ic_menu_white" width="24" height="24"/>
+    </resources>
 </document>
