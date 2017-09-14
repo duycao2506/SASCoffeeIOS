@@ -22,4 +22,8 @@ enum VCIdentifiers : String {
     case WebVC = "WebVC"
     case PromotionVC = "PromotionVC"
     case TranslatorVC = "TranslatorVC"
+    case CreditVC = "CreditViewController"
+    case BranchVC = "BranchVC"
+    case AudioTopicsVC = "AudioTopicsVC"
+    case PromotionDetailVC = "PromotionDetailVC"
 }

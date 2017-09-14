@@ -7,10 +7,12 @@ target 'SAS Coffee' do
 
   # Pods for SAS Coffee
   pod 'pop'
+  pod 'PopupDialog'
   pod 'DrawerController'
   pod 'PureLayout'
   pod 'SwiftPullToRefresh'
-  pod 'GoogleSignIn'
+  pod 'Google/SignIn'
+  pod 'Google/Analytics'
   pod 'RealmSwift'
   pod 'SwiftDate'
   pod 'FacebookCore'
@@ -24,6 +26,7 @@ target 'SAS Coffee' do
   pod 'String+Extensions'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'GradientView'
   target 'SAS CoffeeTests' do
     inherit! :search_paths
     # Pods for testing

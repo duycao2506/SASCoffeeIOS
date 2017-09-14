@@ -17,6 +17,13 @@ class BasicInfoTableViewCell: SuperTableViewCell {
     @IBOutlet weak var lblPoint: UILabel!
     @IBOutlet weak var lblUserLevel: UILabel!
     
+    let memberMapper : [String : String] = [
+        "T" : "Teacher".localize(),
+        "G" : "Guest".localize(),
+        "M" : "Member".localize(),
+        "S" : "Student".localize()
+    ]
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -39,8 +46,8 @@ class BasicInfoTableViewCell: SuperTableViewCell {
         let user = obj as! UserModel
         ivAvatar.sd_setImage(with: URL.init(string: user.avatar), placeholderImage: #imageLiteral(resourceName: "user"), completed: nil)
         lblName.text = user.name
-        lblPoint.text = user.point.description
-        lblUserLevel.text = "New member"
+        lblPoint.text = user.checkIntime.description + "P"
+        lblUserLevel.text = memberMapper[user.userType]
     }
     
     

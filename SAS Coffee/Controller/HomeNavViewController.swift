@@ -31,10 +31,14 @@ class HomeNavViewController: KasperNavViewController {
         self.evo_drawerController?.toggleLeftDrawerSide(animated: true, completion: nil)
     }
     
+    func openFace(_ sender: Any){
+        UIApplication.shared.open(URL.init(string: "https://www.facebook.com/SaiGonAmericanEnglish/")!)
+    }
     
     override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
         super.setViewControllers(viewControllers, animated: true)
-        self.viewControllers.first?.navigationItem.leftBarButtonItems?.first?.action = Selector.init(("toggleNav:"))
+        self.viewControllers.first?.navigationItem.leftBarButtonItems?.first?.action = #selector(HomeNavViewController.toggleNav(_:))
+        self.viewControllers.first?.navigationItem.rightBarButtonItems?.first?.action = #selector(HomeNavViewController.openFace(_:))
         
     }
 

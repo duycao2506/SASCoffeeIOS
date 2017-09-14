@@ -64,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GradientView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -85,6 +90,11 @@
 			<false/>
 		</dict>
 		<key>Pods-SAS CoffeeUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PopupDialog.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -132,7 +142,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1A84CACB00F3DCE9DEB05F37001C42F5</key>
+		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>24D377E0EA90F1873FD4AE26E31E55C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3AC83500358752F6CC4D5029D2A6D465</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,6 +167,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4BF00F9E712E93DA7B03ACF46198775B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5066EAADCA2B508587819D18535FC7FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>593E9479C06FB200807D11AB29EB50BD</key>
 		<dict>
 			<key>primary</key>
@@ -157,7 +187,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61FFA90154EACA33DBBE8CBB515650F5</key>
+		<key>5FC6DCC3C01D006059117DD305E6EFA3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,17 +197,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>701063517805DFB74BE5D6639405BC0C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7335E9C9689F3B8A16F063A884748533</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>808882167139C2D7AC1C93EDC6FE01DB</key>
+		<key>7907601DD6B18E659C6809BDE1E579D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -187,7 +212,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9131DF28ED698C031A1EA944077F2172</key>
+		<key>9F557E1BF553B9EDAF933A05DC3184A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -202,27 +227,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B383F6AB276BC070BA71747459A6CF48</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BD035C93918F05AA543232FF69FC2F4E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C3960FEDDFBCDE3B5587CE377B664007</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C7E2F5595C6CE0ED980168180705BDF0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>CD6C9FB6B052E1CF663F8A56041EA163</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE1BA968914CB00540621B0162CCB336</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -252,7 +262,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F05BBF0ABCBAB1D55C2FE0C052A8CF62</key>
+		<key>F346FE1B3711B24A52570DC5CCBDD930</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F355A4128316E6BB915FEB55DC65AB21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5F1A23A7D4D93B3EB41690FBB0BEA6B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -11,12 +11,15 @@ import PureLayout
 import Alamofire
 import NVActivityIndicatorView
 import pop
-
 import DrawerController
+import ObjectMapper
+import FacebookLogin
+import Google
 
-class EntranceViewController: UIViewController {
+class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
-
+    
+    
     @IBOutlet weak var ivLogo: UIImageView!
     
     var indicator : NVActivityIndicatorView!
@@ -26,13 +29,14 @@ class EntranceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        AppSetting.sharedInstance().mainUser = UserModel(id: "21412", name: "CKLD", email: "duydaodac@gmail.com", phone: "214214421", password: "21421412", userCode: "G00124", avatar: "https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.0-9/16681779_1559943140686685_3567998450761641344_n.jpg?oh=2e1ee6755521c1a63592552750f67765&oe=5A1F65A9", birthday: "25/06/1995",  address: "128 Ho van hue", checkTime: 10, fbId: "4214144")
+       // AppSetting.sharedInstance().mainUser = UserModel(id: "21412", name: "CKLD", email: "duydaodac@gmail.com", phone: "214214421", password: "21421412", userCode: "G00124", avatar: "https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.0-9/16681779_1559943140686685_3567998450761641344_n.jpg?oh=2e1ee6755521c1a63592552750f67765&oe=5A1F65A9", birthday: "25/06/1995",  address: "128 Ho van hue", checkTime: 10, fbId: "4214144")
         
-        
-    
         
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.maxheightnoti  = 56
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate =  self
         initIndicator()
         
        
@@ -40,20 +44,28 @@ class EntranceViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if !isLoaded {
             isLoaded = true
-            DispatchQueue.global(qos: .userInitiated).async {
-                sleep(4)
-                DispatchQueue.main.async {
-                    self.indicator.stopAnimating()
-                    self.moveLogo()
-                    self.showLoginView()
-                }
-            }
             indicator.startAnimating()
+            let result = RealmWrapper.realm.objects(UserModel.self)
+            if let user = result.first{
+                RequestService.POST_login(endpoint: RequestService.POST_LOGIN_AUTO, token: user.token.toBase64(), complete: {
+                    data -> Void in
+                    let response = data as! [String : Any]
+                    if DataService.assignUser(response: response, vc: self){
+                        //RealmWrapper.remove(obj: user)
+                        self.toHomeVC()
+                    }
+                })
+            }else{
+                self.indicator.stopAnimating()
+                self.moveLogoUp()
+                self.showLoginView()
+            }
+            
         }
     }
     
     
-    func moveLogo(){
+    func moveLogoUp(){
         let endpoint = CGPoint(x: ivLogo.center.x, y: ivLogo.center.y/2.0)
         
         let anim = POPSpringAnimation(propertyNamed: kPOPViewCenter)
@@ -70,26 +82,39 @@ class EntranceViewController: UIViewController {
     
     }
     
+    func moveLogoDown(){
+        let endpoint = CGPoint(x: ivLogo.center.x, y: ivLogo.center.y*2.0)
+        
+        let anim = POPSpringAnimation(propertyNamed: kPOPViewCenter)
+        anim?.velocity = CGPoint(x: 0, y: 2.0)
+        anim?.springBounciness = 10
+        anim?.springSpeed = 4
+        anim?.toValue = endpoint
+        anim?.removedOnCompletion = false
+        anim?.completionBlock = {
+            (anim, succ) -> Void in
+            self.ivLogo.center = endpoint
+        }
+        ivLogo.pop_add(anim, forKey: "down_logo")
+    }
+    
     
     func showLoginView(){
-        loginView  = LoginUIView()
-        loginView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height/2.0)
-        loginView.heightAnchor.constraint(equalToConstant: loginView.frame.height)
-        loginView.widthAnchor.constraint(equalToConstant: loginView.frame.width)
-        view.addSubview(loginView)
-//        print(self.view)
-//        
-
-        loginView.btnfb.addTarget(self, action: #selector(EntranceViewController.pressBtnFb), for: .touchUpInside)
-        loginView.btngg.addTarget(self, action: #selector(EntranceViewController.pressBtnGg), for: .touchUpInside)
-        loginView.btnEmail.addTarget(self, action: #selector(EntranceViewController.pressBtnEmail), for: .touchUpInside)
+        if loginView == nil {
+            loginView  = LoginUIView()
+            loginView.btnfb.addTarget(self, action: #selector(EntranceViewController.pressBtnFb), for: .touchUpInside)
+            loginView.btngg.addTarget(self, action: #selector(EntranceViewController.pressBtnGg), for: .touchUpInside)
+            loginView.btnEmail.addTarget(self, action: #selector(EntranceViewController.pressBtnEmail), for: .touchUpInside)
+            view.addSubview(loginView)
+            loginView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height/2.0)
+            loginView.heightAnchor.constraint(equalToConstant: loginView.frame.height)
+            loginView.widthAnchor.constraint(equalToConstant: loginView.frame.width)
+        }
         
+        
+//        print(self.view)
+//
         let endPoint : CGPoint = CGPoint(x: self.view.center.x, y: 3*loginView.frame.height/2 )
-        print(loginView.constraints)
-        print(loginView.frame)
-        print(loginView.bounds)
-        print(loginView.layer.bounds)
-        print(loginView.center)
         
         
         let anim = POPSpringAnimation(propertyNamed: kPOPViewCenter)
@@ -100,7 +125,23 @@ class EntranceViewController: UIViewController {
         loginView.pop_add(anim, forKey: "up_login")
     }
     
+    func hideLoginView(){
+        let endPoint : CGPoint = CGPoint.init(x: self.view.center.x, y: 5*loginView.frame.height/2)
+        let anim = POPSpringAnimation(propertyNamed: kPOPViewCenter)
+        anim?.velocity = CGPoint(x:0, y: 2.0)
+        anim?.springBounciness = 2
+        anim?.springSpeed = 4
+        anim?.toValue = endPoint
+        loginView.pop_add(anim, forKey: "down_login")
+        
+    }
+    
+    
     func pressBtnGg(){
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func toHomeVC(){
         let homevc = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: VCIdentifiers.HomeNavViewController.rawValue) as! HomeNavViewController
         let menuvc = AppStoryBoard.Menu.instance.instantiateViewController(withIdentifier: VCIdentifiers.MenuViewController.rawValue) as! MenuViewController
         menuvc.vcArray = homevc.viewControllers as! [KasperViewController]
@@ -110,14 +151,35 @@ class EntranceViewController: UIViewController {
         drawercontroller.shadowRadius = 2.0
         drawercontroller.shouldStretchDrawer = true
         drawercontroller.shadowOpacity = 0.5
-        self.dismiss(animated: true, completion: nil)
-        present(drawercontroller, animated: true, completion: nil)
-        
+        self.dismiss(animated: false, completion: nil)
+        self.present(drawercontroller, animated: true, completion: nil)
     }
-    
     
     func pressBtnFb(){
         print("FB")
+        
+        let loginManager = LoginManager.init()
+        loginManager.logIn( [.publicProfile], viewController: self) { loginResult in
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success(let _, let _, let accessToken):
+                print("Logged in! \(accessToken)")
+                self.indicator.startAnimating()
+                self.hideLoginView()
+                self.moveLogoDown()
+                RequestService.POST_login(endpoint: RequestService.POST_LOGIN_FB, token: accessToken.authenticationToken, complete: {
+                    data -> Void in
+                    let response = data as! [String : Any]
+                    if DataService.assignUser(response: response, vc: self){
+                        RealmWrapper.save(obj: AppSetting.sharedInstance().mainUser)
+                        self.toHomeVC()
+                    }
+                })
+            }
+        }
     }
     
     func pressBtnEmail(){
@@ -175,13 +237,8 @@ class EntranceViewController: UIViewController {
     
     func initIndicator(){
         
-        indicator = NVActivityIndicatorView(frame: CGRect.zero )
-        indicator.frame.size.height = 50
-        indicator.padding = 10
-        indicator.color = Style.colorWhite
-        
-        indicator.type = .ballPulse
-        self.view.addSubview(indicator)
+        self.indicator = GlobalUtils.getNVIndicatorView(color: Style.colorWhite, type: .ballPulse)
+        self.view.addSubview(self.indicator)
         self.indicator.autoPinEdge(.top, to: .bottom, of: self.ivLogo)
         self.indicator.autoPinEdge(.left, to: .left, of: self.ivLogo)
         self.indicator.autoPinEdge(.right, to: .right, of: self.ivLogo)
@@ -192,13 +249,6 @@ class EntranceViewController: UIViewController {
        
     }
     
-    func toHomeVC(){
-        let hvc = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: VCIdentifiers.HomeNavViewController.rawValue)
-        dismiss(animated: false, completion: nil)
-        sleep(3)
-        present(hvc, animated: true, completion: nil)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -216,6 +266,49 @@ class EntranceViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
+    
+    /**
+    ** Sign in google delegate
+    */
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if error == nil {
+            
+            let authCode = user.serverAuthCode
+            if authCode == nil {
+                notiTextview?.text = "Fail to get serverAuthCode"
+                showNotification()
+                return
+            }
+            self.indicator.startAnimating()
+            self.hideLoginView()
+            self.moveLogoDown()
+            RequestService.POST_login(endpoint: RequestService.POST_LOGIN_GMAIL, token: authCode!, complete: {
+                data -> Void in
+                let response = data as! [String: Any]
+                if DataService.assignUser(response: response, vc: self){
+                    self.toHomeVC()
+                }else {
+                    self.notiTextview?.text = "Fail to login"
+                    self.showNotification()
+                }
+            })
+            print("auth login google \(authCode)")
+        }else{
+            notiTextview?.text = "Fail"
+            showNotification()
+        }
+    }
+    
+    func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+        
+    }
+    func signIn(signIn: GIDSignIn!,
+                presentViewController viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    func signIn(signIn: GIDSignIn!,
+                dismissViewController viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 

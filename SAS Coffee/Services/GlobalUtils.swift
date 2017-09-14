@@ -9,9 +9,11 @@
 
 import UIKit
 import FontAwesomeKit
-
+import NVActivityIndicatorView
 
 class GlobalUtils  : NSObject {
+    static let GG_SERVER_CLIENT_ID = "857542695816-ieqbbqscv4uittao58doqo9kvptnetgs.apps.googleusercontent.com"
+    static let GG_IOS_CLIENT_ID = "857542695816-5s2uqif28482e052rdojrl3plfeeis6n.apps.googleusercontent.com"
     static let GG_API_MAP_KEY = "AIzaSyDxeCkdR4wufHZx8W2ZT6zEQR8WiFZywJI"
     static func stringClassFromString(_ className: String) -> AnyClass! {
         
@@ -41,6 +43,16 @@ class GlobalUtils  : NSObject {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: checkStr)
+    }
+    
+    static func getNVIndicatorView(color: UIColor, type : NVActivityIndicatorType) -> NVActivityIndicatorView {
+        let indicator = NVActivityIndicatorView(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50) )
+        
+        indicator.padding = 16
+        indicator.color = color
+        
+        indicator.type = type
+        return indicator
     }
     
 }

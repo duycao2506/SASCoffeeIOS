@@ -9,7 +9,8 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
-
+import Google
+import RealmSwift
 import NVActivityIndicatorView
 
 @UIApplicationMain
@@ -23,8 +24,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         LangUtil.switchLang(code: LangCode.EN)
         configLoadingBlocker()
+        
         GMSServices.provideAPIKey(GlobalUtils.GG_API_MAP_KEY)
         GMSPlacesClient.provideAPIKey(GlobalUtils.GG_API_MAP_KEY)
+        
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        //gid
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
+        
+        GIDSignIn.sharedInstance().clientID = GlobalUtils.GG_IOS_CLIENT_ID
+        GIDSignIn.sharedInstance().serverClientID = GlobalUtils.GG_SERVER_CLIENT_ID
+        RealmWrapper.config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+            // potentially lengthy data migration
+        })
+        RealmWrapper.realm = try! Realm.init(configuration: RealmWrapper.config)
+        
         return true
     }
 
@@ -58,8 +77,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        GIDSignIn.sharedInstance().signOut()
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        let FBhanlde = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        print("FB" + sourceApplication!)
+        
+        let GGHandle = GIDSignIn.sharedInstance().handle(url as URL!,
+                                                         sourceApplication: sourceApplication,
+                                                         annotation: annotation)
+        
+        return FBhanlde || GGHandle
     }
 
+    private func application(application: UIApplication,
+                     openURL url: URL, options: [String: AnyObject]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url as URL!,
+                                                    sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication.rawValue] as? String,
+                                                    annotation: options[UIApplicationOpenURLOptionsKey.annotation.rawValue])
+    }
+    
+    
 
 }
 

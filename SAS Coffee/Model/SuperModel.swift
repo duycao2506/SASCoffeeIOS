@@ -15,24 +15,28 @@ class SuperModel: Object, Mappable{
     static let ID = "id"
     static let NAME = "name"
     
-    var id : String = ""
-    var name: String = ""
-    required public init(id: String, name :String ) {
+    dynamic var id : Int = 0
+    dynamic var name: String = ""
+    required public init(id: Int, name :String ) {
         super.init()
         self.id = id
         self.name = name
+    }
+    
+    override static func primaryKey() -> String? {
+        return SuperModel.ID
     }
     
     required init() {
         super.init()
     }
     
-    required init(realm: RLMRealm, schema: RLMObjectSchema) {
-        fatalError("init(realm:schema:) has not been implemented")
+    required init(value: Any, schema: RLMSchema) {
+        super.init(value: value, schema: schema)
     }
     
-    required init(value: Any, schema: RLMSchema) {
-        fatalError("init(value:schema:) has not been implemented")
+    required init(realm: RLMRealm, schema: RLMObjectSchema) {
+        super.init(realm: realm, schema: schema)
     }
     
     required init?(map: Map) {
@@ -41,8 +45,8 @@ class SuperModel: Object, Mappable{
     
     // Mappable
     func mapping(map: Map) {
-        id    <- map[SuperModel.ID]
-        name  <- map[SuperModel.NAME]
+        self.id    <- map[SuperModel.ID]
+        self.name  <- map[SuperModel.NAME]
     }
     
 }

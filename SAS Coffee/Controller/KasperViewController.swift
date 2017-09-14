@@ -17,6 +17,7 @@ class KasperViewController: UIViewController, NVActivityIndicatorViewable, Kaspe
     var continueCondition : ((Any, Any) -> Bool)?
     @IBOutlet weak var notiViewHeightConstraint : NSLayoutConstraint?
     @IBOutlet weak var notiTextview : UILabel?
+    var maxheightnoti = 36
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -59,9 +60,19 @@ class KasperViewController: UIViewController, NVActivityIndicatorViewable, Kaspe
     func showNotification(){
         if self.notiViewHeightConstraint != nil {
             self.view.layoutIfNeeded()
-            self.notiViewHeightConstraint?.constant = 36
-            UIView.animate(withDuration: 0.4, animations: {
+            self.notiViewHeightConstraint?.constant = CGFloat(maxheightnoti)
+            UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded() 
+            })
+        }
+    }
+    
+    func hideNotfication(){
+        if self.notiViewHeightConstraint != nil {
+            self.view.layoutIfNeeded()
+            self.notiViewHeightConstraint?.constant = 0
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
             })
         }
     }

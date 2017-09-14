@@ -17,12 +17,15 @@ class UserModel: SuperModel {
     //static
     static let EMAIL = "email"
     static let PHONE = "phone"
-    static let USERCODE = "code"
+    static let USERCODE = "userCode"
     static let AVATAR = "avatar"
     static let FBID = "fbId"
     static let BIRTHDAY = "birthday"
     static let ADDRESS = "address"
     static let PASSWORD = "password"
+    static let CHECKIN = "checkIn"
+    static let BRAID = "branchId"
+    static let TYPE = "type"
     
     
     
@@ -39,14 +42,15 @@ class UserModel: SuperModel {
     dynamic var point : Int = 0
     dynamic var address: String = "Not available".localize()
     dynamic var checkIntime : Int = 0
-    
-    var accessToken : String = ""
+    dynamic var token : String = ""
+    dynamic var userType : String = ""
+    dynamic var branchId : Int = 0
     
     required init() {
         super.init()
     }
     
-    init(id: String,
+    init(id: Int,
          name: String,
          email: String,
          phone: String,
@@ -83,24 +87,33 @@ class UserModel: SuperModel {
         avatar  <- map[UserModel.AVATAR]
         fbId  <- map[UserModel.FBID]
         birthday    <- (map[UserModel.BIRTHDAY], DateTransform())
+        checkIntime <- map[UserModel.CHECKIN]
+        address <- map[UserModel.ADDRESS]
+        password <- map[UserModel.PASSWORD]
+        branchId <- map[UserModel.BRAID]
+        userType <- map[UserModel.TYPE]
     }
     
     
-    required public init(id: String, name: String) {
-        fatalError("init(id:name:) has not been implemented")
-    }
     
     required init(value: Any, schema: RLMSchema) {
-        fatalError("init(value:schema:) has not been implemented")
+        super.init(value: value, schema: schema)
     }
     
     required init(realm: RLMRealm, schema: RLMObjectSchema) {
-        fatalError("init(realm:schema:) has not been implemented")
+        super.init(realm: realm, schema: schema)
     }
     
+    
+    
     required init?(map: Map) {
-        fatalError("init(map:) has not been implemented")
+        super.init(map: map)
     }
+    
+    required public init(id: Int, name: String) {
+        fatalError("init(id:name:) has not been implemented")
+    }
+    
     
     
 }

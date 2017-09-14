@@ -25,8 +25,10 @@ class CardTableViewCell: SuperTableViewCell {
         self.backgroundCardView.layer.cornerRadius = 3.0
         self.backgroundCardView.layer.masksToBounds = false
         self.backgroundCardView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
-        self.backgroundCardView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.backgroundCardView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         self.backgroundCardView.layer.shadowOpacity = 0.8
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

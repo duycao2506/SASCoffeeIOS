@@ -9,7 +9,7 @@
 import UIKit
 import SwiftPullToRefresh
 import FontAwesomeKit
-
+import PopupDialog
 import DrawerController
 
 
@@ -39,15 +39,14 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
         
         arrProfile = [
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.emailIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.email],
-            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.calendarIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.birthday?.string(custom: "dd/MM/yyyy")],
+            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.calendarIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.birthday == nil ? "Not available".localize() : AppSetting.sharedInstance().mainUser.birthday?.string(custom: "dd/MM/yyyy") as Any],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.phoneIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.phone],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.mapIcon(withSize: 24.0)), AppSetting.sharedInstance().mainUser.address]]
         
         
         
         
-        self.startAnimating()
-        refreshData()
+        
         
         //MARK: TableView Configuration
         self.tbview.rowHeight = UITableViewAutomaticDimension
@@ -57,18 +56,55 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
         }
         
         
+        self.view.startLoading(loadingView: GlobalUtils.getNVIndicatorView(color: Style.colorPrimary, type: .ballPulse), logo: #imageLiteral(resourceName: "logo.png"), tag: nil)
+        RequestService.GET_news(memberType: AppSetting.sharedInstance().mainUser.userType, complete: {
+            news -> Void in
+            self.view.stopLoading(loadingViewTag: nil)
+            if news != nil {
+                // Prepare the popup assets
+                let title = "Message for you".localize()
+                let message = news as! String
+                let image = UIImage.init(named: "splash_news")
+                
+                // Create the dialog
+                let popup = PopupDialog(title: title, message: message, image: image)
+                popup.transitionStyle = .bounceDown
+                
+                // Create buttons
+                
+                let buttonOK = DefaultButton(title: "Got it".localize()) {
+                    popup.dismiss()
+                }
+                buttonOK.titleLabel?.textColor = Style.colorSecondary
+                
+                // Add buttons to dialog
+                // Alternatively, you can use popup.addButton(buttonOne)
+                // to add a single button
+                popup.addButton(buttonOK)
+                
+                // Present dialog
+                self.present(popup, animated: true, completion: nil)
+            }
+        })
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+       
+        
+        
     }
     
     
     
     func refreshData(){
-        DispatchQueue.global(qos: .userInitiated).async {
-            sleep(2)
-            DispatchQueue.main.async {
-                self.stopAnimating()
-                self.tbview.spr_endRefreshing()
-            }
-        }
+        RequestService.POST_login(endpoint: RequestService.POST_LOGIN_AUTO, token: AppSetting.sharedInstance().mainUser.token.toBase64(), complete: {
+            data -> Void in
+            DataService.assignUser(response: data as! [String : Any], vc: self)
+            self.view.stopLoading(loadingViewTag: 1241)
+            self.tbview.spr_endRefreshing()
+        })
     }
 
     override func didReceiveMemoryWarning() {

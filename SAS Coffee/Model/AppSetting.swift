@@ -21,6 +21,7 @@ class AppSetting: NSObject {
     static func sharedInstance() -> AppSetting {
         if AppSetting.appSetting == nil {
             AppSetting.appSetting = AppSetting()
+            appSetting.mainUser = UserModel.init()
         }
         return AppSetting.appSetting
     }

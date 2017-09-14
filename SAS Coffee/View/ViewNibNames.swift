@@ -11,4 +11,5 @@ import UIKit
 class ViewNibNames {
     static let loginView : String = "LoginUIView"
     static let imageTitleCell : String = "ImageTitleTableViewCell"
+    static let ivtitledescell : String = "IvLblDesTableViewCell"
 }

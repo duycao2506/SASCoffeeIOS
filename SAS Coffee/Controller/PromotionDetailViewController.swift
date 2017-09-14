@@ -1,15 +1,19 @@
 //
-//  VideoViewController.swift
+//  PromotionDetailViewController.swift
 //  SAS Coffee
 //
-//  Created by Duy Cao on 9/8/17.
+//  Created by Duy Cao on 9/13/17.
 //  Copyright © 2017 Duy Cao. All rights reserved.
 //
 
 import UIKit
 
-class VideoViewController: KasperViewController {
+class PromotionDetailViewController: KasperViewController {
 
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDiscount: UILabel!
+    @IBOutlet weak var lblDeadline: UILabel!
+    @IBOutlet weak var tvDesc: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +36,8 @@ class VideoViewController: KasperViewController {
     }
     */
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
 }

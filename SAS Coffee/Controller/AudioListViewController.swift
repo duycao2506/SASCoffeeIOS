@@ -8,11 +8,15 @@
 
 import UIKit
 
-class AudioListViewController: KasperViewController {
+class AudioListViewController: KasperViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet var tbView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tbView.register(UINib.init(nibName: ViewNibNames.ivtitledescell, bundle: Bundle.main), forCellReuseIdentifier: TableViewCellIdetifier.icontitledesccell)
+        self.tbView.estimatedRowHeight = 100
+        self.tbView.rowHeight = UITableViewAutomaticDimension
         // Do any additional setup after loading the view.
     }
 
@@ -31,5 +35,16 @@ class AudioListViewController: KasperViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tbView.dequeueReusableCell(withIdentifier: TableViewCellIdetifier.icontitledesccell)!
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
 
 }

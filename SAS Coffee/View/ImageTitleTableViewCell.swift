@@ -38,5 +38,6 @@ class ImageTitleTableViewCell: SuperTableViewCell {
         var data = anyObj as! [Any]
         ivIcon.image = (data[0] as! UIImage).changeTint(color: Style.colorPrimary)
         ivtTitle.text = data[1] as! String
+        
     }
 }

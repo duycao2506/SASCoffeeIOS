@@ -21,7 +21,6 @@ class MapViewController: KasperViewController, GMSMapViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Shops".localize()
         
         //Camera
         mapView.isMyLocationEnabled = true
@@ -65,7 +64,11 @@ class MapViewController: KasperViewController, GMSMapViewDelegate{
     
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        print("marker ewqewq")
+        let brvc = AppStoryBoard.Map.instance.instantiateViewController(withIdentifier: VCIdentifiers.BranchVC.rawValue)
+        brvc.modalTransitionStyle = .crossDissolve
+        brvc.modalPresentationStyle = .overCurrentContext
+        brvc.modalPresentationCapturesStatusBarAppearance = true
+        self.present(brvc, animated: true, completion: nil)
         return true
     }
     

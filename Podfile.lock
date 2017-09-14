@@ -26,6 +26,14 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.26.0):
     - FBSDKCoreKit
+  - FirebaseAnalytics (3.9.0):
+    - FirebaseCore (~> 3.6)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.6.0):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
   - FontAwesomeKit (2.2.1):
     - FontAwesomeKit/Core (= 2.2.1)
     - FontAwesomeKit/FontAwesome (= 2.2.1)
@@ -47,6 +55,15 @@ PODS:
     - FontAwesomeKit/Core
   - FontAwesomeKit/Zocial (2.2.1):
     - FontAwesomeKit/Core
+  - Google/Analytics (3.1.0):
+    - Google/Core
+    - GoogleAnalytics (~> 3.12)
+  - Google/Core (3.1.0):
+    - FirebaseAnalytics (~> 3.2)
+  - Google/SignIn (3.1.0):
+    - Google/Core
+    - GoogleSignIn (~> 4.0)
+  - GoogleAnalytics (3.17.0)
   - GoogleMaps (2.4.0):
     - GoogleMaps/Maps (= 2.4.0)
   - GoogleMaps/Base (2.4.0)
@@ -62,11 +79,14 @@ PODS:
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
     - GoogleToolboxForMac/DebugUtils (= 2.1.1)
     - GoogleToolboxForMac/Defines (= 2.1.1)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GradientView (2.2.0)
   - GTMOAuth2 (1.1.4):
     - GTMSessionFetcher (~> 1.1)
   - GTMSessionFetcher (1.1.11):
@@ -79,6 +99,7 @@ PODS:
   - NVActivityIndicatorView/Presenter (3.7.0)
   - ObjectMapper (2.2.8)
   - pop (1.0.10)
+  - PopupDialog (0.5.4)
   - PureLayout (3.0.2)
   - Realm (2.10.0):
     - Realm/Headers (= 2.10.0)
@@ -99,12 +120,15 @@ DEPENDENCIES:
   - FacebookLogin
   - FBSDKShareKit
   - FontAwesomeKit
+  - Google/Analytics
+  - Google/SignIn
   - GoogleMaps
   - GooglePlaces
-  - GoogleSignIn
+  - GradientView
   - NVActivityIndicatorView
   - ObjectMapper
   - pop
+  - PopupDialog
   - PureLayout
   - RealmSwift
   - SDWebImage
@@ -121,16 +145,23 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: c8b8582311ec11b145451d8b9717dc6cc2ae5a76
   FBSDKLoginKit: f3f03b94c21eb834af243c0a881d48641f47ca60
   FBSDKShareKit: 320712d8293fde6392872c91eb80ef0da5d73cc3
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
+  Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
   GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GradientView: a5397174594f158dc1511127f2004ec25c9d2300
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   Realm: 98b3a25643cf6b3e07d2b99fb43fe0eb9c801dec
   RealmSwift: 34073ad3a31232bbaf7c0db898c037940284cba2
@@ -139,6 +170,6 @@ SPEC CHECKSUMS:
   SwiftDate: 029be76691ee89176da3a46c7df3415b6734bc5b
   SwiftPullToRefresh: 11ffa1b9d886b2902bed64b05bd50e1e0f1201f1
 
-PODFILE CHECKSUM: da479a28c0d0d516bddc6875fdbae6bb83ad1a3a
+PODFILE CHECKSUM: 97bed52fd417ae61595f53109e14bedc06bd1263
 
 COCOAPODS: 1.3.1

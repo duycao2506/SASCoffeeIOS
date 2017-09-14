@@ -24,18 +24,23 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
         menuitems = [
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.homeIcon(withSize: 48.0)), "Home".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.starIcon(withSize: 48.0)), "Promotion".localize()],
-            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.mapMarkerIcon(withSize: 48.0)),"Shops".localize()],
+            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.mapMarkerIcon(withSize: 48.0)),"SAS Coffee Towns".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.translateIcon(withSize: 48.0)), "Translator".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.bookIcon(withSize: 48.0)),"Study with E4U".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.infoIcon(withSize: 48.0)), "About us".localize()],
+            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.creditCardIcon(withSize: 48.0)), "Credits".localize()],
             [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.signOutIcon(withSize: 48.0)),"Sign out".localize()]
         ]
         
+        let aboutusresPath = Bundle.main.path(forResource: "info", ofType: "html")
+        let aboutusvc = AppStoryBoard.Web.instance.instantiateViewController(withIdentifier: VCIdentifiers.WebVC.rawValue) as! WebViewController
+        aboutusvc.url = aboutusresPath
         vcArray.append(AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionVC.rawValue) as! KasperViewController)
         vcArray.append(AppStoryBoard.Map.instance.instantiateViewController(withIdentifier: VCIdentifiers.MapViewController.rawValue) as! KasperViewController)
-        vcArray.append(AppStoryBoard.Study.instance.instantiateViewController(withIdentifier: VCIdentifiers.StudyMethodVC.rawValue) as! KasperViewController)
         vcArray.append(AppStoryBoard.Translation.instance.instantiateViewController(withIdentifier: VCIdentifiers.TranslatorVC.rawValue) as! KasperViewController)
-        vcArray.append(AppStoryBoard.Web.instance.instantiateViewController(withIdentifier: VCIdentifiers.WebVC.rawValue) as! KasperViewController)
+        vcArray.append(AppStoryBoard.Study.instance.instantiateViewController(withIdentifier: VCIdentifiers.StudyMethodVC.rawValue) as! KasperViewController)
+        vcArray.append(aboutusvc)
+        vcArray.append(AppStoryBoard.Credit.instance.instantiateViewController(withIdentifier: VCIdentifiers.CreditVC.rawValue) as! KasperViewController)
 
         self.tbView.register(UINib.init(nibName: ViewNibNames.imageTitleCell, bundle: Bundle.main), forCellReuseIdentifier: TableViewCellIdetifier.iconTitleCell)
         self.tbView.contentInset = UIEdgeInsets.init(top: 24, left: 0, bottom: 0, right: 0)
@@ -57,10 +62,12 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(menuitems[indexPath.row][1] as! String)
         if indexPath.row < vcArray.count {
             let centernav = self.evo_drawerController?.centerViewController as! HomeNavViewController
-            centernav.setViewControllers([vcArray[indexPath.row]], animated: true)
+            let chosenVc = vcArray[indexPath.row]
+            chosenVc.navigationItem.title = menuitems[indexPath.row][1] as! String
+            print(chosenVc.navigationItem.title)
+            centernav.setViewControllers([chosenVc], animated: true)
         }
         self.evo_drawerController?.toggleLeftDrawerSide(animated: true, completion: nil)
         
@@ -72,7 +79,6 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuitems.count
-        
     }
 
     /*

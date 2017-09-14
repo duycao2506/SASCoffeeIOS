@@ -16,6 +16,10 @@ struct TableViewCellIdetifier {
     static let profileInfoCell = "profile_info_cell"
     static let profileEditCell = "profile_edit_cell"
     static let iconTitleCell = "icontitle_cell"
+    static let meaningCell = "meaningtableviewcell"
+    static let promotionCell = "promotioncell"
+    static let icontitledesccell = "icontitledescell"
+    static let studymethodcell = "StudyMethodTableCell"
     
-    
+    static let videolistcell = "videolistcell"
 }
