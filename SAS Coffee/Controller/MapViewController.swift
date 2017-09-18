@@ -18,6 +18,8 @@ class MapViewController: KasperViewController, GMSMapViewDelegate{
     @IBOutlet weak var mapView: GMSMapView!
     
     
+    var branches : [BranchModel] = [BranchModel].init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,17 +43,9 @@ class MapViewController: KasperViewController, GMSMapViewDelegate{
         locationManager.delegate = self
 
         
+        self.getBranch()
         
-        let position = CLLocationCoordinate2D(latitude: 10.8070802, longitude: 106.6839667)
-        let marker = GMSMarker(position: position)
-        marker.title = "First Marker"
-        marker.icon = #imageLiteral(resourceName: "ic_map_marker")
-        marker.infoWindowAnchor = CGPoint.init(x: 1.0, y: 1.0)
-        marker.snippet = "gERQWRWQ"
-        marker.appearAnimation = .pop
-        marker.tracksInfoWindowChanges = true
-
-        marker.map = mapView
+        
         
         
         // Do any additional setup after loading the view.
@@ -62,20 +56,64 @@ class MapViewController: KasperViewController, GMSMapViewDelegate{
         // Dispose of any resources that can be recreated.
     }
     
+    func getBranch(){
+        self.view.startLoading(loadingView: GlobalUtils.getNVIndicatorView(color: Style.colorPrimary, type: .ballPulse), logo: #imageLiteral(resourceName: "logo.png"), tag: nil)
+        RequestService.GET_all_branch(complete: {
+            data -> Void in
+            let response = data as! [String : Any]
+            if response["statuskey"] as! Bool{
+                self.branches = DataService.parseBranchList(response: response["branchList"] as! [[String:Any]])
+                DispatchQueue.global().async {
+                    for item in self.branches{
+                        self.addMarker(branch: item)
+                    }
+                    DispatchQueue.main.async {
+                        self.view.stopLoading(loadingViewTag: nil)
+                    }
+                    
+                }
+            }else{
+                self.view.stopLoading(loadingViewTag: nil)
+            }
+        })
+    }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        let brvc = AppStoryBoard.Map.instance.instantiateViewController(withIdentifier: VCIdentifiers.BranchVC.rawValue)
+        return false
+    }
+    
+    //func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+     //   let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 36))
+      //  label.text = marker.title
+        //label.textColor = Style.colorPrimary
+        //return label
+    //}
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        self.showBranchDetail(branch: marker.userData as! BranchModel)
+    }
+    
+    func showBranchDetail(branch : BranchModel){
+        let brvc = AppStoryBoard.Map.instance.instantiateViewController(withIdentifier: VCIdentifiers.BranchVC.rawValue) as! BranchDetailController
         brvc.modalTransitionStyle = .crossDissolve
         brvc.modalPresentationStyle = .overCurrentContext
         brvc.modalPresentationCapturesStatusBarAppearance = true
+        brvc.branch = branch
         self.present(brvc, animated: true, completion: nil)
-        return true
     }
     
-    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-        return UIView.init()
+    func addMarker(branch : BranchModel){
+        let position = CLLocationCoordinate2D(latitude: branch.latitude, longitude: branch.longitude)
+        let marker = GMSMarker(position: position)
+        marker.title = branch.name
+        marker.icon = #imageLiteral(resourceName: "ic_map_marker")
+        marker.userData = branch
+        marker.infoWindowAnchor = CGPoint.init(x: 0.5, y: 0)
+        marker.snippet = branch.address
+        marker.appearAnimation = .pop
+        marker.tracksInfoWindowChanges = true
+        marker.map = self.mapView
     }
-    
 
     /*
     // MARK: - Navigation

@@ -48,10 +48,10 @@ class EventTableViewCell: CardTableViewCell {
         self.promotion = anyObj as! PromotionModel
         self.lbltitle.text = self.promotion.name
         self.lblDescription.text = self.promotion.descript
-        self.lblDiscount.text = self.promotion.discount.description
+        self.lblDiscount.text = self.promotion.discount.description + "%"
     
         if (self.promotion.expireDate?.isAfter(date: Date(), granularity: Calendar.Component.day))! {
-            self.lblDeadline.text = self.promotion.expireDate?.string(custom: "dd-MM-yyyy")
+            self.lblDeadline.text = "Until".localize() + " " + (self.promotion.expireDate?.string(custom: "dd-MM-yyyy"))!
             self.lblDeadline.backgroundColor = UIColor.darkGray
             self.lblDeadline.textColor = Style.colorSecondary
             self.btnDelete.isHidden = true

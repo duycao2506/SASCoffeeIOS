@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LangUtil.switchLang(code: LangCode.EN)
         configLoadingBlocker()
         
-        GMSServices.provideAPIKey(GlobalUtils.GG_API_MAP_KEY)
-        GMSPlacesClient.provideAPIKey(GlobalUtils.GG_API_MAP_KEY)
+        GMSServices.provideAPIKey(AppSetting.sharedInstance().GG_API_MAP_KEY)
+        GMSPlacesClient.provideAPIKey(AppSetting.sharedInstance().GG_API_MAP_KEY)
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
@@ -35,10 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
         
-        GIDSignIn.sharedInstance().clientID = GlobalUtils.GG_IOS_CLIENT_ID
-        GIDSignIn.sharedInstance().serverClientID = GlobalUtils.GG_SERVER_CLIENT_ID
+        GIDSignIn.sharedInstance().clientID = AppSetting.sharedInstance().GG_IOS_CLIENT_ID
+        GIDSignIn.sharedInstance().serverClientID = AppSetting.sharedInstance().GG_SERVER_CLIENT_ID
         RealmWrapper.config = Realm.Configuration(
-            schemaVersion: 1,
+            schemaVersion: 3,
             migrationBlock: { migration, oldSchemaVersion in
             // potentially lengthy data migration
         })

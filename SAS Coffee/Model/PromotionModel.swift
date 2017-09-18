@@ -26,9 +26,7 @@ class PromotionModel: SuperModel {
     
     
     
-    required init?(map: Map) {
-        super.init(map: map)
-    }
+    
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -41,6 +39,10 @@ class PromotionModel: SuperModel {
         formatter.dateFormat = "MMM d,yyyy"
         formatter.locale = Locale(identifier: "en_US_POSIX")
         self.expireDate = formatter.date(from: strtime)
+    }
+    
+    required init?(map: Map) {
+        super.init(map: map)
     }
     
     required init(realm: RLMRealm, schema: RLMObjectSchema) {

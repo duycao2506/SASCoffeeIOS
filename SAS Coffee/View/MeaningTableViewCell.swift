@@ -18,7 +18,9 @@ class MeaningTableViewCell: SuperTableViewCell {
     }
     */
     
-    @IBOutlet weak var meaningtitle: UIView!
+    @IBOutlet weak var lblExTitle: UILabel!
+    @IBOutlet weak var lblDeftitle: UILabel!
+    @IBOutlet weak var meaningtitle: UILabel!
     @IBOutlet weak var wordType: UILabel!
     @IBOutlet weak var phienam: UILabel!
     @IBOutlet weak var definition: UILabel!
@@ -39,7 +41,14 @@ class MeaningTableViewCell: SuperTableViewCell {
     }
     
     override func updateData(anyObj : Any){
-        
+        let data = anyObj as! DictionaryModel
+        self.meaningtitle.text = data.word
+        self.wordType.text = data.type
+        self.phienam.text = data.pronun
+        self.definition.text = data.def
+        self.lblDeftitle.text = (self.definition.text?.isEmpty)! ? "" : "Definition".localize()
+        self.example.text = data.example
+        self.lblExTitle.text = (self.example.text?.isEmpty)! ? "" : "Examples".localize()
     }
 
 }

@@ -18,11 +18,15 @@ class VideoListTableViewCell: CardTableViewCell {
     }
     */
     
+    var observer : KasperObserverDelegate!
+    
     
     
     @IBOutlet weak var ivVideothumbnail: UIImageView!
     @IBOutlet weak var lblVideoDesc: UILabel!
     @IBOutlet weak var lblVideoTitle: UILabel!
+    
+    var vidid : String! = ""
     
     override func awakeFromNib() {
         
@@ -35,8 +39,15 @@ class VideoListTableViewCell: CardTableViewCell {
         
     }
     
+    @IBAction func press_btnPlay(_ sender: Any) {
+        observer.callback(EventConst.PLAY_VIDEO, true, vidid)
+    }
     override func updateData(anyObj: Any) {
-        
+        let video = anyObj as! VideoModel
+        self.lblVideoTitle.text = video.name
+        self.lblVideoDesc.text = video.length
+        self.ivVideothumbnail.sd_setImage(with: URL.init(string: "https://img.youtube.com/vi/\(video.videoId)/0.jpg"), completed: nil)
+        self.vidid = video.videoId
     }
     
     override func updateData(number: Int, str: String, obj: SuperModel) {

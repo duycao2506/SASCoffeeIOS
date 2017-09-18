@@ -12,9 +12,9 @@ class CreditViewController: KasperViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var tbView : UITableView!
 
-    let images : [UIImage] = [#imageLiteral(resourceName: "freepik"), UIImage.init(named: "smashicons")!]
-    let strs : [String] = ["Freepik", "Smashicons"]
-    let links : [String]  = ["http://www.freepik.com/", "https://smashicons.com/"]
+    let images : [UIImage] = [#imageLiteral(resourceName: "freepik"), UIImage.init(named: "smashicons")!, #imageLiteral(resourceName: "plainicon")]
+    let strs : [String] = ["Freepik", "Smashicons", "Plainicon"]
+    let links : [String]  = ["http://www.freepik.com/", "https://smashicons.com/","http://www.plainicon.com"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

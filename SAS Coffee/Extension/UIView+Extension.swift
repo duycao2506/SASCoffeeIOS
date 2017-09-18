@@ -34,6 +34,7 @@ extension UIView {
         self.addSubview(blurview)
         blurview.autoConstrainAttribute(.height, to: .height, of: self)
         blurview.autoConstrainAttribute(.width, to: .width, of: self)
+        blurview.autoCenterInSuperview()
         blurview.tag = tag == nil ? BLURVIEW_TAG : tag!
         self.bringSubview(toFront: blurview)
         let logoview = UIImageView.init(image: logo)

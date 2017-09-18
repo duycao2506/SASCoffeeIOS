@@ -16,6 +16,7 @@ class IvLblDesTableViewCell: CardTableViewCell {
     
     @IBOutlet weak var ivicon: UIImageView!
     var isCardView : Bool! = false
+    var isRendered  : Bool! = false
     
     override func awakeFromNib() {
         super.awakeFromNib()

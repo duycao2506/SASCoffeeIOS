@@ -7,13 +7,26 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
+import FontAwesomeKit
+import AVFoundation
 
-class AudioListViewController: KasperViewController, UITableViewDelegate, UITableViewDataSource {
+class AudioListViewController: KasperViewController, UITableViewDelegate, UITableViewDataSource, AVSpeechSynthesizerDelegate {
 
+    var sentences : List<SentenceModel>!
+    
+    var audioutter : AVSpeechUtterance? = AVSpeechUtterance.init(string: "Hello")
+    let audiosynthesizer : AVSpeechSynthesizer = AVSpeechSynthesizer.init()
+    let voice = AVSpeechSynthesisVoice.init(language: "en-US")
+    var isPlayingIndex : Int = -1
+    var isForceStop : Bool = false
+    
+    
     @IBOutlet var tbView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        audiosynthesizer.delegate = self
         tbView.register(UINib.init(nibName: ViewNibNames.ivtitledescell, bundle: Bundle.main), forCellReuseIdentifier: TableViewCellIdetifier.icontitledesccell)
         self.tbView.estimatedRowHeight = 100
         self.tbView.rowHeight = UITableViewAutomaticDimension
@@ -36,7 +49,18 @@ class AudioListViewController: KasperViewController, UITableViewDelegate, UITabl
     }
     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tbView.dequeueReusableCell(withIdentifier: TableViewCellIdetifier.icontitledesccell)!
+        let cell = tbView.dequeueReusableCell(withIdentifier: TableViewCellIdetifier.icontitledesccell) as! IvLblDesTableViewCell
+        
+        
+        if indexPath.row == isPlayingIndex {
+            cell.ivicon.image = GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.pauseCircleIcon(withSize: 48.0)).changeTint(color: Style.colorPrimary)
+        }else {
+            cell.ivicon.image = GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.playCircleIcon(withSize: 48.0)).changeTint(color: Style.colorPrimary)
+        }
+        
+        cell.lblTitle.text = sentences[indexPath.row].sentenceEn
+        cell.lbldesc.text = sentences[indexPath.row].sentenceVi
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,7 +68,38 @@ class AudioListViewController: KasperViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return sentences.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.audiosynthesizer.isSpeaking {
+            isForceStop = true
+            self.audiosynthesizer.stopSpeaking(at: .immediate)
+        }
+        
+        self.isPlayingIndex = indexPath.row
+        self.audioutter? = AVSpeechUtterance.init(string: sentences[indexPath.row].sentenceEn)
+        self.audioutter?.voice = voice
+        self.audioutter?.rate = 0.5
+        self.audiosynthesizer.speak(self.audioutter!)
+        self.tbView.reloadData()
+    }
+    
+    
+    /// Synthernizer AV Speech
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        
+        
+        if isForceStop {
+            isForceStop = false
+            return
+        }
+        let row = self.isPlayingIndex
+        self.isPlayingIndex = -1
+        self.tbView.reloadRows(at: [IndexPath.init(row: row, section: 0)], with: .fade)
+        
+    }
+    
+
 
 }

@@ -58,16 +58,16 @@
                                                             <blurEffect style="extraLight"/>
                                                         </visualEffectView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evx-iY-NMf">
-                                                            <rect key="frame" x="107.5" y="32" width="128" height="172.5"/>
+                                                            <rect key="frame" x="123" y="47.5" width="98" height="142.5"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphones" translatesAutoresizingMaskIntoConstraints="NO" id="rNF-ew-DzF">
-                                                                    <rect key="frame" x="0.0" y="0.5" width="128" height="128"/>
+                                                                    <rect key="frame" x="0.0" y="0.5" width="98" height="98"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="rNF-ew-DzF" secondAttribute="height" multiplier="1:1" id="Zbm-Ne-7PR"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0W-Pp-h3U">
-                                                                    <rect key="frame" x="0.0" y="144.5" width="128" height="28"/>
+                                                                    <rect key="frame" x="0.0" y="114.5" width="98" height="28"/>
                                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                                                     <color key="textColor" red="0.0" green="0.75294117650000003" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -197,6 +197,10 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GP-jm-4As" customClass="KasperButton" customModule="SAS_Coffee" customModuleProvider="target">
                                                             <rect key="frame" x="142.5" y="80" width="57" height="32"/>
                                                             <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="7GP-jm-4As" secondAttribute="height" multiplier="16:9" id="ffU-aB-LhF"/>
                                                             </constraints>
@@ -212,6 +216,9 @@
                                                                     <color key="value" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="press_btnPlay:" destination="DFn-hA-orF" eventType="touchUpInside" id="ant-IG-j5r"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -281,6 +288,59 @@
             </objects>
             <point key="canvasLocation" x="488.80000000000001" y="707.49625187406298"/>
         </scene>
+        <!--Video Player Controller-->
+        <scene sceneID="baf-kK-soC">
+            <objects>
+                <viewController storyboardIdentifier="videoplayvc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jtn-CX-f81" customClass="VideoPlayerController" customModule="SAS_Coffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rot-fr-Jrv"/>
+                        <viewControllerLayoutGuide type="bottom" id="CzX-M7-i4z"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.80000000000000004" contentMode="scaleToFill" id="zp1-yo-EWT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNb-km-aHo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRI-rV-joO" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="227.5" width="375" height="211"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CRI-rV-joO" secondAttribute="height" multiplier="16:9" id="RF8-IE-msV"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htr-ZE-PV2">
+                                <rect key="frame" x="8" y="28" width="24" height="24"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="cm_close_white"/>
+                                <connections>
+                                    <action selector="actionBackWith_sender:" destination="Jtn-CX-f81" eventType="touchUpInside" id="1Uc-n2-Thl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="CzX-M7-i4z" firstAttribute="top" secondItem="FNb-km-aHo" secondAttribute="bottom" id="0pU-yI-6ju"/>
+                            <constraint firstAttribute="trailing" secondItem="FNb-km-aHo" secondAttribute="trailing" id="15E-1K-bSM"/>
+                            <constraint firstItem="CRI-rV-joO" firstAttribute="centerY" secondItem="zp1-yo-EWT" secondAttribute="centerY" id="9Y2-Yj-C7c"/>
+                            <constraint firstItem="FNb-km-aHo" firstAttribute="leading" secondItem="zp1-yo-EWT" secondAttribute="leading" id="V0T-i7-kgX"/>
+                            <constraint firstItem="FNb-km-aHo" firstAttribute="top" secondItem="zp1-yo-EWT" secondAttribute="top" id="Vpg-0V-Mm0"/>
+                            <constraint firstItem="Htr-ZE-PV2" firstAttribute="top" secondItem="Rot-fr-Jrv" secondAttribute="bottom" constant="8" id="Z8X-w0-D66"/>
+                            <constraint firstItem="Htr-ZE-PV2" firstAttribute="leading" secondItem="zp1-yo-EWT" secondAttribute="leading" constant="8" id="Zm1-NT-Sra"/>
+                            <constraint firstAttribute="trailing" secondItem="CRI-rV-joO" secondAttribute="trailing" id="asp-XC-4u9"/>
+                            <constraint firstItem="CRI-rV-joO" firstAttribute="leading" secondItem="zp1-yo-EWT" secondAttribute="leading" id="dJs-a9-lzS"/>
+                            <constraint firstItem="CRI-rV-joO" firstAttribute="width" secondItem="zp1-yo-EWT" secondAttribute="width" id="s0q-Gg-5Nc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="yplayer" destination="CRI-rV-joO" id="mSv-W2-AJ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vwA-2o-ktG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1240.8" y="706.59670164917543"/>
+        </scene>
         <!--Topic Title-->
         <scene sceneID="7oB-d8-3L7">
             <objects>
@@ -293,7 +353,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HKv-0E-fhh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HKv-0E-fhh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -376,8 +436,9 @@
     <resources>
         <image name="background_nav" width="383" height="479"/>
         <image name="cm_arrow_back_white" width="24" height="24"/>
+        <image name="cm_close_white" width="24" height="24"/>
         <image name="cm_play_white" width="24" height="24"/>
-        <image name="headphones" width="128" height="128"/>
+        <image name="headphones" width="64" height="64"/>
         <image name="ic_facebook" width="12" height="23"/>
         <image name="ic_menu_white" width="24" height="24"/>
     </resources>

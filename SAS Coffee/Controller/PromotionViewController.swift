@@ -23,7 +23,13 @@ class PromotionViewController: KasperViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        self.tbView.spr_setIndicatorHeader {
+            self.refreshData()
+        }
+        self.tbView.spr_beginRefreshing()
+    }
+
+    func refreshData(){
         RequestService.GET_promo_by(userId: AppSetting.sharedInstance().mainUser.id.description, complete: {
             data -> Void in
             let resp = data as! [String : Any]
@@ -37,9 +43,11 @@ class PromotionViewController: KasperViewController, UITableViewDataSource, UITa
                 self.notiTextview?.text = "Fail to fetch the list of promotions".localize()
                 self.showNotification()
             }
+            self.tbView.spr_endRefreshing()
         })
-    }
 
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -59,7 +67,20 @@ class PromotionViewController: KasperViewController, UITableViewDataSource, UITa
     */
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionDetailVC.rawValue)
+        let promo = self.promotionData[indexPath.row]
+        if (promo.expireDate?.isBefore(date: Date.init(), granularity: Calendar.Component.day))! {
+            notiTextview?.text = "The promotion has been expired already".localize()
+            self.showNotification()
+            DispatchQueue.global().async {
+                sleep(2)
+                DispatchQueue.main.async {
+                    self.hideNotfication()
+                }
+            }
+            return
+        }
+        let vc = AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionDetailVC.rawValue) as! PromotionDetailViewController
+        vc.promotion = promo
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -81,10 +102,41 @@ class PromotionViewController: KasperViewController, UITableViewDataSource, UITa
     }
     
     override func callback(_ code: Int?, _ succ: Bool?, _ data: Any) {
-        print("delete item number \(data as! Int)")
-        self.promotionData.remove(at: data as! Int)
-        self.tbView.deleteRows(at: [IndexPath.init(row: data as! Int, section: 0)], with: UITableViewRowAnimation.fade)
-        self.tbView.reloadData()
+        if code == nil {
+            return
+        }
+        let codesure : Int = code!
+        switch codesure {
+        case EventConst.PROMO_DELETE:
+            print("delete item number \(data as! Int)")
+            let index = data as! Int
+            
+            RequestService.DELETE_promo( promoCode: self.promotionData[index].name, userId: AppSetting.sharedInstance().mainUser.id.description, complete: {
+                data -> Void in
+                let resp = data as! [String: Any]
+                if resp["statuskey"] as! Bool {
+                    
+                }else{
+                    self.tbView.spr_beginRefreshing()
+                    self.notiTextview?.text = "Fail to delete promotion".localize()
+                    self.showNotification()
+                    DispatchQueue.global().async {
+                        sleep(2)
+                        DispatchQueue.main.sync {
+                            self.hideNotfication()
+                        }
+                    }
+                }
+                
+            })
+            self.promotionData.remove(at: index)
+            self.tbView.deleteRows(at: [IndexPath.init(row: index, section: 0)], with: UITableViewRowAnimation.fade)
+            self.tbView.reloadData()
+            break
+        default:
+            break
+        }
+        
     }
     
     
