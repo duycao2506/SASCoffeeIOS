@@ -14,7 +14,9 @@ import pop
 import DrawerController
 import ObjectMapper
 import FacebookLogin
-import Google
+import Firebase
+import GoogleSignIn
+import FontAwesomeKit
 
 class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
@@ -45,14 +47,21 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
         if !isLoaded {
             isLoaded = true
             indicator.startAnimating()
-            let result = RealmWrapper.realm.objects(UserModel.self)
+            var result = RealmWrapper.realm.objects(UserModel.self)
             if let user = result.first{
-                RequestService.POST_login(endpoint: RequestService.POST_LOGIN_AUTO, token: user.token.toBase64(), complete: {
+                RequestService.GET_login(endpoint: RequestService.GET_LOGIN_AUTO, token: user.token.toBase64(), complete: {
                     data -> Void in
                     let response = data as! [String : Any]
-                    if DataService.assignUser(response: response, vc: self){
-                        //RealmWrapper.remove(obj: user)
+                    
+                    if (response["statuskey"] as! Bool) && DataService.assignUser(response: response, vc: self){
+                        RealmWrapper.save(obj: AppSetting.sharedInstance().mainUser)
+                        result = RealmWrapper.realm.objects(UserModel.self)
+                        AppSetting.sharedInstance().mainUser = result.first
                         self.toHomeVC()
+                    }else{
+                        self.indicator.stopAnimating()
+                        self.moveLogoUp()
+                        self.showLoginView()
                     }
                 })
             }else{
@@ -66,7 +75,7 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
     
     
     func moveLogoUp(){
-        let endpoint = CGPoint(x: ivLogo.center.x, y: ivLogo.center.y/2.0)
+        let endpoint = CGPoint(x: ivLogo.center.x, y: self.view.frame.height / 4)
         
         let anim = POPSpringAnimation(propertyNamed: kPOPViewCenter)
         anim?.velocity = CGPoint(x: 0, y: -2.0)
@@ -83,7 +92,7 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
     }
     
     func moveLogoDown(){
-        let endpoint = CGPoint(x: ivLogo.center.x, y: ivLogo.center.y*2.0)
+        let endpoint = CGPoint(x: ivLogo.center.x, y: self.view.frame.height / 2)
         
         let anim = POPSpringAnimation(propertyNamed: kPOPViewCenter)
         anim?.velocity = CGPoint(x: 0, y: 2.0)
@@ -102,6 +111,8 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
     func showLoginView(){
         if loginView == nil {
             loginView  = LoginUIView()
+            loginView.btnfb.setImage(GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.facebookIcon(withSize: 24.0)).changeTint(color: UIColor.white), for: .normal)
+            loginView.btngg.setImage(GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.googleIcon(withSize: 24.0)).changeTint(color: UIColor.white), for: .normal)
             loginView.btnfb.addTarget(self, action: #selector(EntranceViewController.pressBtnFb), for: .touchUpInside)
             loginView.btngg.addTarget(self, action: #selector(EntranceViewController.pressBtnGg), for: .touchUpInside)
             loginView.btnEmail.addTarget(self, action: #selector(EntranceViewController.pressBtnEmail), for: .touchUpInside)
@@ -151,8 +162,17 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
         drawercontroller.shadowRadius = 2.0
         drawercontroller.shouldStretchDrawer = true
         drawercontroller.shadowOpacity = 0.5
-        self.dismiss(animated: false, completion: nil)
-        self.present(drawercontroller, animated: true, completion: nil)
+        
+
+        self.present(drawercontroller, animated: true, completion: {
+            self.indicator.stopAnimating()
+            self.moveLogoUp()
+            self.showLoginView()
+        })
+
+        
+      
+        
     }
     
     func pressBtnFb(){
@@ -170,11 +190,13 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
                 self.indicator.startAnimating()
                 self.hideLoginView()
                 self.moveLogoDown()
-                RequestService.POST_login(endpoint: RequestService.POST_LOGIN_FB, token: accessToken.authenticationToken, complete: {
+                RequestService.GET_login(endpoint: RequestService.GET_LOGIN_FB, token: accessToken.authenticationToken, complete: {
                     data -> Void in
                     let response = data as! [String : Any]
                     if DataService.assignUser(response: response, vc: self){
                         RealmWrapper.save(obj: AppSetting.sharedInstance().mainUser)
+                        let result = RealmWrapper.realm.objects(UserModel.self)
+                        AppSetting.sharedInstance().mainUser = result.first
                         self.toHomeVC()
                     }
                 })
@@ -184,6 +206,7 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
     
     func pressBtnEmail(){
         let loginnavvc  = AppStoryBoard.Login.instance.instantiateViewController(withIdentifier: VCIdentifiers.LoginNavVC.rawValue) as! LoginNavViewController
+        loginnavvc.caller = self
         let emailInputVC =  loginnavvc.viewControllers.first as! OneTextFieldViewController
         
         //Define the chain
@@ -196,6 +219,8 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
             (previousData, inputData) -> Bool in
             return GlobalUtils.checkEmail(checkStr: inputData as! String)
         }
+        
+        // Outter VC : Email
         emailInputVC.continueNextVC = {
             (previousData1, nav1) -> Void in
             let passwordInputVC = AppStoryBoard.Login.instance.instantiateViewController(withIdentifier: VCIdentifiers.OneTextInputViewController.rawValue) as! OneTextFieldViewController
@@ -210,33 +235,65 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
                 
             }
             passwordInputVC.strPlaceholder = "password".localize()
-            nav1.pushViewController(passwordInputVC, animated: true)
+            
+            // Outer VC 1 : Password
             passwordInputVC.continueNextVC = {
                 (previousData2, nav2) -> Void in
-                let confirmPasswordVC = AppStoryBoard.Login.instance.instantiateViewController(withIdentifier: VCIdentifiers.OneTextInputViewController.rawValue) as! OneTextFieldViewController
-                confirmPasswordVC.previousData = previousData2
-                confirmPasswordVC.isSecured = true
-                confirmPasswordVC.strDesc = "passwordConfDesc".localize()
-                confirmPasswordVC.strTitle = "confirmPass".localize()
-                confirmPasswordVC.strPlaceholder = "confirmPass".localize()
-                confirmPasswordVC.continueCondition = {
-                    (previousDatacond2, inputdata2) -> Bool in
-                    return (inputdata2 as! String).compare((previousDatacond2 as! [String: String])[UserModel.PASSWORD]!) == ComparisonResult.orderedSame
-                }
-                confirmPasswordVC.continueNextVC = {
-                    (previousData3, nav3) -> Void in
-                    let basicinfoVC = AppStoryBoard.Login.instance.instantiateViewController(withIdentifier: VCIdentifiers.BasicInfoVc.rawValue) as! BasicInfoViewController
-                    basicinfoVC.data = previousData3
-                    nav3.pushViewController(basicinfoVC, animated: true)
-                }
-                nav2.pushViewController(confirmPasswordVC, animated: true)
+                
+                //Check email to decide next step: EXIST ? LOGIN : Confirmpassword
+                nav2.view.startLoading(loadingView: GlobalUtils.getNVIndicatorView(color: Style.colorPrimary, type: .ballPulse), logo: #imageLiteral(resourceName: "logo"), tag: nil)
+                RequestService.GET_check_email(email: previousData2["email"] as! String, complete: {
+                    data -> Void in
+                    let resp = data as! [String:Any]
+                    if resp["statuskey"] as! Bool {
+                        if resp["exist"] as! Bool {
+                            RequestService.POST_loginWithEmail(email: previousData2["email"] as! String, password: previousData2["password"] as! String, complete: {
+                                datalogin -> Void in
+                                print(datalogin)
+                                if DataService.assignUser(response: datalogin as! [String : Any], vc: self){
+                                    nav2.view.stopLoading(loadingViewTag: nil)
+                                    nav2.dismiss(animated: true, completion: {
+                                        RealmWrapper.save(obj: AppSetting.sharedInstance().mainUser)
+                                        let result = RealmWrapper.realm.objects(UserModel.self)
+                                        AppSetting.sharedInstance().mainUser = result.first
+                                        self.toHomeVC()
+                                    })
+                                }
+                            })
+                        }else{
+                            
+                            let confirmPasswordVC = AppStoryBoard.Login.instance.instantiateViewController(withIdentifier: VCIdentifiers.OneTextInputViewController.rawValue) as! OneTextFieldViewController
+                            confirmPasswordVC.previousData = previousData2
+                            confirmPasswordVC.isSecured = true
+                            confirmPasswordVC.strDesc = "passwordConfDesc".localize()
+                            confirmPasswordVC.strTitle = "confirmPass".localize()
+                            confirmPasswordVC.strPlaceholder = "confirmPass".localize()
+                            confirmPasswordVC.continueCondition = {
+                                (previousDatacond2, inputdata2) -> Bool in
+                                return (inputdata2 as! String).compare((previousDatacond2 as! [String: String])[UserModel.PASSWORD]!) == ComparisonResult.orderedSame
+                            }
+                            //Outer VC 2 : Confirm password
+                            confirmPasswordVC.continueNextVC = {
+                                (previousData3, nav3) -> Void in
+                                let basicinfoVC = AppStoryBoard.Login.instance.instantiateViewController(withIdentifier: VCIdentifiers.BasicInfoVc.rawValue) as! BasicInfoViewController
+                                basicinfoVC.data = previousData3
+                                nav3.pushViewController(basicinfoVC, animated: true)
+                            }
+                            nav2.view.stopLoading(loadingViewTag: nil)
+                            nav2.pushViewController(confirmPasswordVC, animated: true)
+                        }
+                    }
+                })
+                
+                
+                
             }
+            nav1.pushViewController(passwordInputVC, animated: true)
         }
         present(loginnavvc, animated: true, completion: nil)
     }
     
     func initIndicator(){
-        
         self.indicator = GlobalUtils.getNVIndicatorView(color: Style.colorWhite, type: .ballPulse)
         self.view.addSubview(self.indicator)
         self.indicator.autoPinEdge(.top, to: .bottom, of: self.ivLogo)
@@ -273,7 +330,7 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
             
-            let authCode = user.serverAuthCode
+            let authCode = user.authentication.idToken
             if authCode == nil {
                 notiTextview?.text = "Fail to get serverAuthCode"
                 showNotification()
@@ -282,14 +339,21 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
             self.indicator.startAnimating()
             self.hideLoginView()
             self.moveLogoDown()
-            RequestService.POST_login(endpoint: RequestService.POST_LOGIN_GMAIL, token: authCode!, complete: {
+            RequestService.GET_login(endpoint: RequestService.GET_LOGIN_GMAIL, token: authCode!, complete: {
                 data -> Void in
                 let response = data as! [String: Any]
-                if DataService.assignUser(response: response, vc: self){
+                print(response)
+                if (response["statuskey"] as! Bool) && DataService.assignUser(response: response, vc: self){
+                    RealmWrapper.save(obj: AppSetting.sharedInstance().mainUser)
+                    let result = RealmWrapper.realm.objects(UserModel.self)
+                    AppSetting.sharedInstance().mainUser = result.first
                     self.toHomeVC()
                 }else {
                     self.notiTextview?.text = "Fail to login"
                     self.showNotification()
+                    self.indicator.startAnimating()
+                    self.hideLoginView()
+                    self.moveLogoDown()
                 }
             })
             print("auth login google \(authCode)")
@@ -310,5 +374,23 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
                 dismissViewController viewController: UIViewController!) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    override func callback(_ code: Int?, _ succ: Bool?, _ data: Any) {
+        let codesure = code!
+        switch codesure {
+        case EventConst.REGISTER_SUCCESS:
+            print(data)
+            RealmWrapper.save(obj: AppSetting.sharedInstance().mainUser)
+            let result = RealmWrapper.realm.objects(UserModel.self)
+            AppSetting.sharedInstance().mainUser = result.first
+            self.toHomeVC()
+            break
+        default:
+            break
+        }
+    }
+    
+    
+    
 }
 

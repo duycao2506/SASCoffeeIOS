@@ -9,6 +9,9 @@
 import FontAwesomeKit
 import DrawerController
 import UIKit
+import Firebase
+import GoogleSignIn
+
 
 
 
@@ -18,12 +21,14 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
     var menuitems : [[Any]]!
     var vcArray : [KasperViewController] = [KasperViewController]()
     
+    var selectedPath : IndexPath? = nil
+    
     @IBOutlet weak var tbView : UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         menuitems = [
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.homeIcon(withSize: 48.0)), "Home".localize()],
-            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.starIcon(withSize: 48.0)), "Promotion".localize()],
+            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.starIcon(withSize: 48.0)), "Event(s)".localize()],
             [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.mapMarkerIcon(withSize: 48.0)),"SAS Coffee Towns".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.translateIcon(withSize: 48.0)), "Translator".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.bookIcon(withSize: 48.0)),"Study with E4U".localize()],
@@ -61,13 +66,38 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.row < vcArray.count {
+            self.selectedPath = indexPath
+        }
+        return indexPath
+    }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row < vcArray.count {
             let centernav = self.evo_drawerController?.centerViewController as! HomeNavViewController
             let chosenVc = vcArray[indexPath.row]
-            chosenVc.navigationItem.title = menuitems[indexPath.row][1] as! String
-            print(chosenVc.navigationItem.title)
+            chosenVc.navigationItem.title = menuitems[indexPath.row][1] as? String
             centernav.setViewControllers([chosenVc], animated: true)
+        }else{
+            let alert = UIAlertController(title: "Hmm".localize(), message: "Are you sure you want to sign out?", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive, handler: {
+                action -> Void in
+                GIDSignIn.sharedInstance().signOut()
+                RealmWrapper.remove(obj: AppSetting.sharedInstance().mainUser)
+                self.evo_drawerController?.dismiss(animated: true, completion: nil)
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            alert.addAction(UIAlertAction.init(title: "Cancel".localize(), style: UIAlertActionStyle.cancel, handler: {
+                action -> Void in
+                self.tbView.selectRow(at: self.selectedPath, animated: false, scrollPosition: .none)
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            
         }
         self.evo_drawerController?.toggleLeftDrawerSide(animated: true, completion: nil)
         
@@ -90,5 +120,8 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
 
 }

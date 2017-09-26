@@ -30,18 +30,18 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_study" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-Xa-1yq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcQ-db-PaH">
+                            <visualEffectView opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcQ-db-PaH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aOw-Yf-Ine">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <color key="backgroundColor" red="0.0" green="0.72549019609999998" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="light"/>
                             </visualEffectView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="dUX-Mb-Aye">
-                                <rect key="frame" x="129.5" y="266" width="115" height="134"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="133.5" y="266" width="107" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYa-P7-sTg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
@@ -90,7 +90,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ivLogo" destination="dUX-Mb-Aye" id="33k-mv-hEk"/>
+                        <outlet property="ivLogo" destination="dUX-Mb-Aye" id="pJh-Jg-oEO"/>
                         <outlet property="notiTextview" destination="8PG-3j-N5b" id="fTP-3q-EoR"/>
                         <outlet property="notiViewHeightConstraint" destination="j0Z-Pq-G4d" id="Jcp-91-S9f"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="TK7-bP-2Dr"/>
@@ -363,18 +363,39 @@
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqz-4t-s3u">
+                                <rect key="frame" x="0.0" y="64" width="375" height="0.0"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your notifcation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hi-da-bkL">
+                                        <rect key="frame" x="16" y="-10.5" width="343" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.87450980389999999" green="0.2901960784" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="0hi-da-bkL" firstAttribute="centerY" secondItem="xqz-4t-s3u" secondAttribute="centerY" id="NAB-Xn-X39"/>
+                                    <constraint firstAttribute="height" id="cZJ-Sg-j6k"/>
+                                    <constraint firstItem="0hi-da-bkL" firstAttribute="leading" secondItem="xqz-4t-s3u" secondAttribute="leading" constant="16" id="u5m-JH-GMl"/>
+                                    <constraint firstAttribute="trailing" secondItem="0hi-da-bkL" secondAttribute="trailing" constant="16" id="vEF-6c-brb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="FJR-vj-elR" secondAttribute="trailing" constant="8" id="10J-Xe-82c"/>
                             <constraint firstItem="FJR-vj-elR" firstAttribute="leading" secondItem="cep-Bv-NNY" secondAttribute="leadingMargin" constant="8" id="2xa-5U-qnd"/>
+                            <constraint firstItem="FJR-vj-elR" firstAttribute="top" secondItem="xqz-4t-s3u" secondAttribute="bottom" constant="16" id="B9b-Qe-fea"/>
                             <constraint firstItem="2je-Bi-qCl" firstAttribute="top" secondItem="FJR-vj-elR" secondAttribute="bottom" constant="16" id="CJm-gU-x8s"/>
+                            <constraint firstItem="xqz-4t-s3u" firstAttribute="leading" secondItem="cep-Bv-NNY" secondAttribute="leading" id="Ouu-ds-ECd"/>
                             <constraint firstItem="52y-Hm-we1" firstAttribute="top" secondItem="2je-Bi-qCl" secondAttribute="bottom" constant="8" id="Svx-bq-aeg"/>
                             <constraint firstItem="2je-Bi-qCl" firstAttribute="leading" secondItem="cep-Bv-NNY" secondAttribute="leadingMargin" constant="8" id="XcR-O8-xFZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="52y-Hm-we1" secondAttribute="trailing" constant="8" id="Yem-Ue-kRg"/>
-                            <constraint firstItem="FJR-vj-elR" firstAttribute="top" secondItem="vcD-dU-RQj" secondAttribute="bottom" constant="16" id="aWM-Zf-la8"/>
                             <constraint firstItem="52y-Hm-we1" firstAttribute="leading" secondItem="cep-Bv-NNY" secondAttribute="leadingMargin" constant="8" id="fl9-5W-1pl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2je-Bi-qCl" secondAttribute="trailing" constant="8" id="gXY-Wc-nDj"/>
+                            <constraint firstItem="xqz-4t-s3u" firstAttribute="top" secondItem="vcD-dU-RQj" secondAttribute="bottom" id="mDK-ye-wkb"/>
+                            <constraint firstAttribute="trailing" secondItem="xqz-4t-s3u" secondAttribute="trailing" id="xct-5F-YnY"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -394,6 +415,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="lbloptionaDesc" destination="FJR-vj-elR" id="BsZ-cw-Jr8"/>
+                        <outlet property="notiTextview" destination="0hi-da-bkL" id="WHK-XH-dhH"/>
+                        <outlet property="notiViewHeightConstraint" destination="cZJ-Sg-j6k" id="Gwg-W4-ztN"/>
                         <outlet property="txtAddress" destination="52y-Hm-we1" id="Qks-Dt-BxJ"/>
                         <outlet property="txtBirthday" destination="2je-Bi-qCl" id="NA8-QK-cnN"/>
                     </connections>
@@ -404,7 +427,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background_study" width="360" height="639"/>
+        <image name="background_study" width="180" height="320"/>
         <image name="cm_arrow_back_white" width="24" height="24"/>
         <image name="cm_check_white" width="24" height="24"/>
         <image name="logo" width="115" height="134"/>

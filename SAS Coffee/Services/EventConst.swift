@@ -11,4 +11,5 @@ import UIKit
 class EventConst {
     static let PROMO_DELETE : Int = 1000
     static let PLAY_VIDEO : Int = 1001
+    static let REGISTER_SUCCESS : Int = 1002
 }

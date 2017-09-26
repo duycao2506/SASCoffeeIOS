@@ -16,6 +16,10 @@ extension UIView {
     var BLURVIEW_TAG : Int {
         return 101
     }
+    
+    var NOTICE_VIEW_TAG : Int {
+        return 201
+    }
 
     /** Loads instance from nib with the same name. */
     func loadNib() -> UIView {
@@ -50,5 +54,48 @@ extension UIView {
     
     func stopLoading(loadingViewTag : Int?){
         self.viewWithTag( loadingViewTag != nil ? loadingViewTag! : BLURVIEW_TAG)?.removeFromSuperview()
+    }
+    
+    func notice(icon: UIImage?, message: String!){
+        let backgroundview = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
+        backgroundview.backgroundColor = UIColor.white
+        self.addSubview(backgroundview)
+        backgroundview.autoPinEdgesToSuperviewEdges()
+        let viewholder = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 96.0, height: 192.0))
+        backgroundview.addSubview(viewholder)
+        backgroundview.tag = NOTICE_VIEW_TAG
+        viewholder.autoSetDimension(.width, toSize: self.frame.width/3)
+        viewholder.autoCenterInSuperview()
+        let imagev : UIImageView!
+        let messagelbl = UILabel.init(frame: CGRect.init(x: 0.0, y: 0.0, width: 96.0, height: 96.0))
+        messagelbl.text = message
+        viewholder.addSubview(messagelbl)
+        if let ic = icon {
+            imagev =  UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: 96.0, height: 96.0))
+            imagev.image = icon?.changeTint(color: Style.colorWhiteHard)
+            viewholder.addSubview(imagev)
+            imagev.contentMode = .scaleToFill
+            imagev.autoSetDimension(.height, toSize: self.frame.width/3.0)
+            imagev.autoPinEdge(toSuperviewEdge: .top)
+            imagev.autoPinEdge(toSuperviewEdge: .left)
+            imagev.autoPinEdge(toSuperviewEdge: .right)
+            messagelbl.autoPinEdge(.top, to: .bottom, of: imagev, withOffset: 16.0)
+        }else{
+            messagelbl.autoPinEdge(toSuperviewEdge: .top)
+        }
+        messagelbl.textColor = UIColor.lightGray
+        messagelbl.numberOfLines = 0
+        messagelbl.autoPinEdge(toSuperviewEdge: .bottom)
+        messagelbl.center.x = self.frame.width/2.0
+        messagelbl.textAlignment = .center
+        messagelbl.autoSetDimension(.width, toSize: 128.0)
+        messagelbl.autoPinEdge(toSuperviewEdge: .left)
+        messagelbl.autoPinEdge(toSuperviewEdge: .right)
+        
+        
+    }
+    
+    func unnotice(){
+        self.viewWithTag(self.NOTICE_VIEW_TAG)?.removeFromSuperview()
     }
 }

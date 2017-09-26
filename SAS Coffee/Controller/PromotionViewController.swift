@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FontAwesomeKit
 
 class PromotionViewController: KasperViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -37,8 +38,18 @@ class PromotionViewController: KasperViewController, UITableViewDataSource, UITa
             if succ {
                 let response = resp["promoList"] as! [[String:Any]]
                 self.promotionData = DataService.parsePromotionList(response: response)
-                print(self.promotionData)
+//                let test = PromotionModel.init(id: 2, name: "21rwqrwq")
+//                test.descript = "<p>Simple Image Insert</p><img src = \"https://www.tutorialspoint.com/html/images/test.png\" alt = \"Test Image\" />"
+//                test.expireDate = Date.init()
+//                test.discount = 20
+//                
+//                self.promotionData.append(test)
                 self.tbView.reloadData()
+                if self.promotionData == nil || self.promotionData.count == 0 {
+                    self.view.notice(icon: GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.moodBadIcon(withSize: 48.0)), message: "There is nothing here, so sorry".localize())
+                }else{
+                    self.view.unnotice()
+                }
             }else{
                 self.notiTextview?.text = "Fail to fetch the list of promotions".localize()
                 self.showNotification()
@@ -69,7 +80,7 @@ class PromotionViewController: KasperViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let promo = self.promotionData[indexPath.row]
         if (promo.expireDate?.isBefore(date: Date.init(), granularity: Calendar.Component.day))! {
-            notiTextview?.text = "The promotion has been expired already".localize()
+            notiTextview?.text = "The event has been expired already".localize()
             self.showNotification()
             DispatchQueue.global().async {
                 sleep(2)
@@ -118,7 +129,7 @@ class PromotionViewController: KasperViewController, UITableViewDataSource, UITa
                     
                 }else{
                     self.tbView.spr_beginRefreshing()
-                    self.notiTextview?.text = "Fail to delete promotion".localize()
+                    self.notiTextview?.text = "Fail to delete the expired event".localize()
                     self.showNotification()
                     DispatchQueue.global().async {
                         sleep(2)

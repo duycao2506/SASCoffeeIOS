@@ -16,6 +16,7 @@ class DataService: NSObject {
         if succ {
             let basicuser = response["data"] as! [String: Any]
             let token = response["token"] as! String
+            AppSetting.sharedInstance().mainUser = UserModel.init()
             AppSetting.sharedInstance().mainUser.mapping(map: Map.init(mappingType: .fromJSON, JSON: basicuser ))
             AppSetting.sharedInstance().mainUser.token = token
             return true

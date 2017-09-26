@@ -2,29 +2,39 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>TRACKING_ID</key>
-	<string>UA-105275468-1</string>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>857542695816-5s2uqif28482e052rdojrl3plfeeis6n.apps.googleusercontent.com</string>
+	<string>616629690165-s6t1q9i5n4a4t0oo1cc54bgh6n9pob5b.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.857542695816-5s2uqif28482e052rdojrl3plfeeis6n</string>
+	<string>com.googleusercontent.apps.616629690165-s6t1q9i5n4a4t0oo1cc54bgh6n9pob5b</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDdtT4e4vyC5cY78vh7B9jt8b1Rm1hLUb8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>616629690165</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.kasper.personal.SAS-Coffee</string>
 	<key>PROJECT_ID</key>
-	<string>sas-coffee</string>
+	<string>english4u-coffee</string>
+	<key>STORAGE_BUCKET</key>
+	<string>english4u-coffee.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
-	<key>IS_ANALYTICS_ENABLED</key>
 	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
 	<false/>
 	<key>IS_GCM_ENABLED</key>
-	<false/>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:857542695816:ios:e9e0a28d883fcabf</string>
+	<string>1:616629690165:ios:e9e0a28d883fcabf</string>
+	<key>DATABASE_URL</key>
+	<string>https://english4u-coffee.firebaseio.com</string>
 </dict>
 </plist>

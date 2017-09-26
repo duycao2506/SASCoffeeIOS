@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class OptionalInfoViewController: KasperViewController {
 
@@ -16,7 +17,7 @@ class OptionalInfoViewController: KasperViewController {
     
     @IBOutlet weak var txtAddress: UITextField!
     
-    var data : [String : String]!
+    var data : [String : Any]!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,10 +53,33 @@ class OptionalInfoViewController: KasperViewController {
     
     @IBAction func finishRegister () {
         data[UserModel.ADDRESS] = txtAddress.text
-        data[UserModel.BIRTHDAY] = txtBirthday.text
-        dismiss(animated: true, completion: {
-            (self.navigationController as! LoginNavViewController).caller.callback(1, true, self.data)
+        var birthdate = Date.init()
+        if (txtBirthday.text?.isEmpty)! {
+            data[UserModel.BIRTHDAY] = birthdate.string(custom: "dd-MM-yyyy")
+        }else{
+            birthdate = (txtBirthday.text?.toDate("dd/MM/yyyy"))!
+            data[UserModel.BIRTHDAY] =  txtBirthday.text
+        }
+        
+        var newuser : UserModel = UserModel.init()
+        newuser.mapping(map: Map.init(mappingType: .fromJSON, JSON: self.data))
+        newuser.birthday = birthdate
+        
+        self.navigationController?.view.startLoading(loadingView: GlobalUtils.getNVIndicatorView(color: Style.colorPrimary, type: .ballPulse), logo: #imageLiteral(resourceName: "logo.png"), tag: nil)
+        print(newuser)
+        RequestService.POST_register(user: newuser, complete: {
+            data -> Void in
+            let resp = data as! [String : Any ]
+            print(resp)
+            if DataService.assignUser(response: resp, vc: self) {
+                self.dismiss(animated: true, completion: {
+                    (self.navigationController as! LoginNavViewController).caller.callback(EventConst.REGISTER_SUCCESS, true, self.data)
+                })
+            }
+            self.navigationController?.view.stopLoading(loadingViewTag: nil)
         })
+        
+        
     }
     
 

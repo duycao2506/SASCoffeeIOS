@@ -24,9 +24,9 @@ class OneTextFieldViewController: KasperViewController {
     var strPlaceholder : String!
     var dataKey : String?
     var strTitle : String!
-    var previousData : [String: String]!
+    var previousData : [String: Any]!
     var isSecured: Bool! = false
-    var continueNextVC : (([String : String], KasperNavViewController) -> ())!
+    var continueNextVC : (([String : Any], KasperNavViewController) -> ())!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default

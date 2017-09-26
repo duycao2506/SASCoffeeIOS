@@ -29,7 +29,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_nav" translatesAutoresizingMaskIntoConstraints="NO" id="RpD-Dq-Rom">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     </imageView>
-                                    <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWD-8O-CYy">
+                                    <visualEffectView opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWD-8O-CYy">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hMs-o1-vBd">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -91,7 +91,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background_nav" width="383" height="479"/>
+        <image name="background_nav" width="1024" height="682"/>
         <image name="logo" width="115" height="134"/>
     </resources>
 </document>

@@ -19,7 +19,7 @@ class EventTableViewCell: CardTableViewCell {
     */
     
     @IBOutlet weak var lbltitle: UILabel!
-    @IBOutlet weak var lblDescription: UILabel!
+    //@IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var lblDiscount: UILabel!
     @IBOutlet weak var lblDeadline: UILabel!
     @IBOutlet weak var btnDelete : UIButton!
@@ -47,7 +47,7 @@ class EventTableViewCell: CardTableViewCell {
     override func updateData(anyObj : Any){
         self.promotion = anyObj as! PromotionModel
         self.lbltitle.text = self.promotion.name
-        self.lblDescription.text = self.promotion.descript
+        //self.lblDescription.text = self.promotion.descript
         self.lblDiscount.text = self.promotion.discount.description + "%"
     
         if (self.promotion.expireDate?.isAfter(date: Date(), granularity: Calendar.Component.day))! {

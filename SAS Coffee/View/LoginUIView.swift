@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FontAwesomeKit
 
 @IBDesignable
 class LoginUIView: NibView {
@@ -25,10 +26,6 @@ class LoginUIView: NibView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        btngg.setImage(GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.googleIcon(withSize: 48.0)).changeTint(color: UIColor.white), for: .normal)
     }
-    
-    
-    
-    
-    
 }

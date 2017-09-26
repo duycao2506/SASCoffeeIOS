@@ -9,6 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 import AVFoundation
+import FontAwesomeKit
 
 class TranslationViewController: KasperViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -51,6 +52,7 @@ class TranslationViewController: KasperViewController, UITableViewDelegate, UITa
         print("hello")
         self.btnTranslate.isEnabled = false
         self.btnTranslate.normalBackground = UIColor.gray
+        self.viewHolderTbView.unnotice()
         self.viewHolderTbView.startLoading(loadingView: GlobalUtils.getNVIndicatorView(color: Style.colorPrimary, type: .ballPulse), logo: #imageLiteral(resourceName: "logo"), tag: nil)
         self.txtTranslate.resignFirstResponder()
         RequestService.POST_translate(input: txtTranslate.text!, isToEng: self.toEng, complete: {
@@ -75,6 +77,7 @@ class TranslationViewController: KasperViewController, UITableViewDelegate, UITa
                 self.setupView()
             })
             if self.toEng {
+                self.viewHolderTbView.notice(icon: GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.moodBadIcon(withSize: 48.0)), message: "There is no result for this word".localize())
                 self.dicts = [DictionaryModel].init()
                 self.tbViewTr.reloadData()
                 self.btnTranslate.backgroundColor = Style.colorSecondary
@@ -82,15 +85,20 @@ class TranslationViewController: KasperViewController, UITableViewDelegate, UITa
                 self.btnTranslate.isEnabled = true
                 return
             }
-            RequestService.GET_word_fam(input: self.txtTranslate.text!, complete: {
+            RequestService.GET_word_fam(input: self.txtTranslate.text!.trimmed(), complete: {
                 data -> Void in
-                let resp = data as! [String : Any]
-                if resp["status"] as! Int == 200 {
-                    let responseArray = resp["results"]
-                    self.dicts = DataService.parseDictionary(resp: responseArray as! [[String : Any]])
-                    print(self.dicts)
-                    
-                    self.tbViewTr.reloadData()
+                if let response = data {
+                    let resp = response as! [String : Any]
+                    if resp["status"] as! Int == 200 {
+                        let responseArray = resp["results"]
+                        self.dicts = DataService.parseDictionary(resp: responseArray as! [[String : Any]])
+                        if self.dicts.count == 0 {
+                            self.viewHolderTbView.notice(icon: GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.moodBadIcon(withSize: 48.0)), message: "There is no result for this word".localize())
+                        }
+                        self.tbViewTr.reloadData()
+                    }
+                }else{
+                    self.viewHolderTbView.notice(icon: GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.moodBadIcon(withSize: 48.0)), message: "There is no result for this word".localize())
                 }
                 self.btnTranslate.backgroundColor = Style.colorSecondary
                 self.viewHolderTbView.stopLoading(loadingViewTag: nil)
@@ -113,6 +121,7 @@ class TranslationViewController: KasperViewController, UITableViewDelegate, UITa
         super.viewDidLoad()
         self.tbViewTr.estimatedRowHeight = 250
         self.tbViewTr.rowHeight = UITableViewAutomaticDimension
+        self.viewHolderTbView.notice(icon: GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.moodIcon(withSize: 48.0)), message: "You have not searched for anything!".localize())
         setupView()
         // Do any additional setup after loading the view.
     }

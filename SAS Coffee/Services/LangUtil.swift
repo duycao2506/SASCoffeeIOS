@@ -34,7 +34,16 @@ class LangUtil {
             "password":"Password",
             "passwordConfDesc":"You have not registered yet. To ensure that there is no mistake in the password you have typed, please input your password one more time",
             "confirmPass":"Confirm your password",
-            "times" : "times"
+            "times" : "times",
+            "optional_info_desc":"These information will let us understand you better, you can skip this step",
+            "your_birthday":"The date you were born",
+            "your_address":"Where you live",
+            "optional_info_title":"Optional Information",
+            "basic_info_title":"Basic information",
+            "basic_info_desc":"These will enhance your account security and let us contact with you more easily",
+            "required_fields":"All fields are required",
+            "what your name is":"What your name is",
+            "what your phone is":"What your phone is",
         ]
     ] as [LangCode : [String : String]]
     

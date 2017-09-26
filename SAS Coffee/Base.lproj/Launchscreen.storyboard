@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,7 +25,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_study" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-Xa-1yq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcQ-db-PaH">
+                            <visualEffectView opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcQ-db-PaH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aOw-Yf-Ine">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -33,6 +34,9 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="VAu-UN-P87">
+                                <rect key="frame" x="134" y="266" width="107" height="134"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -40,18 +44,23 @@
                             <constraint firstItem="UKh-Xa-1yq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2mW-AP-FcK"/>
                             <constraint firstItem="UKh-Xa-1yq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="MHq-2c-Hc1"/>
                             <constraint firstItem="rcQ-db-PaH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Wgb-qe-pup"/>
+                            <constraint firstItem="VAu-UN-P87" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YM8-Z7-k8Z"/>
+                            <constraint firstItem="VAu-UN-P87" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="2:7" id="YMQ-KS-U3y"/>
                             <constraint firstItem="rcQ-db-PaH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bkJ-6R-oMW"/>
                             <constraint firstItem="UKh-Xa-1yq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hAc-z5-eBL"/>
                             <constraint firstItem="UKh-Xa-1yq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oTI-TM-2VL"/>
+                            <constraint firstItem="VAu-UN-P87" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s6I-A6-YCP"/>
                             <constraint firstItem="rcQ-db-PaH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="tNY-9g-rpL"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="137.18140929535232"/>
         </scene>
     </scenes>
     <resources>
-        <image name="background_study" width="360" height="639"/>
+        <image name="background_study" width="180" height="320"/>
+        <image name="logo" width="115" height="134"/>
     </resources>
 </document>

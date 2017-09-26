@@ -51,5 +51,9 @@ class HomeNavViewController: KasperNavViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
 
 }

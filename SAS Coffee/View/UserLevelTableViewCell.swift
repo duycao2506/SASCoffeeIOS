@@ -28,6 +28,7 @@ class UserLevelTableViewCell: SuperTableViewCell {
         
         ivcup4.image = ivcup1.image?.changeTint(color: Style.colorPrimaryLight)
         
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,7 +38,8 @@ class UserLevelTableViewCell: SuperTableViewCell {
     }
     
     override func updateData(number: Int, str: String, obj: SuperModel) {
-        
+        let user = obj as! UserModel
+        pvPoint.progress = Float(user.checkIntime)/100.0 
     }
 
 }

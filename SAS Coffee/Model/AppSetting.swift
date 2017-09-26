@@ -10,9 +10,9 @@ import UIKit
 
 class AppSetting: NSObject {
     private static var appSetting : AppSetting!
-    let GG_SERVER_CLIENT_ID = "857542695816-ieqbbqscv4uittao58doqo9kvptnetgs.apps.googleusercontent.com"
-    let GG_IOS_CLIENT_ID = "857542695816-5s2uqif28482e052rdojrl3plfeeis6n.apps.googleusercontent.com"
-    let GG_API_MAP_KEY = "AIzaSyB4Fzyc870PX12-flZ5AwPgEB1CknvZAZI"
+    let GG_SERVER_CLIENT_ID = "616629690165-05bgilah95mcjt7au75co8k8d4fe433f.apps.googleusercontent.com"
+    let GG_IOS_CLIENT_ID = "616629690165-s6t1q9i5n4a4t0oo1cc54bgh6n9pob5b.apps.googleusercontent.com"
+    let GG_API_MAP_KEY = "AIzaSyDdtT4e4vyC5cY78vh7B9jt8b1Rm1hLUb8"
     let DIC_API_KEY = "wkqpBLMbS0fG9INAwryUDAV1dmaJfTO9"
     
     var mainUser : UserModel!

@@ -8,6 +8,8 @@
 
 import UIKit
 import PureLayout
+import FBSDKLoginKit
+import FBSDKShareKit
 
 class CustomerCodeTableViewCell: CardTableViewCell {
 
@@ -15,17 +17,24 @@ class CustomerCodeTableViewCell: CardTableViewCell {
     @IBOutlet weak var lblCheckin : UILabel!
 
     
+    @IBOutlet weak var btnLike: FBSDKLikeButton!
+    @IBOutlet weak var btnShare: FBSDKShareButton!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
 
     override func updateData(number: Int, str: String, obj: SuperModel) {
+        btnLike.objectID = "https://www.facebook.com/CauLacBoTiengAnhSaiGonAmerican/"
+        let linkShareContent = FBSDKShareLinkContent.init()
+        linkShareContent.contentURL = URL.init(string: "https://www.facebook.com/CauLacBoTiengAnhSaiGonAmerican/")
+        btnShare.shareContent = linkShareContent
         let user = obj as! UserModel
         lblCode.text = user.userCode
         lblCheckin.text = "visit".localize() + " \(user.checkIntime.description) " + "times".localize()

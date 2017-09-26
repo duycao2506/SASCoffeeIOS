@@ -14,7 +14,7 @@ class BasicInfoViewController: KasperViewController {
     @IBOutlet weak var txtPhone: UITextField!
     @IBOutlet weak var lblDesc: UILabel!
     
-    var data : [String:String]!
+    var data : [String:Any]!
     
     override func viewDidLoad() {
         super.viewDidLoad()

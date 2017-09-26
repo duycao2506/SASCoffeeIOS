@@ -86,12 +86,19 @@ class UserModel: SuperModel {
         userCode       <- map[UserModel.USERCODE]
         avatar  <- map[UserModel.AVATAR]
         fbId  <- map[UserModel.FBID]
-        birthday    <- (map[UserModel.BIRTHDAY], DateTransform())
         checkIntime <- map[UserModel.CHECKIN]
         address <- map[UserModel.ADDRESS]
         password <- map[UserModel.PASSWORD]
         branchId <- map[UserModel.BRAID]
         userType <- map[UserModel.TYPE]
+        
+        if let bdstring = map.JSON[UserModel.BIRTHDAY] {
+            let formatter = DateFormatter.init()
+            formatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+            formatter.dateFormat = "MMM d,yyyy"
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+            self.birthday = formatter.date(from: bdstring as! String)
+        }
     }
     
     

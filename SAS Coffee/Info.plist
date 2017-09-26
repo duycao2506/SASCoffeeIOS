@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string></string>
+	<string>SAS Coffee</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -31,7 +31,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.857542695816-5s2uqif28482e052rdojrl3plfeeis6n</string>
+				<string>com.googleusercontent.apps.616629690165-s6t1q9i5n4a4t0oo1cc54bgh6n9pob5b</string>
 			</array>
 		</dict>
 	</array>

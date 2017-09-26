@@ -12,6 +12,20 @@ class AudioTopicsViewController: KasperViewController, UITableViewDataSource, UI
 
     
     var topics : [TopicModel] = [TopicModel].init()
+    let topicImages : [String: [String]] = [
+        "heal" : ["health", "hospital"],
+        "shop" : ["shop", "supermarket"],
+        "workplace" : ["work", "office"],
+        "job" : ["job", "interview"],
+        "daily" : ["daily", "routine", "life"],
+        "dating" : ["dating", "love"],
+        "note" : ["default", "note"],
+        "hotel" : ["hotel", "motel", "sleep"],
+        "eat" : ["restaurant", "eat", "meal", "eat"],
+        "drink" : ["drink", "coffee", "tea"],
+        "direction" : ["street", "sign", "traffic","direction"]
+    ]
+    
     @IBOutlet var tbView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +72,21 @@ class AudioTopicsViewController: KasperViewController, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tbView.dequeueReusableCell(withIdentifier: TableViewCellIdetifier.icontitledesccell)! as! IvLblDesTableViewCell
-        let topic = topics[indexPath.row] 
-        let iconstr = topic.name.lowercased().replacingOccurrences(of: " ", with: "_")
-        cell.ivicon.image = UIImage.init(named: iconstr)?.changeTint(color: Style.colorPrimary)
+        let topic = topics[indexPath.row]
+        var strImg : String = "note"
+        _ = topicImages.index(where: {
+            key, valArr -> Bool in
+            if valArr.index(where: {
+                valStri -> Bool in
+                let topicname = topics[indexPath.row].name
+                return topicname.lowercased().contains(valStri)
+            }) != nil {
+                strImg = key
+                return true
+            }
+            return false
+        })
+        cell.ivicon.image = UIImage.init(named: strImg)!
         cell.lblTitle.text = topic.name
         cell.lbldesc.text = topic.nameVi
         return cell

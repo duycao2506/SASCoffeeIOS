@@ -99,7 +99,7 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
     
     
     func refreshData(){
-        RequestService.POST_login(endpoint: RequestService.POST_LOGIN_AUTO, token: AppSetting.sharedInstance().mainUser.token.toBase64(), complete: {
+        RequestService.GET_login(endpoint: RequestService.GET_LOGIN_AUTO, token: AppSetting.sharedInstance().mainUser.token.toBase64(), complete: {
             data -> Void in
             DataService.assignUser(response: data as! [String : Any], vc: self)
             self.view.stopLoading(loadingViewTag: 1241)
@@ -127,6 +127,8 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
     /**
     * Table view func
     */
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

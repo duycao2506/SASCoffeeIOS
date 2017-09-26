@@ -28,9 +28,13 @@ class PromotionDetailViewController: KasperViewController {
         lblTitle.text = promotion.name
         lblDeadline.text = "Until".localize() + " " + (promotion.expireDate?.string(custom: "dd-MM-yyyy"))!
         lblDiscount.text = promotion.discount.description + "%"
-        tvDesc.text = promotion.descript
+        
+        let attstring : NSAttributedString =  try! NSAttributedString.init(data: promotion.descript.data(using: String.Encoding.unicode)!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+        tvDesc.attributedText = attstring
         checkJoin()
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -45,14 +49,14 @@ class PromotionDetailViewController: KasperViewController {
             print(res)
             if res["statuskey"] as! Bool {
                     let members = res["members"] as! [Any]
-                    if let index = members.index(where: {
-                        item -> Bool in
-                        if !(item is NSNull){
-                            let i = item as! [String : Any]
-                            return (i["id"] as! Int) == AppSetting.sharedInstance().mainUser.id
-                        }
-                        return false
-                    }){
+                if members.index(where: {
+                    item -> Bool in
+                    if !(item is NSNull){
+                        let i = item as! [String : Any]
+                        return (i["id"] as! Int) == AppSetting.sharedInstance().mainUser.id
+                    }
+                    return false
+                }) != nil{
                         self.btnJoin.normalBackground = UIColor.gray
                         self.btnJoin.isEnabled = false
                         self.btnJoin.setTitle("JOINED".localize(), for: .disabled)
