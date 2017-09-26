@@ -356,22 +356,22 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
                     self.moveLogoDown()
                 }
             })
-            print("auth login google \(authCode)")
+            print("auth login google \(String(describing: authCode))")
         }else{
             notiTextview?.text = "Fail"
             showNotification()
         }
     }
     
-    func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+    func signInWillDispatch(signIn: GIDSignIn!, error: Error!) {
         
     }
-    func signIn(signIn: GIDSignIn!,
-                presentViewController viewController: UIViewController!) {
+    func sign(_ signIn: GIDSignIn!,
+              present viewController: UIViewController!) {
         self.present(viewController, animated: true, completion: nil)
     }
-    func signIn(signIn: GIDSignIn!,
-                dismissViewController viewController: UIViewController!) {
+    func sign(_ signIn: GIDSignIn!,
+              dismiss viewController: UIViewController!) {
         self.dismiss(animated: true, completion: nil)
     }
     
