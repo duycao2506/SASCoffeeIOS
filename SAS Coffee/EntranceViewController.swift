@@ -363,14 +363,14 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
         }
     }
     
-    func signInWillDispatch(signIn: GIDSignIn!, error: Error!) {
+    private func signInWillDispatch(signIn: GIDSignIn!, error: Error!) {
         
     }
-    func sign(_ signIn: GIDSignIn!,
+    internal func sign(_ signIn: GIDSignIn!,
               present viewController: UIViewController!) {
         self.present(viewController, animated: true, completion: nil)
     }
-    func sign(_ signIn: GIDSignIn!,
+    internal func sign(_ signIn: GIDSignIn!,
               dismiss viewController: UIViewController!) {
         self.dismiss(animated: true, completion: nil)
     }

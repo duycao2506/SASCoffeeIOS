@@ -31,9 +31,9 @@ class CustomerCodeTableViewCell: CardTableViewCell {
     }
 
     override func updateData(number: Int, str: String, obj: SuperModel) {
-        btnLike.objectID = "https://www.facebook.com/CauLacBoTiengAnhSaiGonAmerican/"
+        btnLike.objectID = "https://www.facebook.com/english4ucoffeeclub/"
         let linkShareContent = FBSDKShareLinkContent.init()
-        linkShareContent.contentURL = URL.init(string: "https://www.facebook.com/CauLacBoTiengAnhSaiGonAmerican/")
+        linkShareContent.contentURL = URL.init(string: "https://www.facebook.com/english4ucoffeeclub/")
         btnShare.shareContent = linkShareContent
         let user = obj as! UserModel
         lblCode.text = user.userCode
