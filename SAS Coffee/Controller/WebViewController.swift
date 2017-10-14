@@ -48,7 +48,12 @@ class WebViewController: KasperViewController, WKUIDelegate, WKNavigationDelegat
             if let url = navigationAction.request.url,
                 let host = url.host, !host.hasPrefix("www.google.com"),
                 UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url)
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    // Fallback on earlier versions
+                    UIApplication.shared.openURL(url)
+                }
                 print(url)
                 print("Redirected to browser. No need to open it locally")
                 decisionHandler(.cancel)

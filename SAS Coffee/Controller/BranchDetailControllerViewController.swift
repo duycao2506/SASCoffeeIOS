@@ -42,11 +42,21 @@ class BranchDetailController: KasperViewController {
     
     
     @IBAction func press_btnCall(_ sender: Any) {
-        UIApplication.shared.open(URL.init(string: "telprompt://0909474232")!)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(URL.init(string: "telprompt://0909474232")!)
+        } else {
+            // Fallback on earlier versions
+            UIApplication.shared.openURL(URL.init(string: "telprompt://0909474232")!)
+        }
     }
     
     @IBAction func press_btnDirection(_ sender: Any) {
-        UIApplication.shared.open(URL.init(string: "https://www.google.com/maps/place/\(self.branch.latitude),\(self.branch.longitude)")!)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(URL.init(string: "https://www.google.com/maps/place/\(self.branch.latitude),\(self.branch.longitude)")!)
+        } else {
+            // Fallback on earlier versions
+            UIApplication.shared.openURL(URL.init(string: "https://www.google.com/maps/place/\(self.branch.latitude),\(self.branch.longitude)")!)
+        }
     }
     func toggleBottom (completeFunc :  ((Bool)->())?) {
         

@@ -60,7 +60,9 @@ extension UIView {
         let backgroundview = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
         backgroundview.backgroundColor = UIColor.white
         self.addSubview(backgroundview)
-        backgroundview.autoPinEdgesToSuperviewEdges()
+        backgroundview.autoConstrainAttribute(.height, to: .height, of: self)
+        backgroundview.autoConstrainAttribute(.width, to: .width, of: self)
+        backgroundview.autoCenterInSuperview()
         let viewholder = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 96.0, height: 192.0))
         backgroundview.addSubview(viewholder)
         backgroundview.tag = NOTICE_VIEW_TAG

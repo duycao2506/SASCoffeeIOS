@@ -32,7 +32,12 @@ class HomeNavViewController: KasperNavViewController {
     }
     
     func openFace(_ sender: Any){
-        UIApplication.shared.open(URL.init(string: "https://www.facebook.com/SaiGonAmericanEnglish/")!)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(URL.init(string: "https://www.facebook.com/SaiGonAmericanEnglish/")!)
+        } else {
+            // Fallback on earlier versions
+            UIApplication.shared.openURL(URL.init(string: "https://www.facebook.com/SaiGonAmericanEnglish/")!)
+        }
     }
     
     override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {

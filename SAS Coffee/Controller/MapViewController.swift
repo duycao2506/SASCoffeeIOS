@@ -106,7 +106,7 @@ class MapViewController: KasperViewController, GMSMapViewDelegate{
         let position = CLLocationCoordinate2D(latitude: branch.latitude, longitude: branch.longitude)
         let marker = GMSMarker(position: position)
         marker.title = branch.name
-        marker.icon = #imageLiteral(resourceName: "ic_map_marker")
+        marker.icon = #imageLiteral(resourceName: "ic_map_marker").changeTint(color: UIColor.red)
         marker.userData = branch
         marker.infoWindowAnchor = CGPoint.init(x: 0.5, y: 0)
         marker.snippet = branch.address

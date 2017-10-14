@@ -254,8 +254,6 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
                                     nav2.view.stopLoading(loadingViewTag: nil)
                                     nav2.dismiss(animated: true, completion: {
                                         RealmWrapper.save(obj: AppSetting.sharedInstance().mainUser)
-                                        let result = RealmWrapper.realm.objects(UserModel.self)
-                                        AppSetting.sharedInstance().mainUser = result.first
                                         self.toHomeVC()
                                     })
                                 }
@@ -345,8 +343,6 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
                 print(response)
                 if (response["statuskey"] as! Bool) && DataService.assignUser(response: response, vc: self){
                     RealmWrapper.save(obj: AppSetting.sharedInstance().mainUser)
-                    let result = RealmWrapper.realm.objects(UserModel.self)
-                    AppSetting.sharedInstance().mainUser = result.first
                     self.toHomeVC()
                 }else {
                     self.notiTextview?.text = "Fail to login"
@@ -381,8 +377,6 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
         case EventConst.REGISTER_SUCCESS:
             print(data)
             RealmWrapper.save(obj: AppSetting.sharedInstance().mainUser)
-            let result = RealmWrapper.realm.objects(UserModel.self)
-            AppSetting.sharedInstance().mainUser = result.first
             self.toHomeVC()
             break
         default:

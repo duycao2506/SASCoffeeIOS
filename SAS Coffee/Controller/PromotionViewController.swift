@@ -31,6 +31,7 @@ class PromotionViewController: KasperViewController, UITableViewDataSource, UITa
     }
 
     func refreshData(){
+        self.view.unnotice()
         RequestService.GET_promo_by(userId: AppSetting.sharedInstance().mainUser.id.description, complete: {
             data -> Void in
             let resp = data as! [String : Any]
@@ -46,7 +47,7 @@ class PromotionViewController: KasperViewController, UITableViewDataSource, UITa
 //                self.promotionData.append(test)
                 self.tbView.reloadData()
                 if self.promotionData == nil || self.promotionData.count == 0 {
-                    self.view.notice(icon: GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.moodBadIcon(withSize: 48.0)), message: "There is nothing here, so sorry".localize())
+                    self.tbView.notice(icon: GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.moodBadIcon(withSize: 48.0)), message: "There is nothing here, so sorry".localize())
                 }else{
                     self.view.unnotice()
                 }

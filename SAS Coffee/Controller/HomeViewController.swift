@@ -102,6 +102,7 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
         RequestService.GET_login(endpoint: RequestService.GET_LOGIN_AUTO, token: AppSetting.sharedInstance().mainUser.token.toBase64(), complete: {
             data -> Void in
             DataService.assignUser(response: data as! [String : Any], vc: self)
+            RealmWrapper.save(obj: AppSetting.sharedInstance().mainUser)
             self.view.stopLoading(loadingViewTag: 1241)
             self.tbview.spr_endRefreshing()
         })
