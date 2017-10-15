@@ -37,7 +37,7 @@ class CustomerCodeTableViewCell: CardTableViewCell {
         btnShare.shareContent = linkShareContent
         let user = obj as! UserModel
         lblCode.text = user.userCode
-        lblCheckin.text = "visit".localize() + (user.checkIntime.description) + "times".localize()
+        lblCheckin.text = "visit".localize() + " " + (user.checkIntime.description) + " " + "times".localize()
     }
     
 }
