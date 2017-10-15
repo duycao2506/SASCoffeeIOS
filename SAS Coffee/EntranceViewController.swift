@@ -179,7 +179,7 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
         print("FB")
         
         let loginManager = LoginManager.init()
-        loginManager.logIn( [.publicProfile], viewController: self) { loginResult in
+        loginManager.logIn( [.publicProfile, .custom("user_birthday")], viewController: self) { loginResult in
             switch loginResult {
             case .failed(let error):
                 print(error)
