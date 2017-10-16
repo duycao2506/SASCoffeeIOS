@@ -10,7 +10,7 @@
 		015F6BBA99B778A0D24F3CD3 /* Pods_SAS_CoffeeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93B730B8783F2AF972FD429 /* Pods_SAS_CoffeeUITests.framework */; };
 		1B32C3684D521CA05864D41A /* Pods_SAS_CoffeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C616FE1F6CA22ACD0D5BE8 /* Pods_SAS_CoffeeTests.framework */; };
 		842A7C101F59174100630509 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A7C0F1F59174100630509 /* UserModel.swift */; };
-		842DE60C1F71882700CA6E38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842DE60B1F71882700CA6E38 /* GoogleService-Info.plist */; };
+		8471C0CD1F949AEC001BA9CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8471C0CC1F949AEC001BA9CC /* GoogleService-Info.plist */; };
 		8475D6571F6A6C8E00768B5E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D6561F6A6C8E00768B5E /* DataService.swift */; };
 		8475D65B1F6AD39200768B5E /* PromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D65A1F6AD39200768B5E /* PromotionModel.swift */; };
 		8475D65D1F6C57F700768B5E /* PromotionJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D65C1F6C57F700768B5E /* PromotionJoinViewController.swift */; };
@@ -121,7 +121,7 @@
 		54B247FBE490E18C1EB4E5AA /* Pods-SAS Coffee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAS Coffee.release.xcconfig"; path = "Pods/Target Support Files/Pods-SAS Coffee/Pods-SAS Coffee.release.xcconfig"; sourceTree = "<group>"; };
 		550E001BCDB940D28E68466B /* Pods_SAS_Coffee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAS_Coffee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		842A7C0F1F59174100630509 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		842DE60B1F71882700CA6E38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8471C0CC1F949AEC001BA9CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8475D6561F6A6C8E00768B5E /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8475D65A1F6AD39200768B5E /* PromotionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
 		8475D65C1F6C57F700768B5E /* PromotionJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionJoinViewController.swift; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 		84BD2DA21F56ACB80044CC5E = {
 			isa = PBXGroup;
 			children = (
-				842DE60B1F71882700CA6E38 /* GoogleService-Info.plist */,
+				8471C0CC1F949AEC001BA9CC /* GoogleService-Info.plist */,
 				84BD2DAD1F56ACBC0044CC5E /* SAS Coffee */,
 				84BD2DC21F56ACC50044CC5E /* SAS CoffeeTests */,
 				84BD2DCD1F56ACC50044CC5E /* SAS CoffeeUITests */,
@@ -725,7 +725,7 @@
 				848F0E161F5AD30900B204F5 /* Assets.xcassets in Resources */,
 				84B8D1191F643C8100D40E2F /* IvLblDesTableViewCell.xib in Resources */,
 				84BD2DF21F56C9FE0044CC5E /* Home.storyboard in Resources */,
-				842DE60C1F71882700CA6E38 /* GoogleService-Info.plist in Resources */,
+				8471C0CD1F949AEC001BA9CC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

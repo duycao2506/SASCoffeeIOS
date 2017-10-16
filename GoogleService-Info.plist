@@ -7,9 +7,11 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>616629690165-s6t1q9i5n4a4t0oo1cc54bgh6n9pob5b.apps.googleusercontent.com</string>
+	<string>616629690165-id42ki5f5sj3rhu06jtvprnh9vq5ml2u.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.616629690165-s6t1q9i5n4a4t0oo1cc54bgh6n9pob5b</string>
+	<string>com.googleusercontent.apps.616629690165-id42ki5f5sj3rhu06jtvprnh9vq5ml2u</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>616629690165-hl571o490656lka3oj5cbu1vdls8h1g6.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDdtT4e4vyC5cY78vh7B9jt8b1Rm1hLUb8</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,23 +19,23 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.kasper.personal.SAS-Coffee</string>
+	<string>com.kasper.personal.EnglishForYouCoffee</string>
 	<key>PROJECT_ID</key>
 	<string>english4u-coffee</string>
 	<key>STORAGE_BUCKET</key>
 	<string>english4u-coffee.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:616629690165:ios:e9e0a28d883fcabf</string>
+	<string>1:616629690165:ios:8d808b30376058c1</string>
 	<key>DATABASE_URL</key>
 	<string>https://english4u-coffee.firebaseio.com</string>
 </dict>
