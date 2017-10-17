@@ -39,12 +39,6 @@ class PromotionViewController: KasperViewController, UITableViewDataSource, UITa
             if succ {
                 let response = resp["promoList"] as! [[String:Any]]
                 self.promotionData = DataService.parsePromotionList(response: response)
-//                let test = PromotionModel.init(id: 2, name: "21rwqrwq")
-//                test.descript = "<p>Simple Image Insert</p><img src = \"https://www.tutorialspoint.com/html/images/test.png\" alt = \"Test Image\" />"
-//                test.expireDate = Date.init()
-//                test.discount = 20
-//                
-//                self.promotionData.append(test)
                 self.tbView.reloadData()
                 if self.promotionData == nil || self.promotionData.count == 0 {
                     self.tbView.notice(icon: GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.moodBadIcon(withSize: 48.0)), message: "There is nothing here, so sorry".localize())

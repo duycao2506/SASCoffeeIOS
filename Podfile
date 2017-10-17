@@ -12,6 +12,8 @@ target 'SAS Coffee' do
   pod 'PureLayout'
   pod 'SwiftPullToRefresh'
   pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
   pod 'GoogleSignIn'
   pod 'RealmSwift'
   pod 'SwiftDate'

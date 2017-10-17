@@ -86,6 +86,7 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
                 action -> Void in
                 GIDSignIn.sharedInstance().signOut()
                 RealmWrapper.remove(obj: AppSetting.sharedInstance().mainUser)
+                Messaging.messaging().unsubscribe(fromTopic: "allUser")
                 self.evo_drawerController?.dismiss(animated: true, completion: nil)
                 alert.dismiss(animated: true, completion: nil)
             }))

@@ -25,11 +25,17 @@ class PromotionDetailViewController: KasperViewController {
         // Do any additional setup after loading the view.
         
         
+        
         lblTitle.text = promotion.name
         lblDeadline.text = "Until".localize() + " " + (promotion.expireDate?.string(custom: "dd-MM-yyyy"))!
         lblDiscount.text = promotion.discount.description + "%"
-        
-        let attstring : NSAttributedString =  try! NSAttributedString.init(data: promotion.descript.data(using: String.Encoding.unicode)!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+        var rawString = ""
+        if let promotionCor = promotion as? PromoEventModel {
+            rawString = promotionCor.fullDes
+        }else{
+            rawString = promotion.descript
+        }
+        let attstring : NSAttributedString =  try! NSAttributedString.init(data: rawString.data(using: String.Encoding.unicode)!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
         tvDesc.attributedText = attstring
         checkJoin()
     }

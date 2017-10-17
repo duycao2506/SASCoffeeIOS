@@ -32,19 +32,23 @@ extension UIView {
     
     //Require Purelayout and NVIndicatorView
     func startLoading(loadingView : NVActivityIndicatorView, logo : UIImage?, tag : Int?){
+        let holder : UIView = UIView.init(frame: self.frame)
         let blurview : UIVisualEffectView = UIVisualEffectView.init(frame : self.frame)
         blurview.effect = UIBlurEffect.init(style: .extraLight)
-        
-        self.addSubview(blurview)
-        blurview.autoConstrainAttribute(.height, to: .height, of: self)
-        blurview.autoConstrainAttribute(.width, to: .width, of: self)
+        self.addSubview(holder)
+        holder.autoConstrainAttribute(.height, to: .height, of: self)
+        holder.autoConstrainAttribute(.width, to: .width, of: self)
+        holder.autoCenterInSuperview()
+        holder.addSubview(blurview)
+        blurview.autoConstrainAttribute(.height, to: .height, of: holder)
+        blurview.autoConstrainAttribute(.width, to: .width, of: holder)
         blurview.autoCenterInSuperview()
-        blurview.tag = tag == nil ? BLURVIEW_TAG : tag!
+        holder.tag = tag == nil ? BLURVIEW_TAG : tag!
         self.bringSubview(toFront: blurview)
         let logoview = UIImageView.init(image: logo)
         loadingView.center.x = self.frame.width/2.0
-        blurview.addSubview(logoview)
-        blurview.addSubview(loadingView)
+        holder.addSubview(logoview)
+        holder.addSubview(loadingView)
         logoview.autoCenterInSuperview()
         
         loadingView.autoPinEdge(.top, to: .bottom, of: logoview)

@@ -11,6 +11,7 @@ import SwiftPullToRefresh
 import FontAwesomeKit
 import PopupDialog
 import DrawerController
+import Firebase
 
 
 class HomeViewController: KasperViewController, UITableViewDataSource, UITableViewDelegate {
@@ -87,14 +88,17 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
             }
         })
         
+        Messaging.messaging().subscribe(toTopic: "testTopic")
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
        
         
-        
     }
+    
     
     
     

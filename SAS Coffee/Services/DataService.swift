@@ -30,7 +30,12 @@ class DataService: NSObject {
     static func parsePromotionList(response : [[String:Any]]) -> [PromotionModel]{
         var promotions : [PromotionModel] = [PromotionModel]()
         for item in response {
-            let promotion = PromotionModel.init()
+            var promotion : PromotionModel!
+            if let eventkey = item[PromoEventModel.FULL_DESC] {
+                promotion = PromoEventModel.init()
+            }else{
+                promotion = PromoVisitModel.init()
+            }
             promotion.mapping(map: Map.init(mappingType: .fromJSON, JSON: item))
             promotions.append(promotion)
         }
@@ -75,5 +80,16 @@ class DataService: NSObject {
             videos.append(vid)
         }
         return videos
+    }
+    
+    static func findEventByIdInPromotionList(id : Int, promotelistRaw : [[String : Any]]) -> PromoEventModel? {
+        for item in promotelistRaw {
+            if let check = item[PromoEventModel.FULL_DESC], (item["id"] as! Int) == id{
+                let event = PromoEventModel.init()
+                event.mapping(map: Map.init(mappingType: .fromJSON, JSON: item))
+                return event
+            }
+        }
+        return nil
     }
 }

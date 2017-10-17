@@ -11,6 +11,7 @@
 		1B32C3684D521CA05864D41A /* Pods_SAS_CoffeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C616FE1F6CA22ACD0D5BE8 /* Pods_SAS_CoffeeTests.framework */; };
 		842A7C101F59174100630509 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A7C0F1F59174100630509 /* UserModel.swift */; };
 		8471C0CD1F949AEC001BA9CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8471C0CC1F949AEC001BA9CC /* GoogleService-Info.plist */; };
+		8471C0CF1F94A803001BA9CC /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8471C0CE1F94A803001BA9CC /* UserNotifications.framework */; };
 		8475D6571F6A6C8E00768B5E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D6561F6A6C8E00768B5E /* DataService.swift */; };
 		8475D65B1F6AD39200768B5E /* PromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D65A1F6AD39200768B5E /* PromotionModel.swift */; };
 		8475D65D1F6C57F700768B5E /* PromotionJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D65C1F6C57F700768B5E /* PromotionJoinViewController.swift */; };
@@ -96,6 +97,8 @@
 		84BEB2741F5ED66A00CCC549 /* BasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEB2731F5ED66A00CCC549 /* BasicInfoViewController.swift */; };
 		84BEB2761F5ED67800CCC549 /* OptionalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEB2751F5ED67800CCC549 /* OptionalInfoViewController.swift */; };
 		84E14BED1F6E7A3F00A29AAF /* VideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E14BEC1F6E7A3F00A29AAF /* VideoPlayerController.swift */; };
+		84E5C1C01F966FAB007A1933 /* PromoEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5C1BF1F966FAB007A1933 /* PromoEventModel.swift */; };
+		84E5C1C21F966FC1007A1933 /* PromoVisitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5C1C11F966FC1007A1933 /* PromoVisitModel.swift */; };
 		B3427F016424EFACF74EB8FE /* Pods_SAS_Coffee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550E001BCDB940D28E68466B /* Pods_SAS_Coffee.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +125,7 @@
 		550E001BCDB940D28E68466B /* Pods_SAS_Coffee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAS_Coffee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		842A7C0F1F59174100630509 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8471C0CC1F949AEC001BA9CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8471C0CE1F94A803001BA9CC /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		8475D6561F6A6C8E00768B5E /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8475D65A1F6AD39200768B5E /* PromotionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
 		8475D65C1F6C57F700768B5E /* PromotionJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionJoinViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 		84BEB2731F5ED66A00CCC549 /* BasicInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfoViewController.swift; sourceTree = "<group>"; };
 		84BEB2751F5ED67800CCC549 /* OptionalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalInfoViewController.swift; sourceTree = "<group>"; };
 		84E14BEC1F6E7A3F00A29AAF /* VideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
+		84E5C1BF1F966FAB007A1933 /* PromoEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoEventModel.swift; sourceTree = "<group>"; };
+		84E5C1C11F966FC1007A1933 /* PromoVisitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoVisitModel.swift; sourceTree = "<group>"; };
 		A93B730B8783F2AF972FD429 /* Pods_SAS_CoffeeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAS_CoffeeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C616FE1F6CA22ACD0D5BE8 /* Pods_SAS_CoffeeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAS_CoffeeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D6D90DA9A43F195BC30577 /* Pods-SAS CoffeeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAS CoffeeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SAS CoffeeTests/Pods-SAS CoffeeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8471C0CF1F94A803001BA9CC /* UserNotifications.framework in Frameworks */,
 				B3427F016424EFACF74EB8FE /* Pods_SAS_Coffee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +504,8 @@
 				8475D6621F6E553900768B5E /* VideoModel.swift */,
 				8475D6641F6E564500768B5E /* TopicModel.swift */,
 				8475D6661F6E565400768B5E /* SentenceModel.swift */,
+				84E5C1BF1F966FAB007A1933 /* PromoEventModel.swift */,
+				84E5C1C11F966FC1007A1933 /* PromoVisitModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -570,6 +579,7 @@
 		D807868A65AF5063502C4DFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8471C0CE1F94A803001BA9CC /* UserNotifications.framework */,
 				550E001BCDB940D28E68466B /* Pods_SAS_Coffee.framework */,
 				A9C616FE1F6CA22ACD0D5BE8 /* Pods_SAS_CoffeeTests.framework */,
 				A93B730B8783F2AF972FD429 /* Pods_SAS_CoffeeUITests.framework */,
@@ -658,6 +668,9 @@
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -769,6 +782,7 @@
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -798,6 +812,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -970,6 +985,7 @@
 				848F0E1C1F5AE3A700B204F5 /* SuperTableViewCell.swift in Sources */,
 				84B8D1331F66B05100D40E2F /* VideoListTableViewCell.swift in Sources */,
 				84B8D1211F64E5B200D40E2F /* EventTableViewCell.swift in Sources */,
+				84E5C1C21F966FC1007A1933 /* PromoVisitModel.swift in Sources */,
 				848F0DE41F59536300B204F5 /* KasperNavViewController.swift in Sources */,
 				84BD2DE41F56B7DB0044CC5E /* AppStoryBoard.swift in Sources */,
 				848F0DFA1F596C9600B204F5 /* LangUtil.swift in Sources */,
@@ -985,6 +1001,7 @@
 				848F0DF21F59647600B204F5 /* Style.swift in Sources */,
 				8475D65D1F6C57F700768B5E /* PromotionJoinViewController.swift in Sources */,
 				84BEB2761F5ED67800CCC549 /* OptionalInfoViewController.swift in Sources */,
+				84E5C1C01F966FAB007A1933 /* PromoEventModel.swift in Sources */,
 				848F0E261F5B274C00B204F5 /* LoginUIView.swift in Sources */,
 				84B8D1081F61414500D40E2F /* TranslationViewController.swift in Sources */,
 				8475D65F1F6CE0DA00768B5E /* BranchModel.swift in Sources */,

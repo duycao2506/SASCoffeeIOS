@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F6A48B11C4007CDEF2292C7A16E1EA1"
+               BlueprintIdentifier = "E43BF26C86172800943090B69217CFB0"
                BuildableName = "Pods_SAS_Coffee.framework"
                BlueprintName = "Pods-SAS Coffee"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F6A48B11C4007CDEF2292C7A16E1EA1"
+            BlueprintIdentifier = "E43BF26C86172800943090B69217CFB0"
             BuildableName = "Pods_SAS_Coffee.framework"
             BlueprintName = "Pods-SAS Coffee"
             ReferencedContainer = "container:Pods.xcodeproj">

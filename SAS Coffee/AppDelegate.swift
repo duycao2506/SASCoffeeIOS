@@ -13,9 +13,11 @@ import Firebase
 import GoogleSignIn
 import RealmSwift
 import NVActivityIndicatorView
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate
+{
 
     var window: UIWindow?
 
@@ -25,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         LangUtil.switchLang(code: LangCode.EN)
         configLoadingBlocker()
+        
+        
         
         GMSServices.provideAPIKey(AppSetting.sharedInstance().GG_API_MAP_KEY)
         GMSPlacesClient.provideAPIKey(AppSetting.sharedInstance().GG_API_MAP_KEY)
@@ -42,6 +46,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // potentially lengthy data migration
         })
         RealmWrapper.realm = try! Realm.init(configuration: RealmWrapper.config)
+        
+        
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.badge, .alert, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+        Messaging.messaging().delegate = self
+        Messaging.messaging().shouldEstablishDirectChannel = true
+        
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
         
         return true
     }
@@ -93,6 +119,70 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return GIDSignIn.sharedInstance().handle(url,
                                                  sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication.rawValue] as? String,
                                                  annotation: [:])
+    }
+    
+    //
+    // Firebase
+    //
+    
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+    }
+    
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+//        if #available(iOS 10.0, *) {
+//            //iOS 10 or above version
+//            let center = UNUserNotificationCenter.current()
+//            let content = UNMutableNotificationContent()
+//            content.title = "Late wake up call"
+//            content.body = "The early bird catches the worm, but the second mouse gets the cheese."
+//            content.categoryIdentifier = "alarm"
+//            content.userInfo = ["customData": "fizzbuzz"]
+//            content.sound = UNNotificationSound.default()
+//
+//            let day = Date.init()
+//            var dateComponents = Calendar.current.dateComponents([.hour, .minute], from: Calendar.current.date(byAdding: .second, value: 30, to: day)!)
+//            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+//
+//            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+//            center.add(request)
+//        } else {
+//            // ios 9
+//            let notification = UILocalNotification()
+//            notification.fireDate = NSDate(timeIntervalSinceNow: 5) as Date
+//            notification.alertBody = "Hey you! Yeah you! Swipe to unlock!"
+//            notification.alertAction = "be awesome!"
+//            notification.soundName = UILocalNotificationDefaultSoundName
+//            UIApplication.shared.scheduleLocalNotification(notification)
+//
+//            let notification1 = UILocalNotification()
+//            notification1.fireDate = NSDate(timeIntervalSinceNow: 15) as Date
+//            notification1.alertBody = "Hey you! Yeah you! Swipe to unlock!"
+//            notification1.alertAction = "be awesome!"
+//            notification1.soundName = UILocalNotificationDefaultSoundName
+//            UIApplication.shared.scheduleLocalNotification(notification1)
+//        }
+        
+        print(remoteMessage)
+        print("dsadasdsa")
+    }
+    
+    
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print(userInfo)
+        print("Hello")
+        NotificationCenter.default.post(Notification.init(name: .init(EventConst.REMOTE_NOTI), object: nil, userInfo: userInfo))
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
+   
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        print(userInfo)
+    }
+    
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
     }
     
     

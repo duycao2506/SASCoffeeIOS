@@ -31,7 +31,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.616629690165-s6t1q9i5n4a4t0oo1cc54bgh6n9pob5b</string>
+				<string>com.googleusercontent.apps.616629690165-id42ki5f5sj3rhu06jtvprnh9vq5ml2u</string>
 			</array>
 		</dict>
 	</array>
@@ -65,6 +65,10 @@
 		<string>Roboto-Bold.ttf</string>
 		<string>Roboto-Light.ttf</string>
 		<string>Roboto-Regular.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Launchscreen</string>
