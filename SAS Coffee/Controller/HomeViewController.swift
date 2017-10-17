@@ -88,7 +88,7 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
             }
         })
         
-        Messaging.messaging().subscribe(toTopic: "testTopic")
+        Messaging.messaging().subscribe(toTopic: "allUser")
         
         
     }
