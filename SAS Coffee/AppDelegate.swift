@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import Firebase
+import FirebaseMessaging
 import GoogleSignIn
 import RealmSwift
 import NVActivityIndicatorView
