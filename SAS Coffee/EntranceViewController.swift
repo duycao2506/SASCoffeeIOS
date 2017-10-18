@@ -35,7 +35,8 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
         
         
         // Do any additional setup after loading the view, typically from a nib.
-        
+        ivLogo.center.x = self.view.frame.width/2
+        ivLogo.center.y = self.view.frame.height/2
         self.maxheightnoti  = 56
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate =  self

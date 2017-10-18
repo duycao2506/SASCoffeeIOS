@@ -10,6 +10,7 @@ import FontAwesomeKit
 import DrawerController
 import UIKit
 import Firebase
+import FirebaseMessaging
 import GoogleSignIn
 
 
