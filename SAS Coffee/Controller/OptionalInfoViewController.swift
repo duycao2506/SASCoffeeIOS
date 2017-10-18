@@ -61,9 +61,11 @@ class OptionalInfoViewController: KasperViewController {
             data[UserModel.BIRTHDAY] =  txtBirthday.text
         }
         
+        
         var newuser : UserModel = UserModel.init()
         newuser.mapping(map: Map.init(mappingType: .fromJSON, JSON: self.data))
         newuser.birthday = birthdate
+        
         
         self.navigationController?.view.startLoading(loadingView: GlobalUtils.getNVIndicatorView(color: Style.colorPrimary, type: .ballPulse), logo: #imageLiteral(resourceName: "logo.png"), tag: nil)
         print(newuser)

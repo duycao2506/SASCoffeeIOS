@@ -12,6 +12,7 @@ import FontAwesomeKit
 import PopupDialog
 import DrawerController
 import Firebase
+import FirebaseMessaging
 
 
 class HomeViewController: KasperViewController, UITableViewDataSource, UITableViewDelegate {
