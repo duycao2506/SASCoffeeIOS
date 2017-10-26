@@ -49,6 +49,26 @@
                ReferencedContainer = "container:SAS Coffee.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8489D03D1FA2518900AF70AD"
+               BuildableName = "Tests.xctest"
+               BlueprintName = "Tests"
+               ReferencedContainer = "container:SAS Coffee.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8489D02F1FA24CEF00AF70AD"
+               BuildableName = "SASCoffeeTest.xctest"
+               BlueprintName = "SASCoffeeTest"
+               ReferencedContainer = "container:SAS Coffee.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

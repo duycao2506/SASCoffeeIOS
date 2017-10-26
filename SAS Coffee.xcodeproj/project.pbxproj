@@ -20,6 +20,11 @@
 		8475D6631F6E553900768B5E /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D6621F6E553900768B5E /* VideoModel.swift */; };
 		8475D6651F6E564500768B5E /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D6641F6E564500768B5E /* TopicModel.swift */; };
 		8475D6671F6E565400768B5E /* SentenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D6661F6E565400768B5E /* SentenceModel.swift */; };
+		8489D04B1FA2546700AF70AD /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8489D04A1FA2546700AF70AD /* News.storyboard */; };
+		8489D04D1FA254BF00AF70AD /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489D04C1FA254BF00AF70AD /* NewsListViewController.swift */; };
+		8489D04F1FA25BDA00AF70AD /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489D04E1FA25BD900AF70AD /* NewsDetailsViewController.swift */; };
+		8489D0521FA25C4100AF70AD /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489D0511FA25C4100AF70AD /* NewsTableViewCell.swift */; };
+		8489D0541FA25D0700AF70AD /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489D0531FA25D0700AF70AD /* NewsModel.swift */; };
 		848F0DDE1F591B8100B204F5 /* SuperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DDD1F591B8000B204F5 /* SuperModel.swift */; };
 		848F0DE01F592A8900B204F5 /* EventConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DDF1F592A8900B204F5 /* EventConst.swift */; };
 		848F0DE41F59536300B204F5 /* KasperNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DE31F59536300B204F5 /* KasperNavViewController.swift */; };
@@ -134,6 +139,11 @@
 		8475D6621F6E553900768B5E /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		8475D6641F6E564500768B5E /* TopicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
 		8475D6661F6E565400768B5E /* SentenceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentenceModel.swift; sourceTree = "<group>"; };
+		8489D04A1FA2546700AF70AD /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		8489D04C1FA254BF00AF70AD /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
+		8489D04E1FA25BD900AF70AD /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
+		8489D0511FA25C4100AF70AD /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		8489D0531FA25D0700AF70AD /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		848F0DDD1F591B8000B204F5 /* SuperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperModel.swift; sourceTree = "<group>"; };
 		848F0DDF1F592A8900B204F5 /* EventConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventConst.swift; sourceTree = "<group>"; };
 		848F0DE31F59536300B204F5 /* KasperNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KasperNavViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +279,24 @@
 				E02056D5DE3F5CAF229D9D58 /* Pods-SAS CoffeeUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8489D0481FA2542200AF70AD /* News */ = {
+			isa = PBXGroup;
+			children = (
+				8489D04A1FA2546700AF70AD /* News.storyboard */,
+				8489D04C1FA254BF00AF70AD /* NewsListViewController.swift */,
+				8489D04E1FA25BD900AF70AD /* NewsDetailsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		8489D0501FA25C0300AF70AD /* News */ = {
+			isa = PBXGroup;
+			children = (
+				8489D0511FA25C4100AF70AD /* NewsTableViewCell.swift */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 		848F0DE11F59529500B204F5 /* Home */ = {
@@ -458,6 +486,7 @@
 		84BD2DDD1F56AFCD0044CC5E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8489D0481FA2542200AF70AD /* News */,
 				84B8D1221F64F32500D40E2F /* Credits */,
 				84B8D1111F61AC4D00D40E2F /* Web */,
 				84B8D1061F61413700D40E2F /* Promotion */,
@@ -506,6 +535,7 @@
 				8475D6661F6E565400768B5E /* SentenceModel.swift */,
 				84E5C1BF1F966FAB007A1933 /* PromoEventModel.swift */,
 				84E5C1C11F966FC1007A1933 /* PromoVisitModel.swift */,
+				8489D0531FA25D0700AF70AD /* NewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -533,6 +563,7 @@
 		84BD2DE21F56AFCD0044CC5E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8489D0501FA25C0300AF70AD /* News */,
 				84B8D1271F650A1700D40E2F /* Study */,
 				84B8D11F1F64E59E00D40E2F /* Promotion */,
 				84B8D11C1F64674E00D40E2F /* Translator */,
@@ -658,7 +689,7 @@
 		84BD2DA31F56ACB80044CC5E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Duy Cao";
 				TargetAttributes = {
@@ -681,13 +712,13 @@
 					};
 					84BD2DBE1F56ACC50044CC5E = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = GVUH4TQN58;
+						DevelopmentTeam = C53Z8DWPT7;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 84BD2DAA1F56ACBB0044CC5E;
 					};
 					84BD2DC91F56ACC50044CC5E = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = GVUH4TQN58;
+						DevelopmentTeam = C53Z8DWPT7;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 84BD2DAA1F56ACBB0044CC5E;
 					};
@@ -723,6 +754,7 @@
 				84B8D10A1F61418000D40E2F /* Map.storyboard in Resources */,
 				84B8D10C1F61419500D40E2F /* Promotion.storyboard in Resources */,
 				84B8D1131F61ACF400D40E2F /* Web.storyboard in Resources */,
+				8489D04B1FA2546700AF70AD /* News.storyboard in Resources */,
 				848F0E011F59B6E300B204F5 /* Roboto-Bold.ttf in Resources */,
 				848F0E021F59B6E300B204F5 /* Roboto-Italic.ttf in Resources */,
 				84B8D12D1F655E7300D40E2F /* info.html in Resources */,
@@ -777,7 +809,7 @@
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-615f275e/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GradientView/GradientView.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -835,9 +867,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SAS CoffeeUITests/Pods-SAS CoffeeUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-Defines-NSData+zlib/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -850,9 +887,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SAS CoffeeTests/Pods-SAS CoffeeTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-Defines-NSData+zlib/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -978,11 +1020,13 @@
 				848F0DF01F5962AE00B204F5 /* GlobalUtils.swift in Sources */,
 				848F0E121F5ACC2F00B204F5 /* AppSetting.swift in Sources */,
 				842A7C101F59174100630509 /* UserModel.swift in Sources */,
+				8489D0521FA25C4100AF70AD /* NewsTableViewCell.swift in Sources */,
 				84B8D1101F61AC1300D40E2F /* WebViewController.swift in Sources */,
 				848F0DF41F59654B00B204F5 /* UIColor+Extension.swift in Sources */,
 				84BEB2741F5ED66A00CCC549 /* BasicInfoViewController.swift in Sources */,
 				84E14BED1F6E7A3F00A29AAF /* VideoPlayerController.swift in Sources */,
 				848F0E1C1F5AE3A700B204F5 /* SuperTableViewCell.swift in Sources */,
+				8489D0541FA25D0700AF70AD /* NewsModel.swift in Sources */,
 				84B8D1331F66B05100D40E2F /* VideoListTableViewCell.swift in Sources */,
 				84B8D1211F64E5B200D40E2F /* EventTableViewCell.swift in Sources */,
 				84E5C1C21F966FC1007A1933 /* PromoVisitModel.swift in Sources */,
@@ -1010,6 +1054,7 @@
 				8475D6651F6E564500768B5E /* TopicModel.swift in Sources */,
 				84B8D1031F6140F100D40E2F /* AudioListViewController.swift in Sources */,
 				848F0E191F5ADC7300B204F5 /* ImageTitleTableViewCell.swift in Sources */,
+				8489D04F1FA25BDA00AF70AD /* NewsDetailsViewController.swift in Sources */,
 				84BEB2721F5EAEBF00CCC549 /* OneTextFieldViewController.swift in Sources */,
 				84BD2DF41F56CC410044CC5E /* KasperViewController.swift in Sources */,
 				848F0E0A1F5A433F00B204F5 /* TableViewCellIdetifier.swift in Sources */,
@@ -1032,6 +1077,7 @@
 				848F0E2E1F5BA83800B204F5 /* ViewNibNames.swift in Sources */,
 				84B8D1291F650A4700D40E2F /* StudyMethodTableCell.swift in Sources */,
 				848F0E061F5A38EE00B204F5 /* BasicInfoTableViewCell.swift in Sources */,
+				8489D04D1FA254BF00AF70AD /* NewsListViewController.swift in Sources */,
 				84B8D10E1F6141A100D40E2F /* PromotionViewController.swift in Sources */,
 				84B8D1351F68F2A400D40E2F /* RealmWrapper.swift in Sources */,
 				848F0DE01F592A8900B204F5 /* EventConst.swift in Sources */,
@@ -1231,7 +1277,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = GVUH4TQN58;
+				DEVELOPMENT_TEAM = C53Z8DWPT7;
 				INFOPLIST_FILE = "SAS CoffeeTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kasper.personal.SAS-CoffeeTests";
@@ -1247,7 +1293,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = GVUH4TQN58;
+				DEVELOPMENT_TEAM = C53Z8DWPT7;
 				INFOPLIST_FILE = "SAS CoffeeTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kasper.personal.SAS-CoffeeTests";
@@ -1262,7 +1308,7 @@
 			baseConfigurationReference = 15767A4926B18A1CB112829E /* Pods-SAS CoffeeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = GVUH4TQN58;
+				DEVELOPMENT_TEAM = C53Z8DWPT7;
 				INFOPLIST_FILE = "SAS CoffeeUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kasper.personal.SAS-CoffeeUITests";
@@ -1277,7 +1323,7 @@
 			baseConfigurationReference = E02056D5DE3F5CAF229D9D58 /* Pods-SAS CoffeeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = GVUH4TQN58;
+				DEVELOPMENT_TEAM = C53Z8DWPT7;
 				INFOPLIST_FILE = "SAS CoffeeUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kasper.personal.SAS-CoffeeUITests";

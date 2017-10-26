@@ -10,7 +10,7 @@ import XCTest
 @testable import SAS_Coffee
 
 class SAS_CoffeeTests: XCTestCase {
-    
+    var user : UserModel!
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.

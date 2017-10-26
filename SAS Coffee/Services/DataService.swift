@@ -92,4 +92,14 @@ class DataService: NSObject {
         }
         return nil
     }
+    
+    static func parseNews(resp : [[String : Any]]) -> [NewsModel]{
+        var newses : [NewsModel] = [NewsModel].init()
+        for item in resp {
+            let news = NewsModel.init()
+            news.mapping(map: Map.init(mappingType: .fromJSON, JSON: item))
+            newses.append(news)
+        }
+        return newses
+    }
 }

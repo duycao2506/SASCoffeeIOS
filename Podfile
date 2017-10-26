@@ -33,11 +33,14 @@ target 'SAS Coffee' do
   target 'SAS CoffeeTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Firebase'
   end
 
   target 'SAS CoffeeUITests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Firebase'
   end
+  
 
 end

@@ -26,6 +26,8 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.26.0):
     - FBSDKCoreKit
+  - Firebase (4.1.1):
+    - Firebase/Core (= 4.1.1)
   - Firebase/Auth (4.1.1):
     - Firebase/Core
     - FirebaseAuth (= 4.1.1)
@@ -140,6 +142,7 @@ DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FBSDKShareKit
+  - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Messaging
@@ -198,6 +201,6 @@ SPEC CHECKSUMS:
   SwiftPullToRefresh: 11ffa1b9d886b2902bed64b05bd50e1e0f1201f1
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: d8192bd39a7e2af7d57e59443e39d9a0372cf496
+PODFILE CHECKSUM: 11837ce43a0a560c50c8412e89fb9ae584992672
 
 COCOAPODS: 1.3.1

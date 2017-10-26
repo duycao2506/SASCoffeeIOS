@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:NewsListVC.swift">
+   </FileRef>
+   <FileRef
       location = "group:SAS Coffee.xcodeproj">
    </FileRef>
    <FileRef

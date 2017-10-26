@@ -58,7 +58,7 @@ class VideoListViewController: KasperViewController, UITableViewDelegate, UITabl
     }
     
     func openVideoController (viid: String){
-        let videovc = AppStoryBoard.Study.instance.instantiateViewController(withIdentifier: VCIdentifiers.videoplayer.rawValue) as! VideoPlayerController
+        let videovc = AppStoryBoard.Study.instance.instantiateViewController(withIdentifier: VCIdentifiers.Videoplayer.rawValue) as! VideoPlayerController
         videovc.modalTransitionStyle = .crossDissolve
         videovc.modalPresentationStyle = .overCurrentContext
         videovc.modalPresentationCapturesStatusBarAppearance = true

@@ -27,5 +27,6 @@ enum VCIdentifiers : String {
     case AudioTopicsVC = "AudioTopicsVC"
     case PromotionDetailVC = "PromotionDetailVC"
     case PromotionJoinConfirmVC = "PromotionJoinConfirmVC"
-    case videoplayer = "videoplayvc"
+    case Videoplayer = "videoplayvc"
+    case NewsListVC = "newsListVC"
 }

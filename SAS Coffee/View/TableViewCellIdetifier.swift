@@ -20,6 +20,6 @@ struct TableViewCellIdetifier {
     static let promotionCell = "promotioncell"
     static let icontitledesccell = "icontitledescell"
     static let studymethodcell = "StudyMethodTableCell"
-    
+    static let newslistcell = "newslistcell"
     static let videolistcell = "videolistcell"
 }
