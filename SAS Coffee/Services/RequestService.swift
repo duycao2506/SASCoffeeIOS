@@ -14,9 +14,9 @@ class RequestService: NSObject {
     
     static var isInternetOk = true
     
-//    static let SERVER_URL = "http://35.201.131.125/sas/sas_server/";
+    static let SERVER_URL = "http://35.201.131.125/sas/sas_server/";
     
-    static let SERVER_URL = "http://192.168.1.38:8080/sascoffee/sas_server/"
+//    static let SERVER_URL = "http://192.168.1.7:8080/sascoffee/sas_server/"
     
     static let GET_SPLASH_NEWS = "user/getNews/"; //
     static let GET_LOGIN_FB = "user/loginFacebook/"; //
@@ -136,6 +136,7 @@ class RequestService: NSObject {
    
     
     static func GET_login(endpoint: String, token : String, complete: @escaping ((Any)->())){
+        print("DSADSADSADSADSADSASA")
         var request = URLRequest.init(url: URL.init(string: RequestService.SERVER_URL + endpoint + token)!)
         request.httpMethod = HTTPMethod.get.rawValue
         Alamofire.request(request).responseJSON(completionHandler: {
