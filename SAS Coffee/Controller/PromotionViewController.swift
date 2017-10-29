@@ -9,28 +9,19 @@
 import UIKit
 import FontAwesomeKit
 
-class PromotionViewController: KasperViewController, UITableViewDataSource, UITableViewDelegate {
+class PromotionViewController: KasperTableViewController {
 
     
-    @IBOutlet weak var tbView : UITableView!
-    
     var promotionData : [PromotionModel] = [PromotionModel]()
-    
-    
     var testArr : [String] = ["dsadsa","d21412rwq", "ewqrwq21412", "4214wqrwqrqw", "421421rwqrwq", "421421rwqrqw"]
     var size : Int = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.tbView.spr_setIndicatorHeader {
-            self.refreshData()
-        }
-        self.tbView.spr_beginRefreshing()
+        
     }
 
-    func refreshData(){
+    override func refreshData(){
         self.view.unnotice()
         RequestService.GET_promo_by(userId: AppSetting.sharedInstance().mainUser.id.description, complete: {
             data -> Void in
@@ -90,7 +81,7 @@ class PromotionViewController: KasperViewController, UITableViewDataSource, UITa
         self.present(vc, animated: true, completion: nil)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  self.tbView.dequeueReusableCell(withIdentifier: TableViewCellIdetifier.promotionCell)! as! EventTableViewCell
         cell.index = indexPath.row
         cell.observer = self
@@ -103,7 +94,7 @@ class PromotionViewController: KasperViewController, UITableViewDataSource, UITa
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return promotionData.count
     }
     

@@ -10,9 +10,37 @@ import UIKit
 
 class NewsDetailsViewController: KasperViewController {
 
+    @IBOutlet weak var lblDate: UILabel!
+    
+    
+    @IBOutlet weak var imvRep: UIImageView!
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    @IBOutlet weak var lblContent: UILabel!
+    
+    
+    var newsEntity : NewsModel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let attstring : NSAttributedString =  try! NSAttributedString.init(data: newsEntity.fullDes.data(using: String.Encoding.unicode)!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+        
+        self.lblContent.attributedText = attstring
+        self.lblTitle.text = newsEntity.name
+        let str = self.newsEntity.img.split(",")
+        
+        
+        var tempImg = UIImage.init(data: Data.init(base64Encoded: str[1])!)
+        
+        let differenceRatio = self.imvRep.frame.size.width
+            / (tempImg?.size.width)!
+        
+        tempImg = tempImg?.resizeImage(scale: differenceRatio)
+        
+        self.imvRep.image = tempImg
+        
+        self.lblDate.text = "Posted on ".localize() + (newsEntity.expireDate?.string(format: .strict("dd/MM/yyyy")))!
         // Do any additional setup after loading the view.
     }
 

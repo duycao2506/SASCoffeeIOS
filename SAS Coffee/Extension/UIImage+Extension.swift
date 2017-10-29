@@ -10,6 +10,18 @@ import UIKit
 import Foundation
 
 extension UIImage {
+    
+    func resizeImage(scale: CGFloat) -> UIImage {
+        let newSize = CGSize(width: self.size.width*scale, height: self.size.height*scale)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        self.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+    
     func changeTint(color : UIColor) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
         guard let context = UIGraphicsGetCurrentContext() else {

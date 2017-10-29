@@ -8,10 +8,8 @@
 
 import UIKit
 
-class CreditViewController: KasperViewController, UITableViewDelegate, UITableViewDataSource {
+class CreditViewController: KasperTableViewController {
     
-    @IBOutlet weak var tbView : UITableView!
-
     let images : [UIImage] = [#imageLiteral(resourceName: "freepik"), UIImage.init(named: "smashicons")!, #imageLiteral(resourceName: "plainicon")]
     let strs : [String] = ["Freepik", "Smashicons", "Plainicon"]
     let links : [String]  = ["http://www.freepik.com/", "https://smashicons.com/","http://www.plainicon.com"]
@@ -43,7 +41,7 @@ class CreditViewController: KasperViewController, UITableViewDelegate, UITableVi
         return 100
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tbView.dequeueReusableCell(withIdentifier: TableViewCellIdetifier.icontitledesccell) as! IvLblDesTableViewCell
 //        cell.isCardView = false
         cell.lbldesc.text = links[indexPath.row]
@@ -56,7 +54,7 @@ class CreditViewController: KasperViewController, UITableViewDelegate, UITableVi
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return links.count
     }
 

@@ -31,6 +31,13 @@ class SAS_CoffeeUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let app = XCUIApplication.init()
+        let buttonGotit = app.buttons["Got it"]
+        let exists = NSPredicate.init(format: "exists == true")
+        expectation(for: exists, evaluatedWith: buttonGotit, handler: nil)
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssert(buttonGotit.exists)
     }
     
 }

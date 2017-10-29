@@ -15,13 +15,7 @@ import Firebase
 import FirebaseMessaging
 
 
-class HomeViewController: KasperViewController, UITableViewDataSource, UITableViewDelegate {
-
-    @IBOutlet weak var tbview : UITableView!
-    
-    
-    
-    
+class HomeViewController: KasperTableViewController {
     var arrProfile : [Any]!
     var hashCell : [String] = [
         TableViewCellIdetifier.basicInfoCell,
@@ -51,11 +45,9 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
         
         
         //MARK: TableView Configuration
-        self.tbview.rowHeight = UITableViewAutomaticDimension
-        self.tbview.register(UINib.init(nibName: ViewNibNames.imageTitleCell, bundle: Bundle.main), forCellReuseIdentifier: TableViewCellIdetifier.iconTitleCell)
-        self.tbview.spr_setIndicatorHeader {
-            self.refreshData()
-        }
+        self.tbView.rowHeight = UITableViewAutomaticDimension
+        self.tbView.register(UINib.init(nibName: ViewNibNames.imageTitleCell, bundle: Bundle.main), forCellReuseIdentifier: TableViewCellIdetifier.iconTitleCell)
+        
         
         
         self.view.startLoading(loadingView: GlobalUtils.getNVIndicatorView(color: Style.colorPrimary, type: .ballPulse), logo: #imageLiteral(resourceName: "logo.png"), tag: nil)
@@ -89,7 +81,7 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
             }
         })
         
-        Messaging.messaging().subscribe(toTopic: "allUser")
+        Messaging.messaging().subscribe(toTopic: "dev")
         
         
     }
@@ -103,13 +95,12 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
     
     
     
-    func refreshData(){
+    override func refreshData(){
         RequestService.GET_login(endpoint: RequestService.GET_LOGIN_AUTO, token: AppSetting.sharedInstance().mainUser.token.toBase64(), complete: {
             data -> Void in
             DataService.assignUser(response: data as! [String : Any], vc: self)
             RealmWrapper.save(obj: AppSetting.sharedInstance().mainUser)
-            self.view.stopLoading(loadingViewTag: 1241)
-            self.tbview.spr_endRefreshing()
+            self.tbView.spr_endRefreshing()
         })
     }
 
@@ -140,7 +131,7 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 7
     }
     
@@ -158,8 +149,8 @@ class HomeViewController: KasperViewController, UITableViewDataSource, UITableVi
         return UITableViewAutomaticDimension
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : SuperTableViewCell? = tbview.dequeueReusableCell(withIdentifier: hashCell[indexPath.row < 3 ? indexPath.row : 3]) as! SuperTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell : SuperTableViewCell? = self.tbView.dequeueReusableCell(withIdentifier: hashCell[indexPath.row < 3 ? indexPath.row : 3]) as! SuperTableViewCell
         if cell is ImageTitleTableViewCell {
             cell?.updateData(anyObj: arrProfile[indexPath.row-3])
         }else{

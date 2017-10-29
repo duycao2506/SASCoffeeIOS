@@ -18,6 +18,7 @@ enum AppStoryBoard : String {
     case Promotion = "Promotion"
     case Web = "Web"
     case Credit = "Credits"
+    case News = "News"
     
     var instance : UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)

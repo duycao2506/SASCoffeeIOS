@@ -283,9 +283,6 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
                         }
                     }
                 })
-                
-                
-                
             }
             nav1.pushViewController(passwordInputVC, animated: true)
         }

@@ -10,6 +10,7 @@
 		015F6BBA99B778A0D24F3CD3 /* Pods_SAS_CoffeeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93B730B8783F2AF972FD429 /* Pods_SAS_CoffeeUITests.framework */; };
 		1B32C3684D521CA05864D41A /* Pods_SAS_CoffeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C616FE1F6CA22ACD0D5BE8 /* Pods_SAS_CoffeeTests.framework */; };
 		842A7C101F59174100630509 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A7C0F1F59174100630509 /* UserModel.swift */; };
+		8459F5881FA31705000B8FEA /* KasperTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459F5871FA31705000B8FEA /* KasperTableViewController.swift */; };
 		8471C0CD1F949AEC001BA9CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8471C0CC1F949AEC001BA9CC /* GoogleService-Info.plist */; };
 		8471C0CF1F94A803001BA9CC /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8471C0CE1F94A803001BA9CC /* UserNotifications.framework */; };
 		8475D6571F6A6C8E00768B5E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D6561F6A6C8E00768B5E /* DataService.swift */; };
@@ -129,6 +130,7 @@
 		54B247FBE490E18C1EB4E5AA /* Pods-SAS Coffee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAS Coffee.release.xcconfig"; path = "Pods/Target Support Files/Pods-SAS Coffee/Pods-SAS Coffee.release.xcconfig"; sourceTree = "<group>"; };
 		550E001BCDB940D28E68466B /* Pods_SAS_Coffee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SAS_Coffee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		842A7C0F1F59174100630509 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		8459F5871FA31705000B8FEA /* KasperTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasperTableViewController.swift; sourceTree = "<group>"; };
 		8471C0CC1F949AEC001BA9CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8471C0CE1F94A803001BA9CC /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		8475D6561F6A6C8E00768B5E /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 				84BD2DE71F56B8CB0044CC5E /* Menu */,
 				84BD2DE61F56B8BF0044CC5E /* Map */,
 				84BD2DE51F56B8B30044CC5E /* Home */,
+				8459F5871FA31705000B8FEA /* KasperTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1082,6 +1085,7 @@
 				84B8D1351F68F2A400D40E2F /* RealmWrapper.swift in Sources */,
 				848F0DE01F592A8900B204F5 /* EventConst.swift in Sources */,
 				84B8D1261F64F35000D40E2F /* CreditViewController.swift in Sources */,
+				8459F5881FA31705000B8FEA /* KasperTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

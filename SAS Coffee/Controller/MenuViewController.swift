@@ -29,6 +29,7 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         menuitems = [
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.homeIcon(withSize: 48.0)), "Home".localize()],
+            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.newspaperOIcon(withSize: 48.0)), "News".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.starIcon(withSize: 48.0)), "Event(s)".localize()],
             [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.mapMarkerIcon(withSize: 48.0)),"SAS Coffee Towns".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.translateIcon(withSize: 48.0)), "Translator".localize()],
@@ -41,11 +42,19 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
         let aboutusresPath = Bundle.main.path(forResource: "info", ofType: "html")
         let aboutusvc = AppStoryBoard.Web.instance.instantiateViewController(withIdentifier: VCIdentifiers.WebVC.rawValue) as! WebViewController
         aboutusvc.url = aboutusresPath
+        
+        vcArray.append(AppStoryBoard.News.instance.instantiateViewController(withIdentifier: VCIdentifiers.NewsListVC.rawValue) as! KasperViewController)
+        
         vcArray.append(AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionVC.rawValue) as! KasperViewController)
+        
         vcArray.append(AppStoryBoard.Map.instance.instantiateViewController(withIdentifier: VCIdentifiers.MapViewController.rawValue) as! KasperViewController)
-        vcArray.append(AppStoryBoard.Translation.instance.instantiateViewController(withIdentifier: VCIdentifiers.TranslatorVC.rawValue) as! KasperViewController)
+    
+        vcArray.append(AppStoryBoard.Translation.instance.instantiateViewController(withIdentifier:             VCIdentifiers.TranslatorVC.rawValue) as! KasperViewController)
+        
         vcArray.append(AppStoryBoard.Study.instance.instantiateViewController(withIdentifier: VCIdentifiers.StudyMethodVC.rawValue) as! KasperViewController)
+        
         vcArray.append(aboutusvc)
+        
         vcArray.append(AppStoryBoard.Credit.instance.instantiateViewController(withIdentifier: VCIdentifiers.CreditVC.rawValue) as! KasperViewController)
 
         self.tbView.register(UINib.init(nibName: ViewNibNames.imageTitleCell, bundle: Bundle.main), forCellReuseIdentifier: TableViewCellIdetifier.iconTitleCell)
