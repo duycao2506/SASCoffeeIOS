@@ -16,7 +16,7 @@ class NewsDetailsViewController: KasperViewController {
     @IBOutlet weak var imvRep: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     
-    @IBOutlet weak var lblContent: UILabel!
+    @IBOutlet weak var lblContent: UITextView!
     
     
     var newsEntity : NewsModel!

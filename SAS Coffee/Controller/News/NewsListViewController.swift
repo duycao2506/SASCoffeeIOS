@@ -14,6 +14,10 @@ class NewsListViewController: KasperTableViewController{
     
     var news : [NewsModel] = [NewsModel].init()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
     var fakeTitle : [String] = [
         "Hell world, this is the news from SAS Coffee, yeah, cannot miss it",
         "Tao hỏi thật nhé, có thằng loz nào thừa thời gian đi chơi riêng với một đứa con gái"
@@ -37,6 +41,8 @@ class NewsListViewController: KasperTableViewController{
         self.page = 0
         self.pureData()
     }
+    
+    
     
     func pureData(){
         self.tbView.unnotice()
@@ -111,4 +117,6 @@ class NewsListViewController: KasperTableViewController{
         vc.newsEntity = self.news[indexPath.row]
         present(vc, animated: true, completion: nil)
     }
+    
+    
 }
