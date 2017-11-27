@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -44,21 +44,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tH-ud-ykB">
-                                                    <rect key="frame" x="16" y="16" width="343" height="236.5"/>
+                                                    <rect key="frame" x="23" y="19" width="329" height="231"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_nav" translatesAutoresizingMaskIntoConstraints="NO" id="r3L-ZY-2Uo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="236.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="231"/>
                                                         </imageView>
                                                         <visualEffectView clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0HQ-UR-hdf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="236.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="231"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="center" id="Otr-MO-Wzw">
-                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="236.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="329" height="231"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </view>
                                                             <blurEffect style="extraLight"/>
                                                         </visualEffectView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evx-iY-NMf">
-                                                            <rect key="frame" x="123" y="47.5" width="98" height="142.5"/>
+                                                            <rect key="frame" x="116" y="45" width="98" height="142.5"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphones" translatesAutoresizingMaskIntoConstraints="NO" id="rNF-ew-DzF">
                                                                     <rect key="frame" x="0.0" y="0.5" width="98" height="98"/>
@@ -170,32 +170,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zmy-Tg-gWS">
-                                                    <rect key="frame" x="16" y="16" width="343" height="275.5"/>
+                                                    <rect key="frame" x="23" y="19" width="329" height="270"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_nav" translatesAutoresizingMaskIntoConstraints="NO" id="fnt-X7-XvD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="192.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="184.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="fnt-X7-XvD" secondAttribute="height" multiplier="16:9" constant="1" id="M8z-80-GRb"/>
                                                             </constraints>
                                                         </imageView>
                                                         <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Htc-px-nvY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="192.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="184.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Video Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1O-Zh-Ooy">
-                                                            <rect key="frame" x="8" y="208.5" width="327" height="29.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1O-Zh-Ooy">
+                                                            <rect key="frame" x="8" y="200.5" width="313" height="34.5"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="22"/>
                                                             <color key="textColor" red="0.0" green="0.75294117650000003" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzs-0M-Bh4">
-                                                            <rect key="frame" x="8" y="246" width="327" height="22.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzs-0M-Bh4">
+                                                            <rect key="frame" x="8" y="243" width="313" height="20"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GP-jm-4As" customClass="KasperButton" customModule="SAS_Coffee" customModuleProvider="target">
-                                                            <rect key="frame" x="142.5" y="80" width="57" height="32"/>
+                                                            <rect key="frame" x="136.5" y="76.5" width="55" height="31"/>
                                                             <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <accessibility key="accessibilityConfiguration">
                                                                 <accessibilityTraits key="traits" notEnabled="YES"/>

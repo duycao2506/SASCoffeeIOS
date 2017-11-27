@@ -14,9 +14,9 @@ class RequestService: NSObject {
     
     static var isInternetOk = true
     
-    static let SERVER_URL = "http://35.201.131.125/sas/sas_server/";
+//    static let SERVER_URL = "http://35.201.131.125/sas/sas_server/";
     
-//    static let SERVER_URL = "http://192.168.1.7:8080/sascoffee/sas_server/"
+    static let SERVER_URL = "http://192.168.1.5:8080/sascoffee/sas_server/"
 //    static let SERVER_URL = "http://192.168.1.38:8080/sascoffee/sas_server/"
     
     static let GET_SPLASH_NEWS = "user/getNews/"; //

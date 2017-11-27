@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -72,10 +72,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" alpha="0.84999999999999998" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKE-LR-umV">
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abY-9a-ChF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <connections>
+                                    <action selector="press_dissmiss:" destination="jDR-fM-zZH" eventType="touchUpInside" id="jZG-bR-3h8"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cx3-jm-AJu">
                                 <rect key="frame" x="0.0" y="226" width="375" height="441"/>
                                 <subviews>
@@ -254,13 +257,13 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="gr7-6e-QW7" firstAttribute="top" secondItem="KKE-LR-umV" secondAttribute="bottom" id="54k-yA-09c"/>
-                            <constraint firstAttribute="trailing" secondItem="KKE-LR-umV" secondAttribute="trailing" id="DtP-au-vbC"/>
+                            <constraint firstItem="gr7-6e-QW7" firstAttribute="top" secondItem="abY-9a-ChF" secondAttribute="bottom" id="2p0-JA-jfA"/>
                             <constraint firstAttribute="trailing" secondItem="cx3-jm-AJu" secondAttribute="trailing" id="Ke8-Kc-L62"/>
                             <constraint firstItem="cx3-jm-AJu" firstAttribute="leading" secondItem="0qX-OF-ugA" secondAttribute="leading" id="Lx3-RR-XB8"/>
-                            <constraint firstItem="KKE-LR-umV" firstAttribute="leading" secondItem="0qX-OF-ugA" secondAttribute="leading" id="gWv-w4-Pfs"/>
+                            <constraint firstItem="abY-9a-ChF" firstAttribute="leading" secondItem="0qX-OF-ugA" secondAttribute="leading" id="cuS-7D-Zg2"/>
                             <constraint firstItem="gr7-6e-QW7" firstAttribute="top" secondItem="cx3-jm-AJu" secondAttribute="bottom" id="nGO-NJ-jNd"/>
-                            <constraint firstItem="KKE-LR-umV" firstAttribute="top" secondItem="0qX-OF-ugA" secondAttribute="top" id="nXi-kG-GHH"/>
+                            <constraint firstItem="abY-9a-ChF" firstAttribute="top" secondItem="0qX-OF-ugA" secondAttribute="top" id="uw2-T5-Prp"/>
+                            <constraint firstAttribute="trailing" secondItem="abY-9a-ChF" secondAttribute="trailing" id="vgo-4A-9xj"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>

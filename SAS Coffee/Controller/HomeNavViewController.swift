@@ -14,7 +14,8 @@ class HomeNavViewController: KasperNavViewController {
 
     
     static var NOTIFICATION_DATA : [String : Any] = [
-        "eventId" : -1
+        "eventId" : -1,
+        "newsId" : -1
     ]
     
     
@@ -35,17 +36,39 @@ class HomeNavViewController: KasperNavViewController {
                 let succ = resp["statuskey"] as! Bool
                 if succ {
                     let response = resp["promoList"] as! [[String:Any]]
-                    let event = DataService.findEventByIdInPromotionList(id : (eventId as! NSString).integerValue, promotelistRaw: response)
-                    let vc = AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionDetailVC.rawValue) as! PromotionDetailViewController
-                    vc.promotion = event
-                    self.present(vc, animated: true, completion: nil)
-                    HomeNavViewController.NOTIFICATION_DATA["eventId"] = -1
+                    if let event = DataService.findEventByIdInPromotionList(id : (eventId as! NSString).integerValue, promotelistRaw: response)
+                    {
+                        let vc = AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionDetailVC.rawValue) as! PromotionDetailViewController
+                        vc.promotion = event
+                        self.present(vc, animated: true, completion: nil)
+                        HomeNavViewController.NOTIFICATION_DATA["eventId"] = -1
+                    }
                 }
                 self.view.stopLoading(loadingViewTag: 111)
                 
             })
         }
     }
+    
+//    func remoteNotiNews(notification : Notification){
+//        if let eventId = notification.userInfo!["id"],  (eventId as! NSString).integerValue > -1 {
+//            self.view.startLoading(loadingView: GlobalUtils.getNVIndicatorView(color: Style.colorPrimary, type: .ballPulse), logo: #imageLiteral(resourceName: "logo"), tag: 111)
+//            RequestService. (userId: AppSetting.sharedInstance().mainUser.id.description, complete: { (data) in
+//                let resp = data as! [String : Any]
+//                let succ = resp["statuskey"] as! Bool
+//                if succ {
+//                    let response = resp["newsList"] as! [[String:Any]]
+//                    let event = DataService.findEventByIdInPromotionList(id : (eventId as! NSString).integerValue, promotelistRaw: response)
+//                    let vc = AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.rawValue) as! PromotionDetailViewController
+//                    vc.promotion = event
+//                    self.present(vc, animated: true, completion: nil)
+//                    HomeNavViewController.NOTIFICATION_DATA["newsId"] = -1
+//                }
+//                self.view.stopLoading(loadingViewTag: 111)
+//
+//            })
+//        }
+//    }
     
     
     deinit {

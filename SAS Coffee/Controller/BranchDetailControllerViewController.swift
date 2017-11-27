@@ -84,7 +84,7 @@ class BranchDetailController: KasperViewController {
         toggleBottom(completeFunc: nil)
     }
     
-    func press_dissmiss(_ sender: Any)  {
+    @IBAction func press_dissmiss(_ sender: Any)  {
         toggleBottom(completeFunc: {
             succ -> Void in
             self.dismiss(animated: true, completion: nil)

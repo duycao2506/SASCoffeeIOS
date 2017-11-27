@@ -15,6 +15,9 @@ class AppSetting: NSObject {
     let GG_API_MAP_KEY = "AIzaSyDdtT4e4vyC5cY78vh7B9jt8b1Rm1hLUb8"
     let DIC_API_KEY = "wkqpBLMbS0fG9INAwryUDAV1dmaJfTO9"
     
+    let NOTI_ALL = "allUser"
+    let NOTI_BRANCH = "branch"
+    
     var mainUser : UserModel!
     
     private override init() {

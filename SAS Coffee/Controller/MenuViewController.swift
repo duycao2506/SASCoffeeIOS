@@ -95,8 +95,9 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive, handler: {
                 action -> Void in
                 GIDSignIn.sharedInstance().signOut()
+                Messaging.messaging().unsubscribe(fromTopic: AppSetting.sharedInstance().NOTI_ALL)
+                Messaging.messaging().unsubscribe(fromTopic: AppSetting.sharedInstance().NOTI_BRANCH + AppSetting.sharedInstance().mainUser.branchId.description)
                 RealmWrapper.remove(obj: AppSetting.sharedInstance().mainUser)
-                Messaging.messaging().unsubscribe(fromTopic: "allUser")
                 self.evo_drawerController?.dismiss(animated: true, completion: nil)
                 alert.dismiss(animated: true, completion: nil)
             }))

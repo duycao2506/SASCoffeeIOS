@@ -81,7 +81,9 @@ class HomeViewController: KasperTableViewController {
             }
         })
         
-        Messaging.messaging().subscribe(toTopic: "dev")
+        Messaging.messaging().subscribe(toTopic: AppSetting.sharedInstance().NOTI_ALL)
+        Messaging.messaging().subscribe(toTopic: AppSetting.sharedInstance().NOTI_BRANCH
+             + AppSetting.sharedInstance().mainUser.branchId.description)
         
         
     }
