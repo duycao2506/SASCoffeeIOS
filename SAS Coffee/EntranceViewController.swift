@@ -156,14 +156,48 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
     func toHomeVC(){
         let homevc = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: VCIdentifiers.HomeNavViewController.rawValue) as! HomeNavViewController
         let menuvc = AppStoryBoard.Menu.instance.instantiateViewController(withIdentifier: VCIdentifiers.MenuViewController.rawValue) as! MenuViewController
-        menuvc.vcArray = homevc.viewControllers as! [KasperViewController]
-        let drawercontroller = DrawerController.init(centerViewController: homevc, leftDrawerViewController: menuvc)
-        drawercontroller.openDrawerGestureModeMask = .all
-        drawercontroller.closeDrawerGestureModeMask = .all
-        drawercontroller.shadowRadius = 2.0
-        drawercontroller.shouldStretchDrawer = true
-        drawercontroller.shadowOpacity = 0.5
+//        menuvc.vcArray = homevc.viewControllers as! [KasperViewController]
+//        let drawercontroller = DrawerController.init(centerViewController: homevc, leftDrawerViewController: menuvc)
+//        drawercontroller.openDrawerGestureModeMask = .all
+//        drawercontroller.closeDrawerGestureModeMask = .all
+//        drawercontroller.shadowRadius = 2.0
+//        drawercontroller.shouldStretchDrawer = true
+//        drawercontroller.shadowOpacity = 0.5
         
+        var vcArray = [UIViewController].init()
+        
+//        vcArray.append(homevc)
+        
+        let newsvc = AppStoryBoard.News.instance.instantiateViewController(withIdentifier: VCIdentifiers.NewsListVC.rawValue) as! KasperViewController
+        
+        vcArray.append(newsvc)
+        
+        let promovc = AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionVC.rawValue) as! KasperViewController
+        vcArray.append(promovc)
+        
+//        let mapvc = AppStoryBoard.Map.instance.instantiateViewController(withIdentifier: VCIdentifiers.MapViewController.rawValue) as! KasperViewController
+//        vcArray.append(mapvc)
+        
+        let transvc = AppStoryBoard.Translation.instance.instantiateViewController(withIdentifier:             VCIdentifiers.TranslatorVC.rawValue) as! KasperViewController
+        vcArray.append(menuvc)
+        
+//        vcArray.append(AppStoryBoard.Study.instance.instantiateViewController(withIdentifier: VCIdentifiers.StudyMethodVC.rawValue) as! KasperViewController)
+        
+        homevc.tabBarItem = UITabBarItem.init(title: "Home".localize(), image: FAKFontAwesome.homeIcon(withSize: 24.0).image(with: CGSize.init(width: 24.0, height: 24.0)), tag: 1)
+        
+        newsvc.tabBarItem = UITabBarItem.init(title: "News".localize(), image: FAKFontAwesome.newspaperOIcon(withSize: 24.0).image(with: CGSize.init(width: 24.0, height: 48)), tag: 1)
+        promovc.tabBarItem = UITabBarItem.init(title: "Promo".localize(), image: FAKFontAwesome.ticketIcon(withSize: 24.0).image(with: CGSize.init(width: 24.0, height: 24.0)), tag: 1)
+        menuvc.tabBarItem = UITabBarItem.init(title: "More".localize(), image: FAKMaterialIcons.menuIcon(withSize: 24.0).image(with: CGSize.init(width: 24.0, height: 24.0)), tag: 1)
+        
+        
+        let drawercontroller = KasperTabController.init()
+        drawercontroller.viewControllers = vcArray.map {
+            HomeNavViewController(rootViewController: $0)
+        }
+        drawercontroller.tabBar.isTranslucent = true
+        drawercontroller.tabBar.backgroundColor = UIColor.white
+        drawercontroller.tabBar.tintColor = Style.colorPrimaryDark
+        drawercontroller.viewControllers?.insert(homevc, at: 0)
 
         self.present(drawercontroller, animated: true, completion: {
             self.indicator.stopAnimating()
