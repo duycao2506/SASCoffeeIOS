@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nJ2-K4-OgG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nJ2-K4-OgG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -44,10 +44,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-7I-NwF">
-                                                    <rect key="frame" x="8" y="16" width="124" height="136"/>
+                                                    <rect key="frame" x="15" y="19" width="124" height="130"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cup" translatesAutoresizingMaskIntoConstraints="NO" id="MN1-W2-iHr">
-                                                            <rect key="frame" x="0.0" y="0.0" width="124" height="136"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="124" height="130"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                     <real key="value" value="6"/>
@@ -55,7 +55,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="jBz-4Q-hKR">
-                                                            <rect key="frame" x="21" y="36" width="83" height="83"/>
+                                                            <rect key="frame" x="21" y="33" width="83" height="83"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="jBz-4Q-hKR" secondAttribute="height" multiplier="1:1" id="5rr-8v-EYy"/>
                                                             </constraints>
@@ -73,7 +73,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mf6-HD-YYq">
-                                                    <rect key="frame" x="140" y="37" width="227" height="29.5"/>
+                                                    <rect key="frame" x="147" y="40" width="213" height="29.5"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Cao Khac Le Duy">
                                                             <attributes>
@@ -86,13 +86,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thành viên mới" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpY-cg-aGH">
-                                                    <rect key="frame" x="140" y="70.5" width="227" height="16.5"/>
+                                                    <rect key="frame" x="147" y="73.5" width="213" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.72549019609999998" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIO-2l-1zK">
-                                                    <rect key="frame" x="140" y="87" width="227" height="37.5"/>
+                                                    <rect key="frame" x="147" y="90" width="213" height="37.5"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="24P">
                                                             <attributes>
@@ -136,7 +136,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FFJ-1x-Tnr">
-                                                    <rect key="frame" x="16" y="16" width="343" height="25"/>
+                                                    <rect key="frame" x="23" y="19" width="329" height="19"/>
                                                     <color key="tintColor" red="0.96078431369999995" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="progressTintColor" red="0.96078431369999995" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="trackTintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -153,18 +153,18 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </progressView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Eo-bD-3ke">
-                                                    <rect key="frame" x="16" y="49" width="343" height="44"/>
+                                                    <rect key="frame" x="23" y="46" width="329" height="44"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cup_medal" translatesAutoresizingMaskIntoConstraints="NO" id="IoP-6F-BBM">
-                                                            <rect key="frame" x="0.0" y="10" width="58.5" height="24"/>
+                                                            <rect key="frame" x="0.0" y="10" width="56" height="24"/>
                                                             <color key="tintColor" red="0.33333333329999998" green="0.37647058820000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cup_medal" translatesAutoresizingMaskIntoConstraints="NO" id="xc1-70-sSV">
-                                                            <rect key="frame" x="58.5" y="10" width="115" height="24"/>
+                                                            <rect key="frame" x="56" y="10" width="110.5" height="24"/>
                                                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cup_medal" translatesAutoresizingMaskIntoConstraints="NO" id="D0l-mq-Nft">
-                                                            <rect key="frame" x="173.5" y="10" width="144" height="24"/>
+                                                            <rect key="frame" x="166.5" y="10" width="138" height="24"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                     <real key="value" value="0.0"/>
@@ -172,7 +172,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cup_medal" translatesAutoresizingMaskIntoConstraints="NO" id="sqi-a0-9Nb">
-                                                            <rect key="frame" x="317.5" y="10" width="29.5" height="24"/>
+                                                            <rect key="frame" x="304.5" y="10" width="28.5" height="24"/>
                                                             <color key="tintColor" red="0.73122532910000004" green="1" blue="0.90534674299999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
                                                     </subviews>
@@ -221,17 +221,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EjJ-Ls-ilY">
-                                                    <rect key="frame" x="16" y="238" width="343" height="1"/>
+                                                    <rect key="frame" x="23" y="241" width="329" height="1"/>
                                                     <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="IBs-C4-xN5"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKf-cP-m60">
-                                                    <rect key="frame" x="24" y="182" width="327" height="40"/>
+                                                    <rect key="frame" x="31" y="185" width="313" height="40"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lZ1-s4-pH4" customClass="FBSDKShareButton">
-                                                            <rect key="frame" x="67" y="0.0" width="81" height="40"/>
+                                                            <rect key="frame" x="60" y="0.0" width="81" height="40"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <accessibility key="accessibilityConfiguration">
                                                                 <accessibilityTraits key="traits" button="YES"/>
@@ -241,7 +241,7 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4f-iQ-lG7" customClass="FBSDKLikeButton">
-                                                            <rect key="frame" x="179" y="0.0" width="81" height="40"/>
+                                                            <rect key="frame" x="172" y="0.0" width="81" height="40"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="81" id="Qif-z7-bjc"/>
@@ -260,18 +260,18 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50g-Xa-q8y">
-                                                    <rect key="frame" x="16" y="16" width="343" height="1"/>
+                                                    <rect key="frame" x="23" y="19" width="329" height="1"/>
                                                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="kMd-ne-Grc"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zkM-2X-bqo">
-                                                    <rect key="frame" x="16" y="33" width="343" height="133"/>
+                                                    <rect key="frame" x="16" y="36" width="343" height="133"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="xHM-2c-ALS">
-                                                    <rect key="frame" x="24" y="41" width="327" height="117"/>
+                                                    <rect key="frame" x="24" y="44" width="327" height="117"/>
                                                     <subviews>
                                                         <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G00004" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOc-uD-lDC">
                                                             <rect key="frame" x="0.0" y="0.0" width="327" height="70"/>
