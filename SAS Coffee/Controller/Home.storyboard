@@ -352,11 +352,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Rtw-6C-oRe">
-                        <barButtonItem key="leftBarButtonItem" tag="1" image="ic_menu_white" style="plain" id="YYq-9s-b3Y" userLabel="navitem">
+                        <barButtonItem key="leftBarButtonItem" tag="1" image="ic_place_white" style="plain" id="YYq-9s-b3Y" userLabel="navitem">
                             <color key="tintColor" red="0.18431372549019609" green="0.50980392156862742" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="ic_facebook" id="dYt-GW-fL1">
-                            <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.18431372549019609" green="0.50980392156862742" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -394,7 +394,7 @@
         <image name="ic_cup" width="119" height="139"/>
         <image name="ic_cup_medal" width="26" height="24"/>
         <image name="ic_facebook" width="12" height="23"/>
-        <image name="ic_menu_white" width="24" height="24"/>
+        <image name="ic_place_white" width="24" height="24"/>
         <image name="user" width="90" height="90"/>
     </resources>
 </document>

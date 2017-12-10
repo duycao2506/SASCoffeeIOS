@@ -28,10 +28,10 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         menuitems = [
-            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.homeIcon(withSize: 48.0)), "Home".localize()],
-            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.newspaperOIcon(withSize: 48.0)), "News".localize()],
-            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.starIcon(withSize: 48.0)), "Event(s)".localize()],
-            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.mapMarkerIcon(withSize: 48.0)),"SAS Coffee Towns".localize()],
+//            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.homeIcon(withSize: 48.0)), "Home".localize()],
+//            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.newspaperOIcon(withSize: 48.0)), "News".localize()],
+//            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.starIcon(withSize: 48.0)), "Event(s)".localize()],
+//            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.mapMarkerIcon(withSize: 48.0)),"SAS Coffee Towns".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.translateIcon(withSize: 48.0)), "Translator".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.bookIcon(withSize: 48.0)),"Study with E4U".localize()],
             [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.infoIcon(withSize: 48.0)), "About us".localize()],
@@ -43,11 +43,11 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
         let aboutusvc = AppStoryBoard.Web.instance.instantiateViewController(withIdentifier: VCIdentifiers.WebVC.rawValue) as! WebViewController
         aboutusvc.url = aboutusresPath
         
-        vcArray.append(AppStoryBoard.News.instance.instantiateViewController(withIdentifier: VCIdentifiers.NewsListVC.rawValue) as! KasperViewController)
+//        vcArray.append(AppStoryBoard.News.instance.instantiateViewController(withIdentifier: VCIdentifiers.NewsListVC.rawValue) as! KasperViewController)
         
-        vcArray.append(AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionVC.rawValue) as! KasperViewController)
+//        vcArray.append(AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionVC.rawValue) as! KasperViewController)
         
-        vcArray.append(AppStoryBoard.Map.instance.instantiateViewController(withIdentifier: VCIdentifiers.MapViewController.rawValue) as! KasperViewController)
+//        vcArray.append(AppStoryBoard.Map.instance.instantiateViewController(withIdentifier: VCIdentifiers.MapViewController.rawValue) as! KasperViewController)
     
         vcArray.append(AppStoryBoard.Translation.instance.instantiateViewController(withIdentifier:             VCIdentifiers.TranslatorVC.rawValue) as! KasperViewController)
         
@@ -86,19 +86,20 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row < vcArray.count {
-            let centernav = self.evo_drawerController?.centerViewController as! HomeNavViewController
-            let chosenVc = vcArray[indexPath.row]
-            chosenVc.navigationItem.title = menuitems[indexPath.row][1] as? String
-            centernav.setViewControllers([chosenVc], animated: true)
+            let chosenVc = KasperNavViewController.init(rootViewController: vcArray[indexPath.row])
+            let navbarFont = UIFont(name: "Roboto-Light", size: 21) ?? UIFont.systemFont(ofSize: 17)
+            chosenVc.navigationBar.titleTextAttributes = [NSFontAttributeName: navbarFont, NSForegroundColorAttributeName:UIColor.darkGray]
+            
+            self.present(chosenVc, animated: true, completion: nil)
         }else{
-            let alert = UIAlertController(title: "Hmm".localize(), message: "Are you sure you want to sign out?", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Hmm".localize(), message: "Are you sure you want to sign out?".localize(), preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive, handler: {
                 action -> Void in
                 GIDSignIn.sharedInstance().signOut()
                 Messaging.messaging().unsubscribe(fromTopic: AppSetting.sharedInstance().NOTI_ALL)
                 Messaging.messaging().unsubscribe(fromTopic: AppSetting.sharedInstance().NOTI_BRANCH + AppSetting.sharedInstance().mainUser.branchId.description)
                 RealmWrapper.remove(obj: AppSetting.sharedInstance().mainUser)
-                self.evo_drawerController?.dismiss(animated: true, completion: nil)
+                self.navigationController?.tabBarController?.dismiss(animated: true, completion: nil)
                 alert.dismiss(animated: true, completion: nil)
             }))
             alert.addAction(UIAlertAction.init(title: "Cancel".localize(), style: UIAlertActionStyle.cancel, handler: {

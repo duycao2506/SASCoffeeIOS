@@ -115,7 +115,7 @@
                         <viewLayoutGuide key="safeArea" id="5mw-zj-gt9"/>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="MXH-Li-jQ5">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" image="ic_menu_white" id="I9d-HM-rUk">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" image="ic_place_white" id="I9d-HM-rUk">
                             <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="ic_facebook" id="sh4-cl-A2B">
@@ -245,6 +245,6 @@
         <image name="background_promotion" width="2048" height="1365"/>
         <image name="ic_arrow_back_white" width="24" height="24"/>
         <image name="ic_facebook" width="12" height="23"/>
-        <image name="ic_menu_white" width="24" height="24"/>
+        <image name="ic_place_white" width="24" height="24"/>
     </resources>
 </document>

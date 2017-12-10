@@ -156,15 +156,62 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
     func toHomeVC(){
         let homevc = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: VCIdentifiers.HomeNavViewController.rawValue) as! HomeNavViewController
         let menuvc = AppStoryBoard.Menu.instance.instantiateViewController(withIdentifier: VCIdentifiers.MenuViewController.rawValue) as! MenuViewController
-        menuvc.vcArray = homevc.viewControllers as! [KasperViewController]
-        let drawercontroller = DrawerController.init(centerViewController: homevc, leftDrawerViewController: menuvc)
-        drawercontroller.openDrawerGestureModeMask = .all
-        drawercontroller.closeDrawerGestureModeMask = .all
-        drawercontroller.shadowRadius = 2.0
-        drawercontroller.shouldStretchDrawer = true
-        drawercontroller.shadowOpacity = 0.5
+//        menuvc.vcArray = homevc.viewControllers as! [KasperViewController]
+//        let drawercontroller = DrawerController.init(centerViewController: homevc, leftDrawerViewController: menuvc)
+//        drawercontroller.openDrawerGestureModeMask = .all
+//        drawercontroller.closeDrawerGestureModeMask = .all
+//        drawercontroller.shadowRadius = 2.0
+//        drawercontroller.shouldStretchDrawer = true
+//        drawercontroller.shadowOpacity = 0.5
         
+        var vcArray = [UIViewController].init()
+        
+        vcArray.append(homevc)
+        
+        let newsvc = AppStoryBoard.News.instance.instantiateViewController(withIdentifier: VCIdentifiers.NewsListVC.rawValue) as! KasperViewController
+        
+        vcArray.append(newsvc)
+        
+        let promovc = AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionVC.rawValue) as! KasperViewController
+        vcArray.append(promovc)
+        
+        vcArray.append(menuvc)
+        
+        
+        homevc.tabBarItem = UITabBarItem.init(title: "Home".localize(), image: FAKFontAwesome.homeIcon(withSize: 24.0).image(with: CGSize.init(width: 24.0, height: 24.0)), tag: 1)
+        
+        newsvc.tabBarItem = UITabBarItem.init(title: "News".localize(), image: FAKFontAwesome.newspaperOIcon(withSize: 24.0).image(with: CGSize.init(width: 24.0, height: 48)), tag: 1)
+        promovc.tabBarItem = UITabBarItem.init(title: "Promo".localize(), image: FAKFontAwesome.ticketIcon(withSize: 24.0).image(with: CGSize.init(width: 24.0, height: 24.0)), tag: 1)
+        menuvc.tabBarItem = UITabBarItem.init(title: "More".localize(), image: FAKMaterialIcons.menuIcon(withSize: 24.0).image(with: CGSize.init(width: 24.0, height: 24.0)), tag: 1)
+        
+        
+        let drawercontroller = KasperTabController.init()
+        drawercontroller.viewControllers = vcArray.map {
+            if $0 is HomeNavViewController {
+                return $0
+            }
+            let nav = HomeNavViewController()
+            nav.setViewControllers([$0], animated: false)
+            nav.navigationBar.barTintColor = Style.colorPrimary
+            let navbarFont = UIFont(name: "Roboto-Light", size: 21) ?? UIFont.systemFont(ofSize: 17)
+            nav.navigationBar.titleTextAttributes = [NSFontAttributeName: navbarFont, NSForegroundColorAttributeName:UIColor.white]
+            return nav
 
+        }
+        drawercontroller.tabBar.isTranslucent = false
+        drawercontroller.tabBar.tintColor = Style.colorPrimaryDark
+        drawercontroller.tabBar.barTintColor = UIColor.white
+        
+        drawercontroller.tabBar.layer.masksToBounds = false
+        drawercontroller.tabBar.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        drawercontroller.tabBar.layer.shadowOffset = CGSize(width: 0, height: -2.0)
+        drawercontroller.tabBar.layer.shadowOpacity = 0.8
+        if #available(iOS 10.0, *) {
+            drawercontroller.tabBar.unselectedItemTintColor = UIColor.lightGray
+        } else {
+            // Fallback on earlier versions
+        }
+        
         self.present(drawercontroller, animated: true, completion: {
             self.indicator.stopAnimating()
             self.moveLogoUp()
@@ -180,7 +227,7 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
         print("FB")
         
         let loginManager = LoginManager.init()
-        loginManager.logIn( [.publicProfile, .custom("user_birthday"), .custom("email")], viewController: self) { loginResult in
+        loginManager.logIn(readPermissions: [.publicProfile, .custom("user_birthday"), .custom("email")], viewController: self) { loginResult in
             switch loginResult {
             case .failed(let error):
                 print(error)

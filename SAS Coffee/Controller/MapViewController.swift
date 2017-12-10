@@ -23,6 +23,7 @@ class MapViewController: KasperViewController, GMSMapViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "SAS Coffee Towns".localize()
         
         //Camera
         mapView.isMyLocationEnabled = true

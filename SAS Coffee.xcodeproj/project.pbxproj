@@ -21,6 +21,7 @@
 		8475D6631F6E553900768B5E /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D6621F6E553900768B5E /* VideoModel.swift */; };
 		8475D6651F6E564500768B5E /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D6641F6E564500768B5E /* TopicModel.swift */; };
 		8475D6671F6E565400768B5E /* SentenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D6661F6E565400768B5E /* SentenceModel.swift */; };
+		8476316A1FCC95D5005EFDD6 /* KasperTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847631691FCC95D5005EFDD6 /* KasperTabController.swift */; };
 		84766D571FCC1BF700511686 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = 84766D561FCC1BF700511686 /* info.html */; };
 		8489D04B1FA2546700AF70AD /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8489D04A1FA2546700AF70AD /* News.storyboard */; };
 		8489D04D1FA254BF00AF70AD /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489D04C1FA254BF00AF70AD /* NewsListViewController.swift */; };
@@ -141,6 +142,7 @@
 		8475D6621F6E553900768B5E /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		8475D6641F6E564500768B5E /* TopicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
 		8475D6661F6E565400768B5E /* SentenceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentenceModel.swift; sourceTree = "<group>"; };
+		847631691FCC95D5005EFDD6 /* KasperTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasperTabController.swift; sourceTree = "<group>"; };
 		84766D561FCC1BF700511686 /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = info.html; path = ../../../../info.html; sourceTree = "<group>"; };
 		8489D04A1FA2546700AF70AD /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		8489D04C1FA254BF00AF70AD /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 				84BD2DE61F56B8BF0044CC5E /* Map */,
 				84BD2DE51F56B8B30044CC5E /* Home */,
 				8459F5871FA31705000B8FEA /* KasperTableViewController.swift */,
+				847631691FCC95D5005EFDD6 /* KasperTabController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1076,6 +1079,7 @@
 				84BEB26A1F5BEE0D00CCC549 /* UIView+Extension.swift in Sources */,
 				84BD2DF61F56CC5C0044CC5E /* HomeNavViewController.swift in Sources */,
 				84B8D0F51F6072A500D40E2F /* MenuViewController.swift in Sources */,
+				8476316A1FCC95D5005EFDD6 /* KasperTabController.swift in Sources */,
 				84BEB26C1F5BEE3100CCC549 /* NibView.swift in Sources */,
 				848F0E2E1F5BA83800B204F5 /* ViewNibNames.swift in Sources */,
 				84B8D1291F650A4700D40E2F /* StudyMethodTableCell.swift in Sources */,

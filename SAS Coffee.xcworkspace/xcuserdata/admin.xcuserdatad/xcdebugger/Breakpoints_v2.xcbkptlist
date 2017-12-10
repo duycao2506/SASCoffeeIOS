@@ -10,7 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SAS Coffee/Controller/HomeViewController.swift"
+<<<<<<< HEAD
             timestampString = "533503975.590892"
+=======
+            timestampString = "533592352.592687"
+>>>>>>> tab_vc
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -22,6 +26,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -70,6 +75,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+=======
+>>>>>>> tab_vc
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -90,11 +97,16 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SAS Coffee/Controller/MenuViewController.swift"
+<<<<<<< HEAD
             timestampString = "533503975.591841"
+=======
+            timestampString = "533592352.59296"
+>>>>>>> tab_vc
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
+<<<<<<< HEAD
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -145,6 +157,10 @@
                   offsetFromSymbolStart = "292">
                </Location>
             </Locations>
+=======
+            landmarkName = "unknown"
+            landmarkType = "0">
+>>>>>>> tab_vc
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -201,6 +217,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "SAS Coffee/EntranceViewController.swift"
             timestampString = "533503975.592198"
             startingColumnNumber = "9223372036854775807"
@@ -233,6 +250,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+=======
+>>>>>>> tab_vc
             filePath = "SAS Coffee/AppDelegate.swift"
             timestampString = "530090017.172543"
             startingColumnNumber = "9223372036854775807"
@@ -250,7 +269,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SAS Coffee/Controller/PromotionViewController.swift"
-            timestampString = "530914013.942005"
+            timestampString = "533585044.612436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -298,7 +317,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SAS Coffee/Controller/PromotionViewController.swift"
-            timestampString = "530914013.942056"
+            timestampString = "533585044.612492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -361,6 +380,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "SAS Coffee/EntranceViewController.swift"
             timestampString = "533503975.592709"
             startingColumnNumber = "9223372036854775807"
@@ -457,8 +477,10 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+=======
+>>>>>>> tab_vc
             filePath = "SAS Coffee/Services/RequestService.swift"
-            timestampString = "533493426.852584"
+            timestampString = "533593627.548731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "212"
@@ -474,7 +496,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SAS Coffee/Services/RequestService.swift"
-            timestampString = "533493426.852888"
+            timestampString = "533593627.54885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "214"
@@ -522,7 +544,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SAS Coffee/Services/RequestService.swift"
-            timestampString = "533493426.853188"
+            timestampString = "533593627.548923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "216"
@@ -537,6 +559,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "SAS Coffee/Services/RequestService.swift"
             timestampString = "533493426.85347"
             startingColumnNumber = "9223372036854775807"
@@ -569,12 +592,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+=======
+>>>>>>> tab_vc
             filePath = "SAS Coffee/Controller/MapViewController.swift"
-            timestampString = "529614510.663599"
+            timestampString = "533592352.594293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "mapView(_:didTapInfoWindowOf:)"
             landmarkType = "7">
          </BreakpointContent>

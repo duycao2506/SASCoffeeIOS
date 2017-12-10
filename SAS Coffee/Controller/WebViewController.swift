@@ -20,6 +20,7 @@ class WebViewController: KasperViewController, WKUIDelegate, WKNavigationDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "About".localize()
         let webConfiguration = WKWebViewConfiguration()
         
         webview = WKWebView.init(frame: self.view.frame, configuration: webConfiguration)
