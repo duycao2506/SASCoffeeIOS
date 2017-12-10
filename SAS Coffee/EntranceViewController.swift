@@ -166,7 +166,7 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
         
         var vcArray = [UIViewController].init()
         
-//        vcArray.append(homevc)
+        vcArray.append(homevc)
         
         let newsvc = AppStoryBoard.News.instance.instantiateViewController(withIdentifier: VCIdentifiers.NewsListVC.rawValue) as! KasperViewController
         
@@ -175,13 +175,8 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
         let promovc = AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionVC.rawValue) as! KasperViewController
         vcArray.append(promovc)
         
-//        let mapvc = AppStoryBoard.Map.instance.instantiateViewController(withIdentifier: VCIdentifiers.MapViewController.rawValue) as! KasperViewController
-//        vcArray.append(mapvc)
-        
-        let transvc = AppStoryBoard.Translation.instance.instantiateViewController(withIdentifier:             VCIdentifiers.TranslatorVC.rawValue) as! KasperViewController
         vcArray.append(menuvc)
         
-//        vcArray.append(AppStoryBoard.Study.instance.instantiateViewController(withIdentifier: VCIdentifiers.StudyMethodVC.rawValue) as! KasperViewController)
         
         homevc.tabBarItem = UITabBarItem.init(title: "Home".localize(), image: FAKFontAwesome.homeIcon(withSize: 24.0).image(with: CGSize.init(width: 24.0, height: 24.0)), tag: 1)
         
@@ -192,13 +187,31 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
         
         let drawercontroller = KasperTabController.init()
         drawercontroller.viewControllers = vcArray.map {
-            HomeNavViewController(rootViewController: $0)
-        }
-        drawercontroller.tabBar.isTranslucent = true
-        drawercontroller.tabBar.backgroundColor = UIColor.white
-        drawercontroller.tabBar.tintColor = Style.colorPrimaryDark
-        drawercontroller.viewControllers?.insert(homevc, at: 0)
+            if $0 is HomeNavViewController {
+                return $0
+            }
+            let nav = HomeNavViewController()
+            nav.setViewControllers([$0], animated: false)
+            nav.navigationBar.barTintColor = Style.colorPrimary
+            let navbarFont = UIFont(name: "Roboto-Light", size: 21) ?? UIFont.systemFont(ofSize: 17)
+            nav.navigationBar.titleTextAttributes = [NSFontAttributeName: navbarFont, NSForegroundColorAttributeName:UIColor.white]
+            return nav
 
+        }
+        drawercontroller.tabBar.isTranslucent = false
+        drawercontroller.tabBar.tintColor = Style.colorPrimaryDark
+        drawercontroller.tabBar.barTintColor = UIColor.white
+        
+        drawercontroller.tabBar.layer.masksToBounds = false
+        drawercontroller.tabBar.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        drawercontroller.tabBar.layer.shadowOffset = CGSize(width: 0, height: -2.0)
+        drawercontroller.tabBar.layer.shadowOpacity = 0.8
+        if #available(iOS 10.0, *) {
+            drawercontroller.tabBar.unselectedItemTintColor = UIColor.lightGray
+        } else {
+            // Fallback on earlier versions
+        }
+        
         self.present(drawercontroller, animated: true, completion: {
             self.indicator.stopAnimating()
             self.moveLogoUp()
@@ -214,7 +227,7 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
         print("FB")
         
         let loginManager = LoginManager.init()
-        loginManager.logIn( [.publicProfile, .custom("user_birthday"), .custom("email")], viewController: self) { loginResult in
+        loginManager.logIn(readPermissions: [.publicProfile, .custom("user_birthday"), .custom("email")], viewController: self) { loginResult in
             switch loginResult {
             case .failed(let error):
                 print(error)

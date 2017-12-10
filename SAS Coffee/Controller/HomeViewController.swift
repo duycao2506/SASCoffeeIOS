@@ -24,6 +24,10 @@ class HomeViewController: KasperTableViewController {
         TableViewCellIdetifier.iconTitleCell
     ]
     
+    static var NOTIFICATION_DATA : [String : Any] = [
+        "eventId" : -1,
+        "newsId" : -1
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +89,8 @@ class HomeViewController: KasperTableViewController {
         Messaging.messaging().subscribe(toTopic: AppSetting.sharedInstance().NOTI_BRANCH
              + AppSetting.sharedInstance().mainUser.branchId.description)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.remoteNotiEvent(notification:)), name:
+            NSNotification.Name(rawValue: EventConst.REMOTE_NOTI), object: nil)
         
     }
     
@@ -94,8 +100,32 @@ class HomeViewController: KasperTableViewController {
         
     }
     
+    func remoteNotiEvent(notification : Notification){
+        if let eventId = notification.userInfo!["id"],  (eventId as! NSString).integerValue > -1 {
+            self.view.startLoading(loadingView: GlobalUtils.getNVIndicatorView(color: Style.colorPrimary, type: .ballPulse), logo: #imageLiteral(resourceName: "logo"), tag: 111)
+            RequestService.GET_promo_by(userId: AppSetting.sharedInstance().mainUser.id.description, complete: { (data) in
+                let resp = data as! [String : Any]
+                let succ = resp["statuskey"] as! Bool
+                if succ {
+                    let response = resp["promoList"] as! [[String:Any]]
+                    if let event = DataService.findEventByIdInPromotionList(id : (eventId as! NSString).integerValue, promotelistRaw: response)
+                    {
+                        let vc = AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionDetailVC.rawValue) as! PromotionDetailViewController
+                        vc.promotion = event
+                        self.present(vc, animated: true, completion: nil)
+                        HomeViewController.NOTIFICATION_DATA["eventId"] = -1
+                    }
+                }
+                self.view.stopLoading(loadingViewTag: 111)
+                
+            })
+        }
+    }
     
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     override func refreshData(){
         RequestService.GET_login(endpoint: RequestService.GET_LOGIN_AUTO, token: AppSetting.sharedInstance().mainUser.token.toBase64(), complete: {

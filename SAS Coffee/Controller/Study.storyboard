@@ -128,11 +128,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Study with E4U" id="dsO-4b-8bl">
-                        <barButtonItem key="leftBarButtonItem" image="ic_menu_white" id="0HC-Ca-TMx">
+                        <barButtonItem key="leftBarButtonItem" image="ic_arrow_back_white" id="0HC-Ca-TMx">
                             <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ic_facebook" id="u7a-NP-OZS">
-                            <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="actionBackWith_sender:" destination="QQk-9F-QxX" id="aNW-X8-BwX"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -183,13 +183,13 @@
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1O-Zh-Ooy">
-                                                            <rect key="frame" x="8" y="200.5" width="313" height="32"/>
+                                                            <rect key="frame" x="8" y="200.5" width="313" height="34.5"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="22"/>
                                                             <color key="textColor" red="0.0" green="0.75294117650000003" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzs-0M-Bh4">
-                                                            <rect key="frame" x="8" y="240.5" width="313" height="22.5"/>
+                                                            <rect key="frame" x="8" y="243" width="313" height="20"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -273,7 +273,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="17p-as-3oN">
-                        <barButtonItem key="leftBarButtonItem" image="cm_arrow_back_white" id="Mdb-wd-iRY">
+                        <barButtonItem key="leftBarButtonItem" image="ic_arrow_back_white" id="Mdb-wd-iRY">
                             <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="actionBackWith_sender:" destination="HcF-Nc-P6V" id="yXl-er-gDQ"/>
@@ -371,7 +371,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Topic Title" id="9VC-4Y-nZl">
-                        <barButtonItem key="leftBarButtonItem" image="cm_arrow_back_white" id="Sw2-6N-6Pr">
+                        <barButtonItem key="leftBarButtonItem" image="ic_arrow_back_white" id="Sw2-6N-6Pr">
                             <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="actionBackWith_sender:" destination="U4e-S5-uU8" id="cFr-B5-d7a"/>
@@ -416,7 +416,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Topics" id="RE8-SS-5An">
-                        <barButtonItem key="leftBarButtonItem" image="cm_arrow_back_white" id="67n-v4-KVu">
+                        <barButtonItem key="leftBarButtonItem" image="ic_arrow_back_white" id="67n-v4-KVu">
                             <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="actionBackWith_sender:" destination="NgL-mu-VAV" id="YeW-Wh-e5J"/>
@@ -435,11 +435,9 @@
     </scenes>
     <resources>
         <image name="background_nav" width="1024" height="682"/>
-        <image name="cm_arrow_back_white" width="24" height="24"/>
         <image name="cm_close_white" width="24" height="24"/>
         <image name="cm_play_white" width="24" height="24"/>
         <image name="headphones" width="64" height="64"/>
-        <image name="ic_facebook" width="12" height="23"/>
-        <image name="ic_menu_white" width="24" height="24"/>
+        <image name="ic_arrow_back_white" width="24" height="24"/>
     </resources>
 </document>

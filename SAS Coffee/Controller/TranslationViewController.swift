@@ -119,6 +119,7 @@ class TranslationViewController: KasperViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Translator".localize()
         self.tbViewTr.estimatedRowHeight = 250
         self.tbViewTr.rowHeight = UITableViewAutomaticDimension
         self.viewHolderTbView.notice(icon: GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.moodIcon(withSize: 48.0)), message: "You have not searched for anything!".localize())

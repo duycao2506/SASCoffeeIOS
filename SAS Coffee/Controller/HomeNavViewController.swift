@@ -13,67 +13,19 @@ import DrawerController
 class HomeNavViewController: KasperNavViewController {
 
     
-    static var NOTIFICATION_DATA : [String : Any] = [
-        "eventId" : -1,
-        "newsId" : -1
-    ]
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.viewControllers.first?.navigationItem.leftBarButtonItems?.first?.action = #selector(HomeNavViewController.toggleNav(_:))
-        NotificationCenter.default.addObserver(self, selector: #selector(self.remoteNotiEvent(notification:)), name:
-            NSNotification.Name(rawValue: EventConst.REMOTE_NOTI), object: nil)
+        self.viewControllers.first?.navigationItem.leftBarButtonItems?.first?.action = #selector(HomeNavViewController.showMap(_:))
+        self.viewControllers.first?.navigationItem.rightBarButtonItems?.first?.action = #selector(HomeNavViewController.openFace(_:))
+        
     }
     
     
-    func remoteNotiEvent(notification : Notification){
-        if let eventId = notification.userInfo!["id"],  (eventId as! NSString).integerValue > -1 {
-            self.view.startLoading(loadingView: GlobalUtils.getNVIndicatorView(color: Style.colorPrimary, type: .ballPulse), logo: #imageLiteral(resourceName: "logo"), tag: 111)
-            RequestService.GET_promo_by(userId: AppSetting.sharedInstance().mainUser.id.description, complete: { (data) in
-                let resp = data as! [String : Any]
-                let succ = resp["statuskey"] as! Bool
-                if succ {
-                    let response = resp["promoList"] as! [[String:Any]]
-                    if let event = DataService.findEventByIdInPromotionList(id : (eventId as! NSString).integerValue, promotelistRaw: response)
-                    {
-                        let vc = AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionDetailVC.rawValue) as! PromotionDetailViewController
-                        vc.promotion = event
-                        self.present(vc, animated: true, completion: nil)
-                        HomeNavViewController.NOTIFICATION_DATA["eventId"] = -1
-                    }
-                }
-                self.view.stopLoading(loadingViewTag: 111)
-                
-            })
-        }
-    }
     
-//    func remoteNotiNews(notification : Notification){
-//        if let eventId = notification.userInfo!["id"],  (eventId as! NSString).integerValue > -1 {
-//            self.view.startLoading(loadingView: GlobalUtils.getNVIndicatorView(color: Style.colorPrimary, type: .ballPulse), logo: #imageLiteral(resourceName: "logo"), tag: 111)
-//            RequestService. (userId: AppSetting.sharedInstance().mainUser.id.description, complete: { (data) in
-//                let resp = data as! [String : Any]
-//                let succ = resp["statuskey"] as! Bool
-//                if succ {
-//                    let response = resp["newsList"] as! [[String:Any]]
-//                    let event = DataService.findEventByIdInPromotionList(id : (eventId as! NSString).integerValue, promotelistRaw: response)
-//                    let vc = AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.rawValue) as! PromotionDetailViewController
-//                    vc.promotion = event
-//                    self.present(vc, animated: true, completion: nil)
-//                    HomeNavViewController.NOTIFICATION_DATA["newsId"] = -1
-//                }
-//                self.view.stopLoading(loadingViewTag: 111)
-//
-//            })
-//        }
-//    }
-    
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
     
     
     override func didReceiveMemoryWarning() {
@@ -83,8 +35,13 @@ class HomeNavViewController: KasperNavViewController {
     }
     
     
-    func toggleNav(_ sender: Any){
-        self.evo_drawerController?.toggleLeftDrawerSide(animated: true, completion: nil)
+    func showMap(_ sender: Any){
+//        self.evo_drawerController?.toggleLeftDrawerSide(animated: true, completion: nil)
+        let vc = AppStoryBoard.Map.instance.instantiateViewController(withIdentifier: VCIdentifiers.MapViewController.rawValue) as! MapViewController
+        let navvc = KasperNavViewController.init(rootViewController: vc)
+        let navbarFont = UIFont(name: "Roboto-Light", size: 21) ?? UIFont.systemFont(ofSize: 17)
+        navvc.navigationBar.titleTextAttributes = [NSFontAttributeName: navbarFont, NSForegroundColorAttributeName:UIColor.darkGray]
+        self.present(navvc, animated: true, completion: nil)
     }
     
     func openFace(_ sender: Any){
@@ -98,7 +55,7 @@ class HomeNavViewController: KasperNavViewController {
     
     override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
         super.setViewControllers(viewControllers, animated: true)
-        self.viewControllers.first?.navigationItem.leftBarButtonItems?.first?.action = #selector(HomeNavViewController.toggleNav(_:))
+        self.viewControllers.first?.navigationItem.leftBarButtonItems?.first?.action = #selector(HomeNavViewController.showMap(_:))
         self.viewControllers.first?.navigationItem.rightBarButtonItems?.first?.action = #selector(HomeNavViewController.openFace(_:))
         
     }

@@ -11,8 +11,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
         </array>
     </customFonts>
     <scenes>
@@ -43,11 +43,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="qJ6-QW-fzJ">
-                        <barButtonItem key="leftBarButtonItem" image="ic_menu_white" id="MP3-q9-PKU">
+                        <barButtonItem key="leftBarButtonItem" image="ic_arrow_back_white" id="MP3-q9-PKU">
                             <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ic_facebook" id="b7d-Vv-pxS">
-                            <color key="tintColor" red="0.1843137255" green="0.50980392159999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="actionBackWith_sender:" destination="xkg-fA-sRO" id="U3f-2O-AoC"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -104,7 +104,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="64" id="Bal-pV-nFP"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="21"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="21"/>
                                                 <color key="textColor" red="0.0" green="0.75294117650000003" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -121,7 +121,7 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtY-dz-vEt">
                                                         <rect key="frame" x="52" y="0.0" width="291" height="36"/>
-                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -149,7 +149,7 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3H-zV-6wy">
                                                         <rect key="frame" x="52" y="0.0" width="291" height="36"/>
-                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -170,6 +170,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="6bW-HL-VZ7"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                                 <state key="normal" title="Chỉ đường">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -190,6 +191,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v75-0q-9c4" customClass="KasperButton" customModule="SAS_Coffee" customModuleProvider="target">
                                                 <rect key="frame" x="191.5" y="176" width="98" height="36"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                                 <state key="normal" title="Liên hệ">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -287,8 +289,7 @@
     </scenes>
     <resources>
         <image name="cm_arrow_downward_white" width="24" height="24"/>
-        <image name="ic_facebook" width="12" height="23"/>
-        <image name="ic_menu_white" width="24" height="24"/>
+        <image name="ic_arrow_back_white" width="24" height="24"/>
         <image name="logo" width="115" height="134"/>
         <image name="shop_cover" width="640" height="480"/>
     </resources>

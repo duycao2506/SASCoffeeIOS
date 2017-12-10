@@ -16,6 +16,7 @@ class CreditViewController: KasperTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Credits".localize()
         self.tbView.register(UINib.init(nibName: ViewNibNames.ivtitledescell, bundle: Bundle.main), forCellReuseIdentifier: TableViewCellIdetifier.icontitledesccell)
 
         // Do any additional setup after loading the view.
