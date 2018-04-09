@@ -76,7 +76,7 @@ extension UIView {
         let messagelbl = UILabel.init(frame: CGRect.init(x: 0.0, y: 0.0, width: 96.0, height: 96.0))
         messagelbl.text = message
         viewholder.addSubview(messagelbl)
-        if let ic = icon {
+        if icon != nil {
             imagev =  UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: 96.0, height: 96.0))
             imagev.image = icon?.changeTint(color: Style.colorWhiteHard)
             viewholder.addSubview(imagev)

@@ -62,7 +62,7 @@ class OneTextFieldViewController: KasperViewController {
     
     
     @IBAction func continueOneText(_ sender: Any) {
-        if continueCondition!(previousData, txtMain.text) {
+        if continueCondition!(previousData, txtMain.text!) {
             if dataKey != nil {
                 previousData[dataKey!] = txtMain.text
             }

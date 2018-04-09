@@ -14,7 +14,7 @@ class RequestService: NSObject {
     
     static var isInternetOk = true
     
-    static let SERVER_URL = "http://35.201.131.125/sas/sas_server/";
+    static let SERVER_URL = "http://35.229.139.124/sas/sas_server/";
     
 //    static let SERVER_URL = "http://192.168.1.3:8080/sascoffee/sas_server/"
 //    static let SERVER_URL = "http://192.168.1.38:8080/sascoffee/sas_server/"
@@ -53,7 +53,6 @@ class RequestService: NSObject {
             if data.result.isSuccess {
                 let map = data.result.value as! [String : Any]
                 let str = map["news"]
-                print("get news \(str)")
                 complete(str)
             }else{
                 complete(nil)
@@ -66,7 +65,6 @@ class RequestService: NSObject {
         Alamofire.request(RequestService.SERVER_URL + RequestService.GET_MEMBER_LIST + promoId, method: .get).responseJSON(completionHandler: {
             data -> Void in
             if data.result.isSuccess {
-                print("get mem list \(String.init(describing: data.value))")
                 complete(data.value!)
             }else{
                 
@@ -105,7 +103,6 @@ class RequestService: NSObject {
         Alamofire.request(RequestService.SERVER_URL + RequestService.GET_ALL_BRANCH, method: .get).responseJSON(completionHandler: {
             data -> Void in
             if data.result.isSuccess {
-                print("get all branch \(String(describing: data.data))")
                 complete(data.value!)
             }else{
                 
@@ -118,7 +115,6 @@ class RequestService: NSObject {
         Alamofire.request(RequestService.SERVER_URL + RequestService.GET_PROMO_BY_USER_ID + userId, method: .get).responseJSON(completionHandler: {
             data -> Void in
             if data.result.isSuccess {
-                print("getpromobyuserid \(String(describing: data.value))")
                 complete(data.value!)
             }else{
                 
@@ -130,7 +126,6 @@ class RequestService: NSObject {
         Alamofire.request(RequestService.SERVER_URL + RequestService.DELETE_PROMO_BY_ID + "\(userId)/\(promoCode)", method: .get).responseJSON(completionHandler: {
             data -> Void in
             if data.result.isSuccess {
-                print("deletepromo \(String(describing: data.value))")
                 complete(data.value!)
             }else{
                 
@@ -161,7 +156,6 @@ class RequestService: NSObject {
         Alamofire.request(request).responseJSON(completionHandler: {
             data -> Void in
             if data.result.isSuccess {
-                print("login to \(endpoint) \(data.value!)")
                 complete(data.value!)
             }else{
                 
@@ -178,7 +172,6 @@ class RequestService: NSObject {
         Alamofire.request(lnk  , method: .post , parameters: pars, encoding: JSONEncoding.default).responseJSON(completionHandler: {
             data -> Void in
             if data.result.isSuccess {
-                print("translate \(data.value!)")
                 complete(data.value!)
             }else{
                 
@@ -191,7 +184,6 @@ class RequestService: NSObject {
         Alamofire.request(lnk, method: .get).responseJSON(completionHandler: {
             data -> Void in
             if data.result.isSuccess {
-                print("dictionary \(data.value!)")
                 complete(data.value!)
             }else{
                 complete(nil)
@@ -203,7 +195,7 @@ class RequestService: NSObject {
         Alamofire.request(RequestService.SERVER_URL + RequestService.GET_CHECK_EMAIL + email, method: .get).responseJSON(completionHandler: {
             data -> Void in
             if data.result.isSuccess {
-                print("check emai \(String(describing: data.value))")
+               
                 complete(data.value!)
             }else{
                 
@@ -249,7 +241,7 @@ class RequestService: NSObject {
     }
     
     static func GET_news_list(page: Int, user : UserModel, complete: @escaping ((Any?) -> ())){
-        var url = "\(RequestService.SERVER_URL)branch/\(user.branchId.description)/\(RequestService.GET_NEWS_LIST)10/\(page.description)"
+        let url = "\(RequestService.SERVER_URL)branch/\(user.branchId.description)/\(RequestService.GET_NEWS_LIST)10/\(page.description)"
         print(url)
         Alamofire.request(url, method: .get).responseJSON(completionHandler: { (data) in
             if data.result.isSuccess {

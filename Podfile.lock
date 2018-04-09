@@ -1,4 +1,5 @@
 PODS:
+  - ADAppRater (1.1.3)
   - Alamofire (4.5.1)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
@@ -135,6 +136,7 @@ PODS:
   - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
+  - ADAppRater
   - Alamofire
   - DrawerController
   - FacebookCore
@@ -162,6 +164,7 @@ DEPENDENCIES:
   - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
+  ADAppRater: d285414abb436a1a89ab1052446cb3e103562218
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   DrawerController: bad219f1535b1ff71f06ceb0f9d4339751b60af4
@@ -199,6 +202,6 @@ SPEC CHECKSUMS:
   SwiftPullToRefresh: 11ffa1b9d886b2902bed64b05bd50e1e0f1201f1
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 11837ce43a0a560c50c8412e89fb9ae584992672
+PODFILE CHECKSUM: f1fe3ad1ac8ab90297cd053bbc5bb97d743f2772
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0

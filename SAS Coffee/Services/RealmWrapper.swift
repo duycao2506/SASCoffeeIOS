@@ -17,9 +17,8 @@ class RealmWrapper: NSObject {
             try realm.write {
                 realm.add(obj, update: true)
             }
-            print("YES")
+           
         } catch {
-            print("FUCK")
         }
     }
     
@@ -29,7 +28,6 @@ class RealmWrapper: NSObject {
                 realm.delete(obj)
             }
         }catch {
-            print("fuck")
         }
     }
     
@@ -39,12 +37,11 @@ class RealmWrapper: NSObject {
                 realm.delete(objs)
             }
         }catch {
-            print("fuck")
         }
     }
 
     static func get(objOf: SuperModel.Type , whereTheseHappen: String!) -> [SuperModel]{
         let result = try! realm.objects(objOf)
-        return Array(result) as! [SuperModel]
+        return Array(result)
     }
 }

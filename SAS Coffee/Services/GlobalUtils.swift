@@ -13,6 +13,8 @@ import NVActivityIndicatorView
 
 class GlobalUtils  : NSObject {
     
+    static let mail = "saigonamericanenglish@gmail.com"
+    
     static func stringClassFromString(_ className: String) -> AnyClass! {
         
         /// get namespace

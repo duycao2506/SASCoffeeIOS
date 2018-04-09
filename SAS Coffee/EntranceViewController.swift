@@ -233,7 +233,7 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
                 print(error)
             case .cancelled:
                 print("User cancelled login.")
-            case .success(let _, let _, let accessToken):
+            case .success( _, let _, let accessToken):
                 print("Logged in! \(accessToken)")
                 self.indicator.startAnimating()
                 self.hideLoginView()
@@ -297,7 +297,6 @@ class EntranceViewController: KasperViewController, GIDSignInDelegate, GIDSignIn
                         if resp["exist"] as! Bool {
                             RequestService.POST_loginWithEmail(email: previousData2["email"] as! String, password: previousData2["password"] as! String, complete: {
                                 datalogin -> Void in
-                                print(datalogin)
                                 if DataService.assignUser(response: datalogin as! [String : Any], vc: self){
                                     nav2.view.stopLoading(loadingViewTag: nil)
                                     nav2.dismiss(animated: true, completion: {

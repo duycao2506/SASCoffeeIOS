@@ -22,12 +22,12 @@
 		8475D6651F6E564500768B5E /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D6641F6E564500768B5E /* TopicModel.swift */; };
 		8475D6671F6E565400768B5E /* SentenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475D6661F6E565400768B5E /* SentenceModel.swift */; };
 		8476316A1FCC95D5005EFDD6 /* KasperTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847631691FCC95D5005EFDD6 /* KasperTabController.swift */; };
-		84766D571FCC1BF700511686 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = 84766D561FCC1BF700511686 /* info.html */; };
 		8489D04B1FA2546700AF70AD /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8489D04A1FA2546700AF70AD /* News.storyboard */; };
 		8489D04D1FA254BF00AF70AD /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489D04C1FA254BF00AF70AD /* NewsListViewController.swift */; };
 		8489D04F1FA25BDA00AF70AD /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489D04E1FA25BD900AF70AD /* NewsDetailsViewController.swift */; };
 		8489D0521FA25C4100AF70AD /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489D0511FA25C4100AF70AD /* NewsTableViewCell.swift */; };
 		8489D0541FA25D0700AF70AD /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489D0531FA25D0700AF70AD /* NewsModel.swift */; };
+		848A829A202E902400B3DFEF /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = 848A8299202E902400B3DFEF /* info.html */; };
 		848F0DDE1F591B8100B204F5 /* SuperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DDD1F591B8000B204F5 /* SuperModel.swift */; };
 		848F0DE01F592A8900B204F5 /* EventConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DDF1F592A8900B204F5 /* EventConst.swift */; };
 		848F0DE41F59536300B204F5 /* KasperNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0DE31F59536300B204F5 /* KasperNavViewController.swift */; };
@@ -143,12 +143,12 @@
 		8475D6641F6E564500768B5E /* TopicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
 		8475D6661F6E565400768B5E /* SentenceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentenceModel.swift; sourceTree = "<group>"; };
 		847631691FCC95D5005EFDD6 /* KasperTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasperTabController.swift; sourceTree = "<group>"; };
-		84766D561FCC1BF700511686 /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = info.html; path = ../../../../info.html; sourceTree = "<group>"; };
 		8489D04A1FA2546700AF70AD /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		8489D04C1FA254BF00AF70AD /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		8489D04E1FA25BD900AF70AD /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		8489D0511FA25C4100AF70AD /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		8489D0531FA25D0700AF70AD /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		848A8299202E902400B3DFEF /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = info.html; sourceTree = "<group>"; };
 		848F0DDD1F591B8000B204F5 /* SuperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperModel.swift; sourceTree = "<group>"; };
 		848F0DDF1F592A8900B204F5 /* EventConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventConst.swift; sourceTree = "<group>"; };
 		848F0DE31F59536300B204F5 /* KasperNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KasperNavViewController.swift; sourceTree = "<group>"; };
@@ -331,7 +331,7 @@
 		848F0DFC1F59B3B400B204F5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				84766D561FCC1BF700511686 /* info.html */,
+				848A8299202E902400B3DFEF /* info.html */,
 				848F0DFD1F59B40800B204F5 /* Roboto-Bold.ttf */,
 				84B8D12E1F655E8700D40E2F /* info_files */,
 				848F0DFE1F59B40800B204F5 /* Roboto-Italic.ttf */,
@@ -696,7 +696,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Duy Cao";
 				TargetAttributes = {
 					84BD2DAA1F56ACBB0044CC5E = {
@@ -763,7 +763,7 @@
 				8489D04B1FA2546700AF70AD /* News.storyboard in Resources */,
 				848F0E011F59B6E300B204F5 /* Roboto-Bold.ttf in Resources */,
 				848F0E021F59B6E300B204F5 /* Roboto-Italic.ttf in Resources */,
-				84766D571FCC1BF700511686 /* info.html in Resources */,
+				848A829A202E902400B3DFEF /* info.html in Resources */,
 				848F0E031F59B6E300B204F5 /* Roboto-Light.ttf in Resources */,
 				84B8D1051F6140FE00D40E2F /* Translation.storyboard in Resources */,
 				84B8D0FC1F61404E00D40E2F /* Study.storyboard in Resources */,
@@ -804,6 +804,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SAS Coffee/Pods-SAS Coffee-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ADAppRater/ADAppRater.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/DrawerController/DrawerController.framework",
@@ -834,6 +835,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADAppRater.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DrawerController.framework",
@@ -1004,7 +1006,9 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1155,7 +1159,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1163,7 +1169,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1206,7 +1216,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1214,7 +1226,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

@@ -30,6 +30,7 @@ target 'SAS Coffee' do
   pod 'GooglePlaces'
   pod 'GradientView'
   pod 'youtube-ios-player-helper'
+  pod 'ADAppRater'
   target 'SAS CoffeeTests' do
     inherit! :search_paths
     # Pods for testing

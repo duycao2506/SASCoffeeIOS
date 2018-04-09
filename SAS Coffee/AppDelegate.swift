@@ -15,6 +15,7 @@ import GoogleSignIn
 import RealmSwift
 import NVActivityIndicatorView
 import UserNotifications
+import ADAppRater
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate
@@ -70,6 +71,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let token = Messaging.messaging().fcmToken
         print("FCM token: \(token ?? "")")
         
+        // AD Apprater
+        
+        ADAppRater.sharedInstance().applicationBundleID = Bundle.main.bundleIdentifier
+        ADAppRater.sharedInstance().applicationName = "English4U Coffee"
+        ADAppRater.sharedInstance().currentVersionDaysUntilPrompt = 1;
+        ADAppRater.sharedInstance().currentVersionLaunchesUntilPrompt = 3;
+        ADAppRater.sharedInstance().remindWaitPeriod = 5;
+        ADAppRater.sharedInstance().promptForNewVersionIfUserRated = true;
+        ADAppRater.sharedInstance().limitPromptFrequency = 30;
+        ADAppRater.sharedInstance().applicationVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         return true
     }
 

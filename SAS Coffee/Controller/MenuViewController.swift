@@ -12,6 +12,84 @@ import UIKit
 import Firebase
 import FirebaseMessaging
 import GoogleSignIn
+import ADAppRater
+
+@objc
+protocol MenuStrategy {
+    func presentMenuAction()
+}
+
+class AbstractMenuStrategy : MenuStrategy {
+    var menuVc : MenuViewController!
+    init(menuVc : MenuViewController) {
+        self.menuVc = menuVc
+    }
+    func presentMenuAction() {
+        
+    }
+}
+
+class MenuStrategyShowingViewController : AbstractMenuStrategy  {
+    var desVc : UIViewController!
+    init(menuVc : MenuViewController, desVc : UIViewController) {
+        super.init(menuVc: menuVc)
+        self.desVc = desVc
+    }
+    override func presentMenuAction() {
+        let presentedVc = KasperNavViewController.init(rootViewController: desVc)
+        self.customNavigationBarOf( desVc: presentedVc as! UINavigationController)
+        menuVc.present(presentedVc, animated: true, completion: nil)
+    }
+    
+    func customNavigationBarOf(desVc: UINavigationController) {
+        let navbarFont = UIFont(name: "Roboto-Light", size: 21) ?? UIFont.systemFont(ofSize: 17)
+        desVc.navigationBar.titleTextAttributes = [NSFontAttributeName: navbarFont, NSForegroundColorAttributeName:UIColor.darkGray]
+    }
+}
+
+
+
+class MenuStrategyRatingApp : AbstractMenuStrategy {
+    override func presentMenuAction() {
+        ADAppRater.sharedInstance().startFlow(from: self.menuVc)
+    }
+}
+
+class MenuStrategySignOut : AbstractMenuStrategy {
+    
+    override func presentMenuAction() {
+        let alert = UIAlertController(title: "Hmm".localize(), message: "Are you sure you want to sign out?".localize(), preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive, handler: {
+            action -> Void in
+            GIDSignIn.sharedInstance().signOut()
+            Messaging.messaging().unsubscribe(fromTopic: AppSetting.sharedInstance().NOTI_ALL)
+            Messaging.messaging().unsubscribe(fromTopic: AppSetting.sharedInstance().NOTI_BRANCH + AppSetting.sharedInstance().mainUser.branchId.description)
+            RealmWrapper.remove(obj: AppSetting.sharedInstance().mainUser)
+            self.menuVc.navigationController?.tabBarController?.dismiss(animated: true, completion: nil)
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction.init(title: "Cancel".localize(), style: UIAlertActionStyle.cancel, handler: {
+            action -> Void in
+            self.menuVc.tbView.selectRow(at: self.menuVc.selectedPath, animated: false, scrollPosition: .none)
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        menuVc.present(alert, animated: true, completion: nil)
+    }
+}
+
+class MenuStrategyFeedback : MenuStrategy {
+    func presentMenuAction() {
+        let email = GlobalUtils.mail
+        if let url = URL(string: "mailto:\(email)") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                // Fallback on earlier versions
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+}
 
 
 
@@ -20,7 +98,16 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
 
     
     var menuitems : [[Any]]!
-    var vcArray : [KasperViewController] = [KasperViewController]()
+    
+    
+    var vcIds : [[AppStoryBoard : VCIdentifiers]] = [
+        [AppStoryBoard.Translation : VCIdentifiers.TranslatorVC],
+        [AppStoryBoard.Study :  VCIdentifiers.StudyMethodVC],
+        [AppStoryBoard.Web : VCIdentifiers.WebVC],
+        [AppStoryBoard.Credit : VCIdentifiers.CreditVC]
+    ]
+    
+    var menuStrategy : [MenuStrategy] = [MenuStrategy].init()
     
     var selectedPath : IndexPath? = nil
     
@@ -28,35 +115,55 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         menuitems = [
-//            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.homeIcon(withSize: 48.0)), "Home".localize()],
-//            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.newspaperOIcon(withSize: 48.0)), "News".localize()],
-//            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.starIcon(withSize: 48.0)), "Event(s)".localize()],
-//            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.mapMarkerIcon(withSize: 48.0)),"SAS Coffee Towns".localize()],
-            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.translateIcon(withSize: 48.0)), "Translator".localize()],
-            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.bookIcon(withSize: 48.0)),"Study with E4U".localize()],
-            [GlobalUtils.getDefaultSizeImage(fakmat: FAKMaterialIcons.infoIcon(withSize: 48.0)), "About us".localize()],
-            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.creditCardIcon(withSize: 48.0)), "Credits".localize()],
-            [GlobalUtils.getDefaultSizeImage(fakawe: FAKFontAwesome.signOutIcon(withSize: 48.0)),"Sign out".localize()]
+            [
+                GlobalUtils.getDefaultSizeImage(
+                    fakmat: FAKMaterialIcons.translateIcon(withSize: 48.0)),
+                "Translator".localize()
+            ],
+            [
+                GlobalUtils.getDefaultSizeImage(
+                    fakmat: FAKMaterialIcons.bookIcon(withSize: 48.0)),
+                "Study with E4U".localize()
+            ],
+            [
+                GlobalUtils.getDefaultSizeImage(
+                    fakmat: FAKMaterialIcons.infoIcon(withSize: 48.0)),
+                "About us".localize()
+            ],
+            [
+                GlobalUtils.getDefaultSizeImage(
+                    fakawe: FAKFontAwesome.creditCardIcon(withSize: 48.0)),
+                "Credits".localize()
+            ],
+            [
+                GlobalUtils.getDefaultSizeImage(
+                    fakmat: FAKMaterialIcons.starIcon(withSize: 48.0)),
+                "Rate now".localize()
+            ],[
+                GlobalUtils.getDefaultSizeImage(
+                    fakawe: FAKFontAwesome.mailForwardIcon(withSize: 48.0)),
+                "Feedback".localize()
+            ],
+            [
+                GlobalUtils.getDefaultSizeImage(
+                    fakawe: FAKFontAwesome.signOutIcon(withSize: 48.0)),
+                "Sign out".localize()
+            ]
         ]
         
-        let aboutusresPath = Bundle.main.path(forResource: "info", ofType: "html")
-        let aboutusvc = AppStoryBoard.Web.instance.instantiateViewController(withIdentifier: VCIdentifiers.WebVC.rawValue) as! WebViewController
-        aboutusvc.url = aboutusresPath
+        //Add menu strategies
+        for i in vcIds {
+            let tmpVC = i.keys.first?.instance.instantiateViewController(withIdentifier: (i.values.first?.rawValue)!) as! KasperViewController
+            if tmpVC is WebViewController {
+                (tmpVC as! WebViewController).url = Bundle.main.path(forResource: "info", ofType: "html")
+            }
+            let tmpStrategy = MenuStrategyShowingViewController.init(menuVc: self, desVc: tmpVC)
+            menuStrategy.append(tmpStrategy)
+        }
+        menuStrategy.append(MenuStrategyRatingApp.init(menuVc: self))
+        menuStrategy.append(MenuStrategyFeedback.init())
+        menuStrategy.append(MenuStrategySignOut.init(menuVc: self))
         
-//        vcArray.append(AppStoryBoard.News.instance.instantiateViewController(withIdentifier: VCIdentifiers.NewsListVC.rawValue) as! KasperViewController)
-        
-//        vcArray.append(AppStoryBoard.Promotion.instance.instantiateViewController(withIdentifier: VCIdentifiers.PromotionVC.rawValue) as! KasperViewController)
-        
-//        vcArray.append(AppStoryBoard.Map.instance.instantiateViewController(withIdentifier: VCIdentifiers.MapViewController.rawValue) as! KasperViewController)
-    
-        vcArray.append(AppStoryBoard.Translation.instance.instantiateViewController(withIdentifier:             VCIdentifiers.TranslatorVC.rawValue) as! KasperViewController)
-        
-        vcArray.append(AppStoryBoard.Study.instance.instantiateViewController(withIdentifier: VCIdentifiers.StudyMethodVC.rawValue) as! KasperViewController)
-        
-        vcArray.append(aboutusvc)
-        
-        vcArray.append(AppStoryBoard.Credit.instance.instantiateViewController(withIdentifier: VCIdentifiers.CreditVC.rawValue) as! KasperViewController)
-
         self.tbView.register(UINib.init(nibName: ViewNibNames.imageTitleCell, bundle: Bundle.main), forCellReuseIdentifier: TableViewCellIdetifier.iconTitleCell)
         self.tbView.contentInset = UIEdgeInsets.init(top: 24, left: 0, bottom: 0, right: 0)
     }
@@ -77,7 +184,7 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if indexPath.row < vcArray.count {
+        if indexPath.row < vcIds.count {
             self.selectedPath = indexPath
         }
         return indexPath
@@ -85,35 +192,7 @@ class MenuViewController: KasperViewController, UITableViewDataSource, UITableVi
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row < vcArray.count {
-            let chosenVc = KasperNavViewController.init(rootViewController: vcArray[indexPath.row])
-            let navbarFont = UIFont(name: "Roboto-Light", size: 21) ?? UIFont.systemFont(ofSize: 17)
-            chosenVc.navigationBar.titleTextAttributes = [NSFontAttributeName: navbarFont, NSForegroundColorAttributeName:UIColor.darkGray]
-            
-            self.present(chosenVc, animated: true, completion: nil)
-        }else{
-            let alert = UIAlertController(title: "Hmm".localize(), message: "Are you sure you want to sign out?".localize(), preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive, handler: {
-                action -> Void in
-                GIDSignIn.sharedInstance().signOut()
-                Messaging.messaging().unsubscribe(fromTopic: AppSetting.sharedInstance().NOTI_ALL)
-                Messaging.messaging().unsubscribe(fromTopic: AppSetting.sharedInstance().NOTI_BRANCH + AppSetting.sharedInstance().mainUser.branchId.description)
-                RealmWrapper.remove(obj: AppSetting.sharedInstance().mainUser)
-                self.navigationController?.tabBarController?.dismiss(animated: true, completion: nil)
-                alert.dismiss(animated: true, completion: nil)
-            }))
-            alert.addAction(UIAlertAction.init(title: "Cancel".localize(), style: UIAlertActionStyle.cancel, handler: {
-                action -> Void in
-                self.tbView.selectRow(at: self.selectedPath, animated: false, scrollPosition: .none)
-                alert.dismiss(animated: true, completion: nil)
-            }))
-            self.present(alert, animated: true, completion: nil)
-            
-            
-            
-        }
-        self.evo_drawerController?.toggleLeftDrawerSide(animated: true, completion: nil)
-        
+        menuStrategy[indexPath.row].presentMenuAction()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
